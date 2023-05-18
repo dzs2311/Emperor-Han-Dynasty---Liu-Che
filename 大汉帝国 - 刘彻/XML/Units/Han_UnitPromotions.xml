@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 2023/5/17 21:15:33 -->
+<GameData>
+	<UnitPromotions>
+		<!-- 细柳连营石堑牢 -->
+		<Row>
+			<Type>PROMOTION_XILIUYING</Type>
+			<Description>TXT_KEY_PROMOTION_XILIUYING</Description>
+			<Help>TXT_KEY_PROMOTION_XILIUYING_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<MovesChange>1</MovesChange>
+			<DefenseMod>33</DefenseMod>
+			<EnemyHealChange>10</EnemyHealChange>
+			<!--敌人领地额外恢复量-->
+			<NeutralHealChange>10</NeutralHealChange>
+			<!--中立领地额外恢复量-->
+			<FriendlyHealChange>10</FriendlyHealChange>
+			<!--友方领地额外恢复量-->
+			<PortraitIndex>14</PortraitIndex>
+			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_XILIUYING</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- 初随骠骑战渔阳 -->
+		<Row>
+			<Type>PROMOTION_HUOQUBING_RIDER</Type>
+			<Description>TXT_KEY_PROMOTION_HUOQUBING_RIDER</Description>
+			<Help>TXT_KEY_PROMOTION_HUOQUBING_RIDER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<MovesChange>1</MovesChange>
+			<IgnoreTerrainCost>true</IgnoreTerrainCost>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HUOQUBING_RIDER</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+  </UnitPromotions>
+  <UnitPromotions_PromotionModifiers>
+  		<!-- 细柳连营石堑牢 -->
+  		<Row>
+			<PromotionType>PROMOTION_XILIUYING</PromotionType>
+			<OtherPromotionType>PROMOTION_INFANTRY_COMBAT</OtherPromotionType>
+			<Defense>100</Defense>
+		</Row>
+	  	<Row>
+			<PromotionType>PROMOTION_XILIUYING</PromotionType>
+			<OtherPromotionType>PROMOTION_ARCHERY_COMBAT</OtherPromotionType>
+			<Defense>100</Defense>
+		</Row>
+  		<Row>
+			<PromotionType>PROMOTION_XILIUYING</PromotionType>
+			<OtherPromotionType>PROMOTION_HITANDRUN</OtherPromotionType>
+			<Defense>100</Defense>
+		</Row>
+  		<Row>
+			<PromotionType>PROMOTION_XILIUYING</PromotionType>
+			<OtherPromotionType>PROMOTION_GUNPOWDER_INFANTRY_COMBAT</OtherPromotionType>
+			<Defense>100</Defense>
+		</Row>
+  </UnitPromotions_PromotionModifiers>
+  
+</GameData>

@@ -5,7 +5,7 @@
     <ProjectGuid>{f7d05ab4-1440-48e2-a93f-eb1c028940a3}</ProjectGuid>
     <Name>大汉帝国 - 刘彻</Name>
     <Guid>fa629749-9ccb-4f91-ac82-c09bf85c162c</Guid>
-    <ModVersion>1</ModVersion>
+    <ModVersion>8</ModVersion>
     <Stability>Alpha</Stability>
     <Teaser>汉秉威信，总率万国，日月所照，皆为臣妾！</Teaser>
     <Description>汉秉威信，总率万国，日月所照，皆为臣妾！</Description>
@@ -20,11 +20,89 @@
     <SupportsMac>true</SupportsMac>
     <AssemblyName>大汉帝国 - 刘彻</AssemblyName>
     <RootNamespace>大汉帝国 - 刘彻</RootNamespace>
-    <ModReferences />
+    <ModReferences>
+      <Association>
+        <Type>Mod</Type>
+        <Name>(1) CIV5MPDLL</Name>
+        <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
+        <MinVersion>0</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>(2) Super Power - Rise of Hegemony</Name>
+        <Id>f9b9c8aa-b6d1-4188-9239-c1de2207ab7c</Id>
+        <MinVersion>9</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModReferences>
     <ReloadLandmarkSystem>true</ReloadLandmarkSystem>
     <ReloadUnitSystem>true</ReloadUnitSystem>
     <ReloadStrategicViewSystem>true</ReloadStrategicViewSystem>
     <ReloadAudioSystem>true</ReloadAudioSystem>
+    <ModDependencies>
+      <Association>
+        <Type>Mod</Type>
+        <Name>(1) CIV5MPDLL</Name>
+        <Id>a2969a0a-e4da-41cc-9e0b-19b29aa971d8</Id>
+        <MinVersion>3</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+      <Association>
+        <Type>Mod</Type>
+        <Name>(2) Super Power - Rise of Hegemony</Name>
+        <Id>f9b9c8aa-b6d1-4188-9239-c1de2207ab7c</Id>
+        <MinVersion>9</MinVersion>
+        <MaxVersion>999</MaxVersion>
+      </Association>
+    </ModDependencies>
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/Han_ArtDefines.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/Han_IconAtlases.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/Han_MainCode.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/Han_Improvements.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>SQL/Han_Units.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/Buildings/Han_Buildings.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/Text/Han_Text_en_US.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/Text/Han_Text_zh_CN.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/Units/Han_UnitPromotions.xml</FileName>
+      </Action>
+    </ModActions>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -56,9 +134,35 @@
     <Folder Include="Art\Flags" />
     <Folder Include="Art\SV" />
     <Folder Include="Audio" />
+    <Folder Include="Lua" />
+    <Folder Include="XML" />
+    <Folder Include="SQL" />
+    <Folder Include="XML\Buildings" />
+    <Folder Include="XML\Units" />
+    <Folder Include="XML\Text" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Art\Flags\HanNuFlag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\HanQiMenFlag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\HanRiderFlag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\NanTianMenFlag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Flags\RelicHanJiFlag.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Flags\HanScythianUnitFlag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -422,6 +526,38 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_016.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_024.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_032.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_045.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_048.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_064.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_080.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Icons\Han_AlphaAtlas_128.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\Icons\Han_IconAtlas032.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -470,6 +606,18 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
+    <Content Include="Art\SV\SV_Han_Nu.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_Han_QiMen.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_Han_Rider.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
     <Content Include="Art\SV\SV_Han_Fort.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -480,7 +628,15 @@
     </Content>
     <Content Include="Art\SV\SV_Han_Ji.dds">
       <SubType>Lua</SubType>
-      <ImportIntoVFS>False</ImportIntoVFS>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_Han_Scythian_Saka.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\SV\SV_NanTianMen.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Audio\Han_Peace.mp3">
       <SubType>Lua</SubType>
@@ -489,6 +645,42 @@
     <Content Include="Audio\Han_War.mp3">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Han_ArtDefines.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Han_IconAtlases.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Han_Improvements.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Han_MainCode.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Han_Units.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\Buildings\Han_Buildings.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\Text\Han_Text_en_US.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\Text\Han_Text_zh_CN.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\Units\Han_UnitPromotions.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
