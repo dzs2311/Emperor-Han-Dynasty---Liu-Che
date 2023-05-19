@@ -53,7 +53,7 @@ FROM ArtDefine_StrategicView WHERE StrategicViewType = 'ART_DEF_UNIT_ELITE_RIDER
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 										DamageStates,	Formation)
-SELECT	'ART_DEF_UNIT_SP_HAN_ELITE_RIDER',				DamageStates, 	Formation
+SELECT	'ART_DEF_UNIT_SP_HAN_ELITE_RIDER',			DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_ELITE_RIDER';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
@@ -161,7 +161,7 @@ VALUES	('ART_DEF_UNIT_SP_HAN_NU',				    'Unit', 	'SV_HAN_NU.dds');
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 										DamageStates,	Formation)
-VALUES	('ART_DEF_UNIT_SP_HAN_HORSEARCHER',			DamageStates, 	'TwoBigGuns');
+VALUES	('ART_DEF_UNIT_SP_HAN_HORSEARCHER',			1, 				'TwoBigGuns');
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,								UnitMemberInfoType,								 NumMembers)
@@ -236,12 +236,12 @@ VALUES	('ART_DEF_UNIT_SP_HAN_SAKA',				'Unit', 	'SV_Han_Scythian_Saka.dds');
 ------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ArtDefine_UnitInfos 
 		(Type, 										DamageStates,	Formation)
-SELECT	'ART_DEF_UNIT_SP_HAN_CHENGYING',			DamageStates, 	'TwoBigGUns'
+SELECT	'ART_DEF_UNIT_SP_HAN_CHENGYING',			DamageStates, 	Formation
 FROM ArtDefine_UnitInfos WHERE Type = 'ART_DEF_UNIT_MECH';
 
 INSERT INTO ArtDefine_UnitInfoMemberInfos 	
 		(UnitInfoType,								UnitMemberInfoType,							 NumMembers)
-SELECT	'ART_DEF_UNIT_SP_HAN_CHENGYING', 		    'ART_DEF_UNIT_MEMBER_SP_HAN_CHENGYING',		 2
+SELECT	'ART_DEF_UNIT_SP_HAN_CHENGYING', 		    'ART_DEF_UNIT_MEMBER_SP_HAN_CHENGYING',		 1
 FROM ArtDefine_UnitInfoMemberInfos WHERE UnitInfoType = 'ART_DEF_UNIT_MECH';
 
 INSERT INTO ArtDefine_UnitMemberCombats 
@@ -256,7 +256,7 @@ FROM ArtDefine_UnitMemberCombatWeapons WHERE UnitMemberType = 'ART_DEF_UNIT_MEMB
 
 INSERT INTO ArtDefine_UnitMemberInfos 	
 		(Type, 											Scale,	ZOffset, Domain, Model, 					MaterialTypeTag, MaterialTypeSoundOverrideTag)
-SELECT	'ART_DEF_UNIT_MEMBER_SP_HAN_CHENGYING',			Scale,	ZOffset, Domain, 'metalgear_white.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
+SELECT	'ART_DEF_UNIT_MEMBER_SP_HAN_CHENGYING',			0.10,	ZOffset, Domain, 'metalgear_white.fxsxml',	MaterialTypeTag, MaterialTypeSoundOverrideTag
 FROM ArtDefine_UnitMemberInfos WHERE Type = 'ART_DEF_UNIT_MEMBER_MECH';
 
 INSERT INTO ArtDefine_StrategicView 
@@ -306,9 +306,9 @@ VALUES		('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Improvement', 	'HAN_POST'),
 
 INSERT INTO ArtDefine_Landmarks 
 			(ImprovementType, 						Era,	State,				 Scale, LayoutHandler,	ResourceType,			Model,					TerrainContour)
-VALUES		('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Any', 	'UnderConstruction', 0.8,	'SNAPSHOT',		'ART_DEF_RESOURCE_ALL', 'Kakurezato_hb.fxsxml', 1),
-			('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Any', 	'Constructed',		 0.8,	'SNAPSHOT',		'ART_DEF_RESOURCE_ALL', 'Kakurezato_01.fxsxml', 1),
-			('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Any', 	'Pillaged',			 0.8,	'SNAPSHOT',		'ART_DEF_RESOURCE_ALL', 'Kakurezato_pl.fxsxml', 1),
+VALUES		('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Any', 	'UnderConstruction', 1,		'SNAPSHOT',		'ART_DEF_RESOURCE_ALL', 'Kakurezato_hb.fxsxml', 1),
+			('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Any', 	'Constructed',		 1,		'SNAPSHOT',		'ART_DEF_RESOURCE_ALL', 'Kakurezato_01.fxsxml', 1),
+			('ART_DEF_IMPROVEMENT_SP_HAN_POST',		'Any', 	'Pillaged',			 1,		'SNAPSHOT',		'ART_DEF_RESOURCE_ALL', 'Kakurezato_pl.fxsxml', 1),
 			('ART_DEF_IMPROVEMENT_SP_HAN_FORT',		'Any', 	'UnderConstruction', 1,		'RANDOM',		'ART_DEF_RESOURCE_ALL', 'DZONG_HB.fxsxml',		1),
 			('ART_DEF_IMPROVEMENT_SP_HAN_FORT',		'Any', 	'Constructed',		 1,		'RANDOM',		'ART_DEF_RESOURCE_ALL', 'DZONG_B.fxsxml',		1),
 			('ART_DEF_IMPROVEMENT_SP_HAN_FORT',		'Any', 	'Pillaged',			 1,		'RANDOM',		'ART_DEF_RESOURCE_ALL', 'DZONG_PL.fxsxml',		1);

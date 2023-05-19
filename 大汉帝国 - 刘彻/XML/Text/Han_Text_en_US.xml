@@ -350,11 +350,31 @@
 		<Row Tag="TXT_KEY_PROMOTION_HUOQUBING_RIDER_HELP">
 			<Text>[ICON_MOVES]移动力+1，且[ICON_MOVES]移动不受地形影响。</Text>
 		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_VASSAL_MOUNTEDXBOW">
+			<Text>乌孙弓骑兵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_VASSAL_MOUNTEDXBOW_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]是大汉特有的的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
+				[NEWLINE][ICON_BULLET]WIP。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_VASSAL_MOUNTEDXBOW_TEXT">
+			<Text>WIP</Text>
+		</Row>	
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW_HELP">
+			<Text>WIP。</Text>
+		</Row>
 		<!--*******************************UI*******************************-->
-		<Row Tag="TXT_KEY_IMPROVEMENT_HAN_POST">
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST">
 			<Text>丝路驿站</Text>
 		</Row>
-		<Row Tag="TXT_KEY_IMPROVEMENT_HAN_POST_HELP">
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP">
 			<Text>
 			[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]是大汉的特色设施，可修建于除特定资源[ICON_RES_HORSE][ICON_RES_IRON][ICON_RES_TEA][ICON_RES_GOLD]外的非[COLOR_POSITIVE_TEXT]奢侈资源[ENDCOLOR]地块上。[NEWLINE]
 			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]、[COLOR_POSITIVE_TEXT]军寨[ENDCOLOR]和[COLOR_POSITIVE_TEXT]城寨[ENDCOLOR]数量之和不得超过1+（全国总人口/10）。
@@ -367,7 +387,7 @@
 			[NEWLINE][ICON_BULLET]建造在城邦境内可提供一份该城邦的[COLOR_POSITIVE_TEXT]奢侈[ENDCOLOR]。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_IMPROVEMENT_HAN_POST_PEDIA">
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST_PEDIA">
 			<Text>
 				1987年，考古工作者在甘肃安敦公路甜水井道班南侧1.5公里处的戈壁荒漠中发现了一处遗址。
 				[NEWLINE]遗址出土的竹简记载，此处为一处大型的驿站遗址。汉武帝元鼎六年（前111年）开始使用，初称“悬泉亭”，昭帝时期改称“悬泉置”。东汉后期又改称“悬泉邮”，魏晋时废弃，时间长达400多年之久。
@@ -376,17 +396,17 @@
 			</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_BUILD_HAN_POST">
-			<Text>修建一座[LINK=IMPROVEMENT_HAN_POST]丝路驿站[\LINK]</Text>
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_POST">
+			<Text>修建一座[LINK=IMPROVEMENT_SP_HAN_POST]丝路驿站[\LINK]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_BUILD_HAN_POST_REC">
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_POST_REC">
 			<Text>丝路驿站能够提供防御加成并开发重要资源，临山沿河的堡寨拥有丰富的加成。</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_IMPROVEMENT_HAN_FORT">
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT">
 			<Text>汉塞</Text>
 		</Row>
-		<Row Tag="TXT_KEY_IMPROVEMENT_HAN_FORT_HELP">
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT_HELP">
 			<Text>
 			[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]是大汉的特色设施，可修建于除特定资源[ICON_RES_HORSE][ICON_RES_IRON][ICON_RES_TEA][ICON_RES_GOLD]外的非[COLOR_POSITIVE_TEXT]奢侈资源[ENDCOLOR]地块上。[NEWLINE]
 			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]、[COLOR_POSITIVE_TEXT]军寨[ENDCOLOR]和[COLOR_POSITIVE_TEXT]城寨[ENDCOLOR]数量之和不得超过1+（全国总人口/10）。
@@ -399,15 +419,88 @@
 			[NEWLINE][ICON_BULLET]建造在城邦境内可提供一份该城邦的[COLOR_POSITIVE_TEXT]奢侈[ENDCOLOR]。
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_IMPROVEMENT_HAN_FORT_PEDIA">
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT_PEDIA">
 			<Text>汉武帝元狩年间，大将霍去病北征出击匈奴，即由北地郡，经银川平原，沿黄河北行，出鸡鹿塞直达居延，取得了军事上的很大胜利。但是史书上也留下了许多汉匈和平往来的记载。汉宣帝甘露三年(公元前51年)，匈奴呼韩邪单于首次入朝长安，汉宣帝令沿途七郡列骑二千欢迎。单于抵长安，受到宣帝殊礼相待。当其由长安返回漠北，就是由鸡鹿塞穿越阴山北上的。汉王朝不但派兵护送，“又转边谷米鞴前后三万四千斛，给赡其食。”自此，出现了“朔方无复兵之踪六十余年”，“数世不见烟火之警，人民炽盛，牛马布野”的繁荣和平景象。西汉竟宁元年(公元前33年)，单于复入朝，元帝以后宫良家女王昭君赐单于。昭君偕单于出塞，就是从鸡鹿塞经由哈隆格乃峡谷，前往漠北的。</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_BUILD_HAN_FORT">
-			<Text>修建一座[LINK=IMPROVEMENT_HAN_FORT]汉塞[\LINK]</Text>
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_FORT">
+			<Text>修建一座[LINK=IMPROVEMENT_SP_HAN_FORT]汉塞[\LINK]</Text>
 		</Row>
-		<Row Tag="TXT_KEY_BUILD_HAN_FORT_REC">
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_FORT_REC">
 			<Text>丝路驿站能够提供防御加成并开发重要资源，临山沿河的堡寨拥有丰富的加成。</Text>
+		</Row>
+
+		<!--*******************************Elite Units*******************************-->
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER">
+			<Text>[COLOR_YIELD_GOLD]期门禁军[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER_HELP">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_ELITE_RIDER_TEXT">
+			<Text>期门、羽林皆为汉代宫廷禁军。期门，掌执兵宿卫，因皇帝微行，以之“期诸殿门”故称。平帝时更名虎贲，“若虎贲兽”，言其勇猛。秩比郎官。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_HELP">
+			<Text>WIP</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_AMB">
+			<Text>[COLOR_YIELD_GOLD]绝域轻骑[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_AMB_HELP">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_ELITE_AMB_TEXT">
+			<Text>
+				班超（32年－102年），字仲升。扶风平陵（今陕西省咸阳市）人。东汉时期著名军事家、外交家，史学家班彪的幼子，其长兄班固、妹妹班昭也是著名史学家。
+				[NEWLINE]班超为人有大志，不修细节，但内心孝敬恭谨，审察事理。他口齿辩给，博览群书。不甘于为官府抄写文书，投笔从戎，随窦固出击北匈奴，又奉命出使西域，在三十一年的时间里，收服了西域五十多个国家，为西域的回归做出了巨大贡献，期间还曾击败自中亚来犯的贵霜帝国。
+				[NEWLINE]官至西域都护，封定远侯，世称“班定远”。 永元十二年（100年），班超因年迈请求回朝。永元十四年（102年），抵达雒阳，被拜为射声校尉。不久后便病逝，享年七十一岁。死后葬于雒阳邙山之上。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_AMB">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_AMB_HELP">
+			<Text>WIP</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_XUANNV">
+			<Text>[COLOR_YIELD_GOLD]“玄女”空天战机[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_XUANNV_HELP">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_XUANNV_TEXT">
+			<Text>在“南天门计划”中，“玄女”战机是综合研发中心牵头开发的一款空天战机，装备一套由力场驱动装置与变循环发动机相结合的动力装置，可搭载脉冲粒子加速炮吊舱以及多种制导武器。在“南天门计划”的战术构想中，“玄女”战机将主要依托“鸾鸟”大型战略空天载机平台，承担各类制空、突防、末端打击任务。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_XUANNV">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_XUANNV_HELP">
+			<Text>WIP</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_MECH">
+			<Text>[COLOR_YIELD_GOLD]“承影”战术机甲[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_MECH_HELP">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_ELITE_MECH_TEXT">
+			<Text>在“南天门计划”中，“承影”是基于轨道空降作战开发的一种新型战术机甲，其多项关键技术，如动力、武备、材料借鉴了大量同时期空天武器装备的最新成果，可灵活使用低空飞行或步行两种行进模式。在实际运用中通常以多机群行动为主，可根据不同的任务类型、目标特性灵活地调整战术。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_MECH">
+			<Text>WIP</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_MECH_HELP">
+			<Text>WIP</Text>
 		</Row>
 	</Language_en_US>
   
