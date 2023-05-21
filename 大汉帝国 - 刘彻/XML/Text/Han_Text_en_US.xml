@@ -24,7 +24,6 @@
     	<Row Tag="TXT_KEY_CIV5_DOM_SP_HAN_TEXT">
     		<Text>您给了一个民族前所未有的尊严，您树立了一个民族挺立千秋的自信；您的国号，成为一个民族永远的称呼。您被宵小羞辱、被宵小以一些不良手段窃国之后依然照耀于汗青中，而当您王者归来之时，必将惊天动地。您能再次持剑振臂高呼，执敌酋之首悬于槀街蛮夷使馆中吗？您能再次率领汉家精兵扫清寰宇来向世界昭告“明犯强汉者，虽远必诛！”的名言吗？您能带领着汉家子弟来完成后世推背图中征服世界的预言吗？</Text>
     	</Row>
-
 		<!--*********************************** 城市 ***********************************-->
 		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_00">
 			<Text>长安</Text>
@@ -214,15 +213,30 @@
 
 		<!--*******************************特性*******************************-->
 		<Row Tag="TXT_KEY_TRAIT_SP_HAN_SHORT">
-			<Text>云汉天道/率土之滨</Text>
+			<Text>维天有汉/率土之滨</Text>
 		</Row>
 		<Row Tag="TXT_KEY_TRAIT_SP_HAN">
 			<Text>
-				[ICON_BULLET]所有[ICON_PROMOTION_LIGHTNING_WARFARE][COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]在境外造成[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点额外伤害，在境内减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害，所有[ICON_PEACE]信仰/[ICON_CULTURE]文化建筑获得对等基础[ICON_CULTURE]文化/[ICON_PEACE]信仰；
-				[NEWLINE][ICON_BULLET]文明首个接触的城邦自动成为盟友(100[ICON_INFLUENCE]影响力)，位于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+2[ICON_INFLUENCE]影响力。
+				[ICON_BULLET]所有[ICON_PROMOTION_LIGHTNING_WARFARE][COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害，在境外造成[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点额外伤害，所有[ICON_PEACE]信仰/[ICON_CULTURE]文化建筑获得对等基础[ICON_CULTURE]文化/[ICON_PEACE]信仰；
+				[NEWLINE][ICON_BULLET]文明首个接触的城邦自动成为盟友(200[ICON_INFLUENCE]影响力)，位于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+5[ICON_INFLUENCE]影响力，完成城邦任务后获得1队[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]；
+				[NEWLINE][ICON_BULLET]拥有独特的历史加成系统。
 			</Text>
 		</Row>
+		
+		<Row Tag="TXT_KEY_TRAIT_HAN_NOTI_1">
+			<Text>普天之下，莫非王土；率土之滨，莫非王臣。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_HAN_NOTI_2">
+			<Text>您是他们遇见的第一个伟大帝国，在大汉文明的赫赫威势之下，他们向我们表示了臣服。[NEWLINE][NEWLINE]我们对[ICON_CITY_STATE]城邦的[ICON_INFLUENCE]影响力提高了[COLOR_POSITIVE_TEXT]200点[ENDCOLOR]</Text>
+		</Row>
 
+		
+		<Row Tag="TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND">
+			<Text>减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND_HELP">
+			<Text>减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害</Text>
+		</Row>
 		<!--*******************************建筑*******************************-->
 		<Row Tag="TXT_KEY_BUILDING_GUANYI_DESC">
 			<Text>[ICON_INTERNATIONAL_TRADE]驿传</Text>
@@ -230,9 +244,9 @@
 		<Row Tag="TXT_KEY_BUILDING_GUANYI_HELP">
 			<Text>
 				从本城起始的陆上[ICON_INTERNATIONAL_TRADE]商路距离+100%，每条陆地贸易线路额外+6[ICON_GOLD]金币。
-				[NEWLINE][NEWLINE][ICON_RES_CONSUMER]商品+5，并提供一名[ICON_GREAT_MERCHANT][COLOR_YIELD_GOLD]商业家[ENDCOLOR]席位。
-				[NEWLINE][NEWLINE]本城[ICON_RES_SILK][ICON_RES_INCENSE][ICON_RES_TEA][ICON_RES_JADE]特定奢侈品分别提供额外产出加成。
-				[NEWLINE][NEWLINE]修建完成后提供一队[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET][ICON_RES_CONSUMER]商品+5，并提供一名[ICON_GREAT_MERCHANT][COLOR_YIELD_GOLD]商业家[ENDCOLOR]席位。
+				[NEWLINE][ICON_BULLET]本城[ICON_RES_SILK][ICON_RES_INCENSE][ICON_RES_TEA][ICON_RES_JADE]特定奢侈品分别提供额外产出加成。
+				[NEWLINE][ICON_BULLET]修建完成后提供1队[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_GUANYI_PEDIA">
@@ -245,11 +259,11 @@
 		<Row Tag="TXT_KEY_BUILDING_TAIXUE_HELP">
 			<Text>
 				太学是国内的最高学府，建成后获得一项[COLOR_MAGENTA]免费政策[ENDCOLOR]。
-				[NEWLINE][NEWLINE]本城+25%[ICON_CULTURE]文化产出，每位[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]+1[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。
-				[NEWLINE][NEWLINE]建成后每座[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]获得一名[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]席位，完成[COLOR_MAGENTA]传统政策[ENDCOLOR]使全国+10%[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。
-				[NEWLINE][NEWLINE]必须在文明的所有[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]中建造[ICON_RESEARCH]学院。[ICON_PRODUCTION]建造花费随[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]数量增加。
-				[NEWLINE][NEWLINE]无需开启[COLOR_MAGENTA]美学政策[ENDCOLOR]树。
-				[NEWLINE][NEWLINE]学而优则仕，希望学子们能有好的表现，将来能给国家建言献策。
+				[NEWLINE][ICON_BULLET]本城+25%[ICON_CULTURE]文化产出，每位[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]+1[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。
+				[NEWLINE][ICON_BULLET]建成后每座[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]获得一名[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]席位，完成[COLOR_MAGENTA]传统政策[ENDCOLOR]使全国+10%[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。
+				[NEWLINE][ICON_BULLET]必须在文明的所有[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]中建造[ICON_RESEARCH]学院。[ICON_PRODUCTION]建造花费随[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]数量增加。
+				[NEWLINE][ICON_BULLET]无需开启[COLOR_MAGENTA]美学政策[ENDCOLOR]树。
+				[NEWLINE][ICON_BULLET]学而优则仕，希望学子们能有好的表现，将来能给国家建言献策。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_TAIXUE_PEDIA">
@@ -279,9 +293,11 @@
 			<Tag>TXT_KEY_BUILDING_HAN_GARDEN_HELP</Tag>
 			<Text>
 				只能在大型城市（26人口）建造。
-				[NEWLINE]本城市+25%[ICON_GREAT_PEOPLE]伟人点数积累、+2[ICON_HAPPINESS_1]全局快乐。
-				[NEWLINE][NEWLINE]每座园林-3%[ICON_HAPPINESS_4]全局不满。
-				[NEWLINE][NEWLINE]每座中国园林为大型城市及以上的每个城市规模提供[ICON_FOOD]食物、[ICON_RESEARCH]科研和[ICON_GOLDEN_AGE]黄金时代点数产出，数值随城市规模增加。
+				[NEWLINE][ICON_BULLET]本城市+25%[ICON_GREAT_PEOPLE]伟人点数积累。
+				[NEWLINE][ICON_BULLET]+10[ICON_RES_HORSE]资源，全国所有的牲畜资源全产出+1。
+				[NEWLINE][ICON_BULLET]+1[ICON_HAPPINESS_1]全局快乐。
+				[NEWLINE][ICON_BULLET]每座[ICON_GREAT_PEOPLE]上林苑可以为轻重骑兵和相应的装甲单位提供1点额外伤害，最高叠加10点。
+				[NEWLINE][ICON_BULLET][ICON_GREAT_PEOPLE]上林苑为1/2级城市提供额外4/2点[ICON_FOOD]食物和[ICON_RESEARCH]科研产出。
 			</Text>
 		</Row>
 
@@ -291,8 +307,11 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_HAN_CROSSBOWMAN_HELP">
 			<Text>
-				[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]是大汉的特有单位，只能通过驿传赠送获得。
-				[NEWLINE][ICON_BULLET]WIP。			
+				[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]是大汉的特有单位，只能通过驿传赠送获得，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，每回合获得相当于远程最大[ICON_STRENGTH]攻击力的[ICON_GOLD]金币。	
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]时，每回合额外回复5点血量，获得相当于基础远程[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化。		
+				[NEWLINE][ICON_BULLET]根据驻守回合数可造成额外伤害，最多额外增加[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点。
+				[NEWLINE][ICON_BULLET]所攻击的敌人失去全部[ICON_MOVES]移动力。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_HAN_CROSSBOWMAN_TEXT">
@@ -306,7 +325,12 @@
 			<Text>佽飞射士彍强弩</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HAN_CROSSBOWMAN_HELP">
-			<Text>WIP。</Text>
+			<Text>
+				[ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，每回合获得相当于远程最大[ICON_STRENGTH]攻击力的[ICON_GOLD]金币。	
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]时，每回合额外回复5点血量，获得相当于基础远程[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化。		
+				[NEWLINE][ICON_BULLET]根据驻守回合数可造成额外伤害，最多额外增加[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点。
+				[NEWLINE][ICON_BULLET]所攻击的敌人失去全部[ICON_MOVES]移动力。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_XILIUYING">
@@ -314,9 +338,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_XILIUYING_HELP">
 			<Text>
-				[COLOR_POSITIVE_TEXT]细柳营[ENDCOLOR]是大汉的特色单位，代替[COLOR_POSITIVE_TEXT]长枪兵[ENDCOLOR]，解锁科技提前至[COLOR_CYAN]工程学[ENDCOLOR]。
-				[NEWLINE][NEWLINE]自带+1[ICON_MOVES]移动力、+33%[ICON_STRENGTH]防御力，且每回合[COLOR_POSITIVE_TEXT]额外恢复[ENDCOLOR]10[ICON_PROMOTION_MEDIC]生命。在没有时代优势的情况下几乎无法正面突破细柳营的防线。
-				[NEWLINE][NEWLINE]对抗[ICON_PROMOTION_INFANTRY_COMBAT][COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]、[ICON_PROMOTION_ARCHERY_COMBAT][COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]、[ICON_PROMOTION_HITANDRUN][COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]、[ICON_PROMOTION_GUNPOWDER_INFANTRY][COLOR_POSITIVE_TEXT]早期火药步兵[ENDCOLOR]时+100%[ICON_STRENGTH]防御力。[COLOR_POSITIVE_TEXT][ENDCOLOR]
+				[COLOR_POSITIVE_TEXT]细柳营[ENDCOLOR]是大汉的特色单位，代替[COLOR_POSITIVE_TEXT]长枪兵[ENDCOLOR]，解锁科技提前至[COLOR_CYAN]工程学[ENDCOLOR]，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带+1[ICON_MOVES]移动力、+33%[ICON_STRENGTH]防御力，且每回合[COLOR_POSITIVE_TEXT]额外恢复[ENDCOLOR]10[ICON_PROMOTION_MEDIC]生命。在没有时代优势的情况下几乎无法正面突破细柳营的防线。
+				[NEWLINE][ICON_BULLET]对抗[ICON_PROMOTION_INFANTRY_COMBAT][COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]、[ICON_PROMOTION_ARCHERY_COMBAT][COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]、[ICON_PROMOTION_HITANDRUN][COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]、[ICON_PROMOTION_GUNPOWDER_INFANTRY][COLOR_POSITIVE_TEXT]火药步兵[ENDCOLOR]时+100%[ICON_STRENGTH]防御力。[COLOR_POSITIVE_TEXT][ENDCOLOR]
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_XILIUYING_TEXT">
@@ -327,7 +351,7 @@
 			<Text>细柳连营石堑牢</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_XILIUYING_HELP">
-			<Text>[NEWLINE][ICON_BULLET][ICON_MOVES]移动力+1、[ICON_STRENGTH]防御力+33%，每回合[COLOR_POSITIVE_TEXT]额外恢复[ENDCOLOR]10[ICON_PROMOTION_MEDIC]生命。[NEWLINE][ICON_BULLET]对抗[ICON_PROMOTION_INFANTRY_COMBAT][COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]、[ICON_PROMOTION_ARCHERY_COMBAT][COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]、[ICON_PROMOTION_HITANDRUN][COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]、[ICON_PROMOTION_GUNPOWDER_INFANTRY][COLOR_POSITIVE_TEXT]早期火药步兵[ENDCOLOR]时+100%[ICON_STRENGTH]防御力。</Text>
+			<Text>[NEWLINE][ICON_BULLET][ICON_MOVES]移动力+1、[ICON_STRENGTH]防御力+33%，每回合[COLOR_POSITIVE_TEXT]额外恢复[ENDCOLOR]10[ICON_PROMOTION_MEDIC]生命。[NEWLINE][ICON_BULLET]对抗[ICON_PROMOTION_INFANTRY_COMBAT][COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]、[ICON_PROMOTION_ARCHERY_COMBAT][COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]、[ICON_PROMOTION_HITANDRUN][COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]、[ICON_PROMOTION_GUNPOWDER_INFANTRY][COLOR_POSITIVE_TEXT]火药步兵[ENDCOLOR]时+100%[ICON_STRENGTH]防御力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_HUOQUBING_RIDER">
@@ -335,9 +359,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_HUOQUBING_RIDER_HELP">
 			<Text>
-				[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]是大汉的特色单位，代替[COLOR_POSITIVE_TEXT]骑手[ENDCOLOR]，且拥有更高的战斗力（32[ICON_STRENGTH]）。
-				[NEWLINE][NEWLINE]自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响。
-				[NEWLINE][NEWLINE]在晋升[COLOR_POSITIVE_TEXT]封狼居胥[ENDCOLOR]的双重加持下，问鼎最强古典[ICON_PROMOTION_KNIGHT_COMBAT][COLOR_POSITIVE_TEXT]重装骑兵[ENDCOLOR]的宝座。
+				[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]是大汉的特色单位，代替[COLOR_POSITIVE_TEXT]骑手[ENDCOLOR]，且拥有更高的战斗力（32[ICON_STRENGTH]），可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响。
+				[NEWLINE][ICON_BULLET]每点已使用的[ICON_MOVES]移动力增加10%[ICON_STRENGTH]战斗力。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_HUOQUBING_RIDER_TEXT">
@@ -348,7 +372,10 @@
 			<Text>初随骠骑战渔阳</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HUOQUBING_RIDER_HELP">
-			<Text>[ICON_MOVES]移动力+1，且[ICON_MOVES]移动不受地形影响。</Text>
+			<Text>
+				[ICON_BULLET]自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响。
+				[NEWLINE][ICON_BULLET]每点已使用的[ICON_MOVES]移动力增加10%[ICON_STRENGTH]战斗力。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_UNIT_HAN_VASSAL_MOUNTEDXBOW">
@@ -356,19 +383,31 @@
 		</Row>
 		<Row Tag="TXT_KEY_UNIT_HAN_VASSAL_MOUNTEDXBOW_HELP">
 			<Text>
-				[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]是大汉特有的的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失。
-				[NEWLINE][ICON_BULLET]WIP。
+				[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]是大汉特有的的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失，只能在完成城邦任务时获得，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]3格内的每个[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力。
+				[NEWLINE][ICON_BULLET]每个新产生的[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]或新发现的城邦增加1点基础[ICON_STRENTH]战斗力，升级后可保留。
+				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位获取相当于造成伤害的[ICON_PEACE]信仰，随时代增加。
+				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位获取相当于造成伤害的[ICON_RESEARCH]科研，随时代增加。
+				[NEWLINE][ICON_BULLET]每次近战攻击回复2[ICON_MOVES]移动力，每次远程攻击回复10血量。
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，回合开始时额外+2[ICON_MOVES]移动力。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_HAN_VASSAL_MOUNTEDXBOW_TEXT">
-			<Text>WIP</Text>
+			<Text>乌孙，是汉代连接东西方草原交通的最重要国家之一，乌孙人的首领称为“昆莫”或“昆弥”。公元前2世纪初叶，乌孙人与月氏人均在今甘肃境内敦煌祁连间游牧，北邻匈奴人。乌孙王难兜靡被月氏人攻杀（据《汉书·张骞传》），他的儿子猎骄靡刚刚诞生，由匈奴冒顿单于收养成人，后来得以复兴故国。公元前177～公元前176年间，冒顿单于进攻月氏。月氏战败西迁至伊犁河流域。后老上单于与乌孙昆莫猎骄靡合力进攻迁往伊犁河流域的月氏，月氏不敌，南迁大夏境内，但也有少数人仍然留居当地。在塞种人与月氏大部南下以后，乌孙人迁至伊犁河流域与留下来的塞种人、月氏人一道游牧。从此乌孙日益强大，逐渐摆脱了匈奴的控制。根据考古学家发现的乌孙古墓群和其他遗迹表明，其政治中心在赤谷城。南北朝时，乌孙与北魏关系密切。辽代曾遣使入贡。乌孙人以游牧的畜牧业为主，兼营狩猎，养马业特别繁盛。</Text>
 		</Row>	
 
 		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW">
-			<Text>WIP</Text>
+			<Text>解忧</Text>
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW_HELP">
-			<Text>WIP。</Text>
+			<Text>
+				[ICON_BULLET]3格内的每个[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力。
+				[NEWLINE][ICON_BULLET]每个新产生的[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]或新发现的城邦增加1点基础[ICON_STRENTH]战斗力，升级后可保留。
+				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位获取相当于造成伤害的[ICON_PEACE]信仰，随时代增加。
+				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位获取相当于造成伤害的[ICON_RESEARCH]科研，随时代增加。
+				[NEWLINE][ICON_BULLET]每次近战攻击回复2[ICON_MOVES]移动力，每次远程攻击回复10血量。
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，回合开始时额外+2[ICON_MOVES]移动力。
+			</Text>
 		</Row>
 		<!--*******************************UI*******************************-->
 		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST">
@@ -376,15 +415,11 @@
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP">
 			<Text>
-			[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]是大汉的特色设施，可修建于除特定资源[ICON_RES_HORSE][ICON_RES_IRON][ICON_RES_TEA][ICON_RES_GOLD]外的非[COLOR_POSITIVE_TEXT]奢侈资源[ENDCOLOR]地块上。[NEWLINE]
-			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]、[COLOR_POSITIVE_TEXT]军寨[ENDCOLOR]和[COLOR_POSITIVE_TEXT]城寨[ENDCOLOR]数量之和不得超过1+（全国总人口/10）。
-			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]上有[ICON_CITIZEN]市民工作[COLOR_YIELD_GOLD]10[ENDCOLOR]回合（标准速度）后将扩建为[COLOR_POSITIVE_TEXT]城寨[ENDCOLOR]。
-			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]驻扎[ENDCOLOR]于此的单位[ICON_STRENGTH]战斗力+50%。
-			[NEWLINE][ICON_BULLET]若与[ICON_PROMOTION_PROMO_VP_03_53][COLOR_POSITIVE_TEXT]河流[ENDCOLOR]相邻，则额外+1[ICON_FOOD]食物、[ICON_GOLD]金钱。
-			[NEWLINE][ICON_BULLET]若与[ICON_PROMOTION_ALTITUDE_TRAINING][COLOR_POSITIVE_TEXT]山脉[ENDCOLOR]相邻，则额外+1[ICON_PRODUCTION]产能、[ICON_RESEARCH]科研。
-			[NEWLINE][ICON_BULLET]若在[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]道路[ENDCOLOR]/[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]铁路[ENDCOLOR]上，则额外+1/+2[ICON_GOLD]金钱。
-			[NEWLINE][ICON_BULLET]与[COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]相邻的农田+1[ICON_FOOD]食物、[ICON_GOLD]金钱。
-			[NEWLINE][ICON_BULLET]建造在城邦境内可提供一份该城邦的[COLOR_POSITIVE_TEXT]奢侈[ENDCOLOR]。
+				[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]是大汉的特色设施，不可相邻建造，不可修建于资源之上，建成后不会移除地貌。[NEWLINE]
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]驻扎[ENDCOLOR]于此的单位[ICON_STRENGTH]战斗力+25%，且附近友军每回合额外回复5点血量。
+				[NEWLINE][ICON_BULLET]在有[ICON_CITIZEN]市民工作时，若有商路经过，则每回合额外提供3点[ICON_GOLD]金钱和[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET]若与[ICON_PROMOTION_PROMO_VP_03_53][COLOR_POSITIVE_TEXT]河流[ENDCOLOR]相邻，则额外+1[ICON_FOOD]食物、[ICON_GOLD]金钱。
+				[NEWLINE][ICON_BULLET]若在[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]道路[ENDCOLOR]/[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]铁路[ENDCOLOR]上，则额外+1/+2[ICON_CULTURE]文化。
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST_PEDIA">
@@ -400,7 +435,7 @@
 			<Text>修建一座[LINK=IMPROVEMENT_SP_HAN_POST]丝路驿站[\LINK]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILD_SP_HAN_POST_REC">
-			<Text>丝路驿站能够提供防御加成并开发重要资源，临山沿河的堡寨拥有丰富的加成。</Text>
+			<Text>[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]能够提供带来额外的金钱和文化，并在一定程度上增强军事单位的作战能力。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT">
@@ -408,15 +443,10 @@
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT_HELP">
 			<Text>
-			[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]是大汉的特色设施，可修建于除特定资源[ICON_RES_HORSE][ICON_RES_IRON][ICON_RES_TEA][ICON_RES_GOLD]外的非[COLOR_POSITIVE_TEXT]奢侈资源[ENDCOLOR]地块上。[NEWLINE]
-			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]、[COLOR_POSITIVE_TEXT]军寨[ENDCOLOR]和[COLOR_POSITIVE_TEXT]城寨[ENDCOLOR]数量之和不得超过1+（全国总人口/10）。
-			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]上有[ICON_CITIZEN]市民工作[COLOR_YIELD_GOLD]10[ENDCOLOR]回合（标准速度）后将扩建为[COLOR_POSITIVE_TEXT]城寨[ENDCOLOR]。
-			[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]驻扎[ENDCOLOR]于此的单位[ICON_STRENGTH]战斗力+50%。
-			[NEWLINE][ICON_BULLET]若与[ICON_PROMOTION_PROMO_VP_03_53][COLOR_POSITIVE_TEXT]河流[ENDCOLOR]相邻，则额外+1[ICON_FOOD]食物、[ICON_GOLD]金钱。
-			[NEWLINE][ICON_BULLET]若与[ICON_PROMOTION_ALTITUDE_TRAINING][COLOR_POSITIVE_TEXT]山脉[ENDCOLOR]相邻，则额外+1[ICON_PRODUCTION]产能、[ICON_RESEARCH]科研。
-			[NEWLINE][ICON_BULLET]若在[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]道路[ENDCOLOR]/[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]铁路[ENDCOLOR]上，则额外+1/+2[ICON_GOLD]金钱。
-			[NEWLINE][ICON_BULLET]与[COLOR_POSITIVE_TEXT]堡寨[ENDCOLOR]相邻的农田+1[ICON_FOOD]食物、[ICON_GOLD]金钱。
-			[NEWLINE][ICON_BULLET]建造在城邦境内可提供一份该城邦的[COLOR_POSITIVE_TEXT]奢侈[ENDCOLOR]。
+				[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]是大汉的独有设施，只能由大汉的特色单位建造，可以修建在友方或相邻领土，不可相邻建造，不可修建于资源之上，建成后会移除地貌。[NEWLINE]
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]驻扎[ENDCOLOR]于此的单位[ICON_STRENGTH]战斗力+50%，并对相邻的敌军造成[COLOR_POSITIVE_TEXT]10[ENDCOLOR]伤害。。
+				[NEWLINE][ICON_BULLET]地块作战单位最大容量+1。
+				[NEWLINE][ICON_BULLET]若在[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]道路[ENDCOLOR]/[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]铁路[ENDCOLOR]上，则额外+1/+2[ICON_PRODUCTION]产能
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT_PEDIA">
@@ -427,9 +457,46 @@
 			<Text>修建一座[LINK=IMPROVEMENT_SP_HAN_FORT]汉塞[\LINK]</Text>
 		</Row>
 		<Row Tag="TXT_KEY_BUILD_SP_HAN_FORT_REC">
-			<Text>丝路驿站能够提供防御加成并开发重要资源，临山沿河的堡寨拥有丰富的加成。</Text>
+			<Text>[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]是大汉的独有设施，只能有大汉的特色单位建造。</Text>
+		</Row>
+		<!--*********************************** Projects ***********************************-->
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING">
+			<Text>郎卫军制改革</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING_HELP">
+			<Text>只有[COLOR_POSITIVE_TEXT]首个[ENDCOLOR]完成此军事项目的文明可以训练或购买精英重骑禁卫军单位：[COLOR_YIELD_GOLD]期门禁军[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING_PEDIA">
+			<Text>期门、羽林皆为汉代宫廷禁军。期门军是汉武帝于建元三年(前138)建立的。有侍中、常侍、武骑及待诏陇西、北地等六郡的良家子能骑射者组成，共约有一千人，归光禄勋掌管。因常为侍从武帝而期待于殿门，故有“期门”之名。</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING">
+			<Text>复置西域都护府</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING_HELP">
+			<Text>只有[COLOR_POSITIVE_TEXT]首个[ENDCOLOR]完成此军事项目的文明可以训练或购买精英使者轻骑兵单位：[COLOR_YIELD_GOLD]绝域轻骑[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING_PEDIA">
+			<Text>
+				汉宣帝时，始设西域都护，为西域最高军政长官。
+				[NEWLINE]王莽时期，西域分割为55个小国，其中北道诸国，复受制于匈奴。
+				[NEWLINE]东汉时期，西域诸国纷纷要求东汉王朝恢复“都护”管辖。南道上的莎车组织力量抗拒匈奴，保护着居留在西域的“故都护吏士妻子千余口”。不久，汉立莎车王为汉“西域大都尉”，五十余国都属于莎车统领。尔后莎车、鄯善、车师、焉耆等国又派人到洛阳“请立都护”，东汉光武帝刘秀因“天下初定”，“匈奴未服”而没有允诺。
+				[NEWLINE]东汉明帝时，东汉开始发动对匈奴的战争。又遣班超出使西域，西域遂平。后以西域长史行都护职。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_HAN_MECH_TRAINING">
+			<Text>南天门计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_MECH_TRAINING_HELP">
+			<Text>只有[COLOR_POSITIVE_TEXT]首个[ENDCOLOR]完成此军事项目的文明可以训练或购买精英空天战机和精英战术机甲：[COLOR_YIELD_GOLD]“玄女”空天战机[ENDCOLOR]和[COLOR_YIELD_GOLD]“承影”战术机甲[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_MECH_TRAINING_PEDIA">
+			<Text>
+				为了应对来自外星和硅基生命体的威胁，2043年，南天门计划正式启动，由大型战略空天载机平台——“鸾鸟”、空天战机——“玄女”、战术机器人——”承影”等构成了全球性综合战略防卫体系。
+				[NEWLINE]该计划在罗布泊事件中发挥了重要作用，但随着对“潘多拉”带来的科技的研究，以及外星文明久久不至，以美国为首的西方国家开始了另外的谋划，直到他们直面了远征而来的裂隙飞船……			
+			</Text>
+		</Row>
 		<!--*******************************Elite Units*******************************-->
 		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER">
 			<Text>[COLOR_YIELD_GOLD]期门禁军[ENDCOLOR]</Text>

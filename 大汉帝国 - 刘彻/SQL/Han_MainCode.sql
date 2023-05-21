@@ -5,6 +5,7 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTION_SPLASH_DAMAGE';		-
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'ROG_CORE';						-- 开启单位强权效果
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_DO_TURN';			-- 开启单位过回合事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';		-- 开启单位远程攻击事件
 --==========================================================================================================================
 -- Civilizations
 --==========================================================================================================================
@@ -192,7 +193,7 @@ VALUES		('LEADER_SP_LIUCHE', 	'FLAVOR_PRODUCTION', 				10),--注重产能
 			--军队建设
 			('LEADER_SP_LIUCHE', 	'FLAVOR_RECON', 					5),--侦查部队
 			('LEADER_SP_LIUCHE', 	'FLAVOR_RANGED', 					6),--远程部队
-			('LEADER_SP_LIUCHE', 	'FLAVOR_MOBILE', 					10),--机动部队
+			('LEADER_SP_LIUCHE', 	'FLAVOR_MOBILE', 					12),--机动部队
 			('LEADER_SP_LIUCHE', 	'FLAVOR_NAVAL', 					12),--海军部队
 			('LEADER_SP_LIUCHE', 	'FLAVOR_NAVAL_RECON', 				8),--海军游猎部队
 			('LEADER_SP_LIUCHE', 	'FLAVOR_AIR', 						8),--空军部队
@@ -219,8 +220,8 @@ VALUES		('LEADER_SP_LIUCHE', 	'FLAVOR_PRODUCTION', 				10),--注重产能
 			('LEADER_SP_LIUCHE', 	'FLAVOR_NUKE', 						7),--发展核威慑
 			('LEADER_SP_LIUCHE', 	'FLAVOR_USE_NUKE', 					2),--使用核武库
 			--贸易倾向
-			('LEADER_SP_LIUCHE', 	'FLAVOR_I_LAND_TRADE_ROUTE', 		1),--陆地商路
-			('LEADER_SP_LIUCHE', 	'FLAVOR_I_SEA_TRADE_ROUTE', 		12),--海洋商路
+			('LEADER_SP_LIUCHE', 	'FLAVOR_I_LAND_TRADE_ROUTE', 		12),--陆地商路
+			('LEADER_SP_LIUCHE', 	'FLAVOR_I_SEA_TRADE_ROUTE', 		1),--海洋商路
 			('LEADER_SP_LIUCHE', 	'FLAVOR_I_TRADE_ORIGIN', 			12),--发起商路
 			('LEADER_SP_LIUCHE', 	'FLAVOR_I_TRADE_DESTINATION', 		12);--接收商路
 --==========================================================================================================================	
@@ -233,8 +234,34 @@ VALUES		('LEADER_SP_LIUCHE', 	'TRAIT_SP_HAN');
 -- Traits
 --==========================================================================================================================	
 INSERT INTO Traits 
-			(Type, 				Description, 				ShortDescription,					EmbarkedToLandFlatCost,		ExtraFoundedCityTerritoryClaimRange)
-VALUES		('TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN_SHORT',		1,							6);
+			(Type, 				Description, 				ShortDescription)
+VALUES		('TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN_SHORT');
+--==========================================================================================================================	
+-- Trait_BuildingClassYieldChanges
+--==========================================================================================================================	
+INSERT INTO Trait_BuildingClassYieldChanges(TraitType, BuildingClassType, YieldType, YieldChange)
+SELECT 'TRAIT_SP_HAN', t1.Type, 'YIELD_CULTURE' , t2.Yield
+FROM BuildingClasses t1 LEFT JOIN Building_YieldChanges t2 
+ON t1.DefaultBuilding = t2.BuildingType
+WHERE t2.Yield > 0 AND t2.YieldType = 'YIELD_FAITH';
+
+INSERT INTO Trait_BuildingClassYieldChanges(TraitType, BuildingClassType, YieldType, YieldChange)
+SELECT 'TRAIT_SP_HAN', t1.Type, 'YIELD_FAITH' , t2.Yield
+FROM BuildingClasses t1 LEFT JOIN Building_YieldChanges t2 
+ON t1.DefaultBuilding = t2.BuildingType
+WHERE t2.Yield > 0 AND t2.YieldType = 'YIELD_CULTURE';
+--==========================================================================================================================	
+-- Trait_Promotions
+--==========================================================================================================================	
+INSERT INTO Trait_FreePromotionUnitCombats
+			(TraitType,			UnitCombatType,				PromotionType) 	
+VALUES		('TRAIT_SP_HAN',	'UNITCOMBAT_MELEE',			'PROMOTION_SP_HAN_TRAIT_LAND'),
+			('TRAIT_SP_HAN',	'UNITCOMBAT_MOUNTED',		'PROMOTION_SP_HAN_TRAIT_LAND'),	
+			('TRAIT_SP_HAN',	'UNITCOMBAT_ARMOR',			'PROMOTION_SP_HAN_TRAIT_LAND'),
+			('TRAIT_SP_HAN',	'UNITCOMBAT_HELICOPTER',	'PROMOTION_SP_HAN_TRAIT_LAND'),
+			('TRAIT_SP_HAN',	'UNITCOMBAT_SIEGE',			'PROMOTION_SP_HAN_TRAIT_LAND'),
+			('TRAIT_SP_HAN',	'UNITCOMBAT_BOMBER',		'PROMOTION_SP_HAN_TRAIT_LAND'),
+			('TRAIT_SP_HAN',	'UNITCOMBAT_RECON',			'PROMOTION_SP_HAN_TRAIT_LAND');
 --==========================================================================================================================
 -- AUDIO
 --==========================================================================================================================	

@@ -8,7 +8,7 @@
     <ModVersion>8</ModVersion>
     <Stability>Alpha</Stability>
     <Teaser>汉秉威信，总率万国，日月所照，皆为臣妾！</Teaser>
-    <Description>汉秉威信，总率万国，日月所照，皆为臣妾！</Description>
+    <Description>他建立了一个国家前所未有的尊严；[NEWLINE]他给了一个族群挺立千秋的自信；[NEWLINE]他的国号成了一个伟大民族永远的名字！</Description>
     <Authors>SunXiaoChuan、dzs2311</Authors>
     <SpecialThanks>
     </SpecialThanks>
@@ -108,6 +108,14 @@
         <FileName>XML/Units/Han_UnitPromotions.xml</FileName>
       </Action>
     </ModActions>
+    <ModContent>
+      <Content xmlns="">
+        <Type>InGameUIAddin</Type>
+        <Name>Han Script</Name>
+        <Description>Han Script</Description>
+        <FileName>Lua/Han Script.lua</FileName>
+      </Content>
+    </ModContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -650,6 +658,10 @@
     <Content Include="Audio\Han_War.mp3">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Lua\Han Script.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="SQL\Han_ArtDefines.sql">
       <SubType>Lua</SubType>

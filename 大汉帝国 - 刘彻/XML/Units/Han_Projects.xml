@@ -1,10 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 2023/5/19 10:43:42 -->
 <GameData>
-  <!-- TODO: Insert table creation example here. -->
- 
-  <!-- TODO: Insert table data example here.-->
-  
-  <!-- Enter your Game Data here. -->
+  <Projects>
+  		<Row>
+			<Type>PROJECT_HAN_ELITE_RIDER_TRAINING</Type>
+			<Description>TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING</Description>
+			<Help>TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING_HELP</Help>
+			<Civilopedia>TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING_PEDIA</Civilopedia>
+			<TechPrereq>TECH_HORSEBACK_RIDING</TechPrereq>
+			<MaxGlobalInstances>1</MaxGlobalInstances>
+			<MaxTeamInstances>1</MaxTeamInstances>
+			<Cost>65</Cost>
+			<PortraitIndex>29</PortraitIndex>
+			<IconAtlas>SPBalance_ATLAS</IconAtlas>
+		</Row>
+
+		<Row>
+			<Type>PROJECT_HAN_ELITE_AMB_TRAINING</Type>
+			<Description>TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING</Description>
+			<Help>TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING_HELP</Help>
+			<Civilopedia>TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING_PEDIA</Civilopedia>
+			<TechPrereq>TECH_HORSEBACK_RIDING</TechPrereq>
+			<MaxGlobalInstances>1</MaxGlobalInstances>
+			<MaxTeamInstances>1</MaxTeamInstances>
+			<Cost>65</Cost>
+			<PortraitIndex>29</PortraitIndex>
+			<IconAtlas>SPBalance_ATLAS</IconAtlas>
+		</Row>
+
+		<Row>
+			<Type>PROJECT_HAN_ELITE_MECH_TRAINING</Type>
+			<Description>TXT_KEY_PROJECT_HAN_ELITE_MECH_TRAINING</Description>
+			<Help>TXT_KEY_PROJECT_HAN_ELITE_MECH_TRAINING_HELP</Help>
+			<Civilopedia>TXT_KEY_PROJECT_HAN_ELITE_MECH_TRAINING_PEDIA</Civilopedia>
+			<TechPrereq>TECH_ROBOTICS</TechPrereq>
+			<MaxGlobalInstances>1</MaxGlobalInstances>
+			<MaxTeamInstances>1</MaxTeamInstances>
+			<Cost>900</Cost>
+			<PortraitIndex>29</PortraitIndex>
+			<IconAtlas>SPBalance_ATLAS</IconAtlas>
+		</Row>
+  </Projects>
+  <Project_Flavors>
+  		<Row>
+			<ProjectType>PROJECT_HAN_ELITE_RIDER_TRAINING</ProjectType>
+			<FlavorType>FLAVOR_MOBILE</FlavorType>
+			<Flavor>60</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_HAN_ELITE_AMB_TRAINING</ProjectType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>60</Flavor>
+		</Row>
+		<Row>
+			<ProjectType>PROJECT_HAN_ELITE_MECH_TRAINING</ProjectType>
+			<FlavorType>FLAVOR_RANGED</FlavorType>
+			<Flavor>60</Flavor>
+		</Row>
+  </Project_Flavors>
   
 </GameData>
