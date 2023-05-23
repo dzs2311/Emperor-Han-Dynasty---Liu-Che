@@ -8,67 +8,27 @@ local KnightID              = GameInfo.UnitPromotions["PROMOTION_KNIGHT_COMBAT"]
 local TankID                = GameInfo.UnitPromotions["PROMOTION_TANK_COMBAT"].ID
 local HelicopterUnitID      = GameInfo.UnitPromotions["PROMOTION_HELI_ATTACK"].ID
 local HitAndRunUnitID       = GameInfo.UnitPromotions["PROMOTION_HITANDRUN"].ID
+local HanInfantryID			= GameInfo.UnitPromotions['PROMOTION_XILIUYING'].ID
 local HanNuID               = GameInfo.UnitPromotions["PROMOTION_HAN_CROSSBOWMAN"].ID
 local HanRiderID            = GameInfo.UnitPromotions["PROMOTION_HUOQUBING_RIDER"].ID
 local HanSakaID             = GameInfo.UnitPromotions["PROMOTION_HAN_VASSAL_MOUNTEDXBOW"].ID
+local HanTraitLandID		= GameInfo.UnitPromotions["PROMOTION_SP_HAN_TRAIT_LAND"].ID
 --------------------------------------------------------------
 -- 文明过回合
 --------------------------------------------------------------
-function HanOnPlayerDoTurn(playerID)
-	local player = Players[playerID]
+-- function HanOnPlayerDoTurn(playerID)
+-- 	local player = Players[playerID]
 
-	if player == nil or player:IsBarbarian() or player:IsMinorCiv() then
-    	return
-	end
+-- 	if player == nil or player:IsBarbarian() or player:IsMinorCiv() then
+--     	return
+-- 	end
 
-	local pEraType = player:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID
-	local pCapital = player:GetCapitalCity()
+-- 	local pEraType = player:GetCurrentEra()
+-- 	local pEraID = GameInfo.Eras[pEraType].ID
+-- 	local pCapital = player:GetCapitalCity()
 
-	-- 黄金时代为见过面的城邦增长5影响力
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_SP_HAN"] then
-		if player:IsGoldenAge() then
-			for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
-				local iCSplayer = Players[iCS]
-				if (iCSplayer ~= nil and iCSplayer:IsAlive() and iCSplayer:IsMinorCiv() 
-				and player:GetTeam():IsHasMet(iCSplayer:GetTeam())) 
-				then
-					iCSplayer:ChangeMinorCivFriendshipWithMajor(playerID, 200)
-				end
-			end
-		end
-	end
-
-	-- 丝路驿站提供额外金钱和文化
-	if player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_SP_HAN"] and player:IsAlive() then
-		for city in player:Cities() do
-			for cityPlot = 0, city:GetNumCityPlots() - 1, 1 do
-				local plot = city:GetCityIndexPlot(cityPlot)
-				if plot then
-				if plot:GetOwner() == playerID then
-				if city:IsWorkingPlot(plot) then	
-				if plot:GetImprovementType() == GameInfoTypes["IMPROVEMENT_SP_HAN_POST"]
-				and plot:IsTradeRoute()
-				then 
-					local bonus = 3
-					player:ChangeGold(bonus)
-					player:ChangeJONSCulture(bonus)
-					if player:IsHuman() then
-						local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()));
-						Events.AddPopupTextEvent(HexToWorld(hex),
-							Locale.ConvertTextKey("[COLOR_YIELD_GOLD]+{1_Num}[ENDCOLOR][ICON_GOLD][NEWLINE][COLOR_MAGENTA]+{2_Num}[ENDCOLOR][ICON_CULTURE]", 
-							bonus, bonus));
-					end
-				end
-				end
-				end
-				end
-			end
-		end
-	end
-
-end
-GameEvents.PlayerDoTurn.Add(HanOnPlayerDoTurn)
+-- end
+-- GameEvents.PlayerDoTurn.Add(HanOnPlayerDoTurn)
 --------------------------------------------------------------
 -- 单位固定伤害
 --------------------------------------------------------------
@@ -103,12 +63,16 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
             additionalDamage = additionalDamage + numShangLinYuan
         end
 
-        if attPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_SP_HAN"] 
+        if attUnit:ISHasPromotion(HanTraitLandID)
         and attUnit:GetDomainType() == DomainTypes.DOMAIN_LAND
         and not attUnit:GetPlot():IsFriendlyTerritory(iAttackPlayerID)
         then
             -- 汉文明特性加成
             additionalDamage = additionalDamage + 5
+			--冠军骠骑额外加成
+			if attUnit:IsHasPromotion(HanRiderID) then
+				additionalDamage = additionalDamage + 2.5
+			end
         end
 
         if attUnit:IsHasPromotion(KnightID) then
@@ -129,52 +93,52 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	or Players[playerID]:GetUnitByID(unitID):IsDead()
 	or Players[playerID]:GetUnitByID(unitID):IsDelayedDeath()
 	then
-		return;
+		return
 	end
 
-	local player = Players[playerID];
-	local unit = Players[playerID]:GetUnitByID(unitID);
-    local plot = Map.GetPlot(iPlotX, iPlotY);
+	local player = Players[playerID]
+	local unit = Players[playerID]:GetUnitByID(unitID)
+    local plot = Map.GetPlot(iPlotX, iPlotY)
 
     if unit:IsHasPromotion(HanNuID) then
         -- 佽飞射士彍强弩
-        local plot = unit:GetPlot();
+        local plot = unit:GetPlot()
         if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
             -- 驻扎于丝路驿站
             local unitCount = plot:GetNumUnits()
             local iGold = unit:GetMaxRangedCombatStrength()
-            -- for i = 0, unitCount - 1, 1 do
-            --     local pUnit = plot:GetUnit(i)
-            --     if pUnit:IsHasPromotion(HanNuID) then
-            --         iGold = iGold + pUnit:GetMaxRangedCombatStrength()
-            --     end
-	        -- end
-            player:ChangeGold(iGold);
+            player:ChangeGold(iGold)
             if player:IsHuman() then
-                local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()));
+                local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()))
                 Events.AddPopupTextEvent(HexToWorld(hex),
-                    Locale.ConvertTextKey("[COLOR_YIELD_GOLD]+{1_Num}[ENDCOLOR][ICON_GOLD]", iGold));
+                    Locale.ConvertTextKey("[COLOR_YIELD_GOLD]+{1_Num}[ENDCOLOR][ICON_GOLD]", iGold))
             end
         elseif plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_FORT"].ID then
             -- 驻扎于汉塞
-            unit:ChangeDamage(-5);
+            unit:ChangeDamage(-5)
             local iCulture = unit:GetBaseRangedCombatStrength()
             player:ChangeJONSCulture(iCulture)
             if player:IsHuman() then
-                local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()));
+                local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()))
                 Events.AddPopupTextEvent(HexToWorld(hex),
-                    Locale.ConvertTextKey("[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE]", iCulture));
+                    Locale.ConvertTextKey("[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE]", iCulture))
             end
         end
     end
 
 	if unit:IsHasPromotion(HanSakaID) then
         -- 解忧
-		local plot = unit:GetPlot();
+		local plot = unit:GetPlot()
         if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
-			unit:ChangeMoves(120);
+			unit:ChangeMoves(120)
 		end
 	end
+
+	if unit:IsHasPromotion(HanInfantryID) then
+		--细柳连营
+		unit:ChangeDamage(-20);
+	end
+
 end
 GameEvents.UnitDoTurn.Add(HanOnUnitDoTurn)
 --------------------------------------------------------------
@@ -186,7 +150,7 @@ function HanUnitCreated( iPlayerID, iUnitID )
 	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
 	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
 	then
-		return;
+		return
 	end
 	local unit = Players[ iPlayerID ]:GetUnitByID( iUnitID )
     local player = Players[iPlayerID]
@@ -194,6 +158,7 @@ function HanUnitCreated( iPlayerID, iUnitID )
 	if unit:IsHasPromotion(HanRiderID) 
 	and player:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 
 	then
+		-- 解忧
         for pUnit in player:Units() do
             if pUnit:IsHasPromotion(HanSakaID) then
                 pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
@@ -206,56 +171,20 @@ GameEvents.UnitCreated.Add(HanUnitCreated)
 --------------------------------------------------------------
 -- 发现城邦
 --------------------------------------------------------------
-function HanOnPopup( popupInfo )
-    local m_PopupInfo = nil;
-	
-	local bGreeting = popupInfo.Type == ButtonPopupTypes.BUTTONPOPUP_CITY_STATE_GREETING;
-	
-	if (not bGreeting) then
-		return;
-	end
-	
-	m_PopupInfo = popupInfo;	
-	
-    local iPlayer = popupInfo.Data1;
-    local pPlayer = Players[iPlayer];
-	
-	
-	local civType = pPlayer:GetCivilizationType();
-	local civInfo = GameInfo.Civilizations[civType];
-	
-	local iActivePlayer = Game.GetActivePlayer();
-    local player = Players[iActivePlayer];
-	
-	-- Gifts
-	local bFirstMajorCiv = popupInfo.Option1;
-	
-	if (bFirstMajorCiv) and player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_SP_HAN"] then
-        pPlayer:ChangeMinorCivFriendshipWithMajor(iActivePlayer, 200)		----增加200点关系
-        local citystateCapital = pPlayer:GetCapitalCity()	---获取城邦的首都
-        player:AddNotification(NotificationTypes.NOTIFICATION_MINOR_QUEST, 
-		Locale.ConvertTextKey("TXT_KEY_TRAIT_AUS_NOTI_2") , 
-		Locale.ConvertTextKey("TXT_KEY_TRAIT_AUS_NOTI_1"), 
-		citystateCapital:GetX(), citystateCapital:GetY())
-	end
-	
-end
--- Events.SerialEventGameMessagePopup.Add( HanOnPopup );
--------------------------------------------------
 function HanTeamMeetHook (eTeamMet, eTeamMoving)
-	local pPlayerMoving;
+	local pPlayerMoving
 	for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
-		local pPlayer = Players[iPlayer];
+		local pPlayer = Players[iPlayer]
 		if(pPlayer:GetTeam() == eTeamMoving) then
-			pPlayerMoving = pPlayer;
+			pPlayerMoving = pPlayer
 		end
 	end
 	
-	local pPlayerMet;
+	local pPlayerMet
 	for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
-		local pPlayer = Players[iPlayer];
+		local pPlayer = Players[iPlayer]
 		if(pPlayer:GetTeam() == eTeamMet) then
-			pPlayerMet = pPlayer;
+			pPlayerMet = pPlayer
 		end
 	end
 
@@ -345,7 +274,7 @@ function HanTeamMeetHook (eTeamMet, eTeamMoving)
 	    end
 	end
 end
-GameEvents.TeamMeet.Add(HanTeamMeetHook);
+GameEvents.TeamMeet.Add(HanTeamMeetHook)
 --------------------------------------------------------------
 -- 完成城邦任务
 --------------------------------------------------------------
@@ -366,15 +295,15 @@ function HanPlayerCompletedMinorCivQuest(iMajor, iMinor, iQuestType, iStartTurn,
 			
 			local NewUnit = pPlayer:InitUnit(unitType, plotX, plotY, UNITAI_ATTACK)
 			NewUnit:JumpToNearestValidPlot()
-			local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID;
-			local LANDTotal =  capCity:GetFreeExperience() + capCity:GetDomainFreeExperience(domainLandID);
-			NewUnit:ChangeExperience(LANDTotal);
+			local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID
+			local LANDTotal =  capCity:GetFreeExperience() + capCity:GetDomainFreeExperience(domainLandID)
+			NewUnit:ChangeExperience(LANDTotal)
 		end
 	end
 
 
 end
-GameEvents.PlayerCompletedQuest.Add(HanPlayerCompletedMinorCivQuest);
+GameEvents.PlayerCompletedQuest.Add(HanPlayerCompletedMinorCivQuest)
 --------------------------------------------------------------
 -- 乌孙弓骑兵攻击友方单位
 --------------------------------------------------------------
@@ -385,26 +314,26 @@ function OnHanSakaCanRangeAttackAt(iPlayer, iUnit, iX, iY, bNeedWar)
 
 	if pUnit:IsHasPromotion(HanSakaID)
 	then
-		local pPlot = Map.GetPlot(iX, iY);
-		local ePlayer = nil;
-		local Range = pUnitInfo.Range;
+		local pPlot = Map.GetPlot(iX, iY)
+		local ePlayer = nil
+		local Range = pUnitInfo.Range
 
-		local unitCount = pPlot:GetNumUnits();
+		local unitCount = pPlot:GetNumUnits()
 		if Range > 0 and unitCount > 0 and pPlot ~= pUnit:GetPlot() then
-			local pFoundUnit = pPlot:GetUnit(0);
-			ePlayer = Players[pFoundUnit:GetOwner()];
+			local pFoundUnit = pPlot:GetUnit(0)
+			ePlayer = Players[pFoundUnit:GetOwner()]
 			if ePlayer and not PlayersAtWar(ePlayer, pPlayer)
 			then
 				if pFoundUnit:GetOwner() ~= iPlayer then
-					return true;
+					return true
 				elseif pFoundUnit:GetOwner() == iPlayer and unitCount == 1 then
-					return true;
+					return true
 				end
 			end
 		end
 	end
 
-	return false;
+	return false
 end
 GameEvents.UnitCanRangeAttackAt.Add(OnHanSakaCanRangeAttackAt)
 function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
@@ -417,37 +346,37 @@ function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
 
 	-- 乌孙弓骑兵
 	if pUnit:IsHasPromotion(HanSakaID) then
-		local unitCount = pPlot:GetNumUnits();
-		local iFaith = 0;
+		local unitCount = pPlot:GetNumUnits()
+		local iFaith = 0
 		if unitCount > 0 then
 			for i = 0, unitCount - 1, 1 do
-				local pFoundUnit = pPlot:GetUnit(i);
+				local pFoundUnit = pPlot:GetUnit(i)
 				if pFoundUnit and pFoundUnit:GetBaseCombatStrength() > 0 then
-					local iPrivateerDamage = pUnit:GetRangeCombatDamage(pFoundUnit, nil, false);
-					iPrivateerDamage = math.min(pFoundUnit:GetCurrHitPoints() - 1, iPrivateerDamage);
-					pFoundUnit:ChangeDamage(iPrivateerDamage);
-					pUnit:ChangeExperience(pUnitInfo.XPValueAttack);
-					iFaith = iFaith + iPrivateerDamage * (1 + pEraID);
+					local iPrivateerDamage = pUnit:GetRangeCombatDamage(pFoundUnit, nil, false)
+					iPrivateerDamage = math.min(pFoundUnit:GetCurrHitPoints() - 1, iPrivateerDamage)
+					pFoundUnit:ChangeDamage(iPrivateerDamage)
+					pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
+					iFaith = iFaith + iPrivateerDamage * (1 + pEraID)
 				end
 			end
 		end
-		pPlayer:ChangeFaith(iFaith);
+		pPlayer:ChangeFaith(iFaith)
 
-		local hex = ToHexFromGrid(Vector2(iX, iY));
-		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_PEACE]",iFaith));
+		local hex = ToHexFromGrid(Vector2(iX, iY))
+		Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_PEACE]",iFaith))
 	end
 
-	return 1;
+	return 1
 end
 GameEvents.UnitRangeAttackAt.Add(OnHanSakaRangeAttackAt)
 --------------------------------------------------------------
 -- 单位作战效果
 --------------------------------------------------------------
-local g_DoNewAttackEffect = nil;
+local g_DoNewAttackEffect = nil
 function NewAttackEffectStarted(iType, iPlotX, iPlotY)
 	if (PreGame.GetGameOption("GAMEOPTION_SP_NEWATTACK_OFF") == 1) then
-		print("SP Attack Effect - OFF!");
-		return;
+		print("SP Attack Effect - OFF!")
+		return
 	end
 
 	if iType == GameInfoTypes["BATTLETYPE_MELEE"]
@@ -467,12 +396,12 @@ function NewAttackEffectStarted(iType, iPlotX, iPlotY)
 			bIsCity     = false,
 			defCityID   = -1,
 			battleType  = iType,
-		};
+		}
 	end
 end
 
-GameEvents.BattleStarted.Add(NewAttackEffectStarted);
--- local tCaptureSPUnits = {};
+GameEvents.BattleStarted.Add(NewAttackEffectStarted)
+-- local tCaptureSPUnits = {}
 function NewAttackEffectJoined(iPlayer, iUnitOrCity, iRole, bIsCity)
 	if g_DoNewAttackEffect == nil
 		or Players[iPlayer] == nil or not Players[iPlayer]:IsAlive()
@@ -480,24 +409,24 @@ function NewAttackEffectJoined(iPlayer, iUnitOrCity, iRole, bIsCity)
 		or (bIsCity and (Players[iPlayer]:GetCityByID(iUnitOrCity) == nil or iRole == GameInfoTypes["BATTLEROLE_ATTACKER"]))
 		or iRole == GameInfoTypes["BATTLEROLE_BYSTANDER"]
 	then
-		return;
+		return
 	end
 	if bIsCity then
-		g_DoNewAttackEffect.defPlayerID = iPlayer;
-		g_DoNewAttackEffect.defCityID = iUnitOrCity;
-		g_DoNewAttackEffect.bIsCity = bIsCity;
+		g_DoNewAttackEffect.defPlayerID = iPlayer
+		g_DoNewAttackEffect.defCityID = iUnitOrCity
+		g_DoNewAttackEffect.bIsCity = bIsCity
 	elseif iRole == GameInfoTypes["BATTLEROLE_ATTACKER"] then
-		g_DoNewAttackEffect.attPlayerID = iPlayer;
-		g_DoNewAttackEffect.attUnitID = iUnitOrCity;
-		g_DoNewAttackEffect.attODamage = Players[iPlayer]:GetUnitByID(iUnitOrCity):GetDamage();
+		g_DoNewAttackEffect.attPlayerID = iPlayer
+		g_DoNewAttackEffect.attUnitID = iUnitOrCity
+		g_DoNewAttackEffect.attODamage = Players[iPlayer]:GetUnitByID(iUnitOrCity):GetDamage()
 	elseif iRole == GameInfoTypes["BATTLEROLE_DEFENDER"] or iRole == GameInfoTypes["BATTLEROLE_INTERCEPTOR"] then
-		g_DoNewAttackEffect.defPlayerID = iPlayer;
-		g_DoNewAttackEffect.defUnitID = iUnitOrCity;
-		g_DoNewAttackEffect.defODamage = Players[iPlayer]:GetUnitByID(iUnitOrCity):GetDamage();
+		g_DoNewAttackEffect.defPlayerID = iPlayer
+		g_DoNewAttackEffect.defUnitID = iUnitOrCity
+		g_DoNewAttackEffect.defODamage = Players[iPlayer]:GetUnitByID(iUnitOrCity):GetDamage()
 	end
 end
 
-GameEvents.BattleJoined.Add(NewAttackEffectJoined);
+GameEvents.BattleJoined.Add(NewAttackEffectJoined)
 function NewAttackEffect()
 	--Defines and status checks
 	if g_DoNewAttackEffect == nil or Players[g_DoNewAttackEffect.defPlayerID] == nil
@@ -506,46 +435,46 @@ function NewAttackEffect()
 		-- or Players[ g_DoNewAttackEffect.attPlayerID ]:GetUnitByID(g_DoNewAttackEffect.attUnitID):IsDead()
 		or Map.GetPlot(g_DoNewAttackEffect.PlotX, g_DoNewAttackEffect.PlotY) == nil
 	then
-		return;
+		return
 	end
 
-	local attPlayerID = g_DoNewAttackEffect.attPlayerID;
-	local attPlayer = Players[attPlayerID];
-	local defPlayerID = g_DoNewAttackEffect.defPlayerID;
-	local defPlayer = Players[defPlayerID];
+	local attPlayerID = g_DoNewAttackEffect.attPlayerID
+	local attPlayer = Players[attPlayerID]
+	local defPlayerID = g_DoNewAttackEffect.defPlayerID
+	local defPlayer = Players[defPlayerID]
 
-	local attUnit = attPlayer:GetUnitByID(g_DoNewAttackEffect.attUnitID);
-	local attPlot = attUnit:GetPlot();
+	local attUnit = attPlayer:GetUnitByID(g_DoNewAttackEffect.attUnitID)
+	local attPlot = attUnit:GetPlot()
 
-	local plotX = g_DoNewAttackEffect.PlotX;
-	local plotY = g_DoNewAttackEffect.PlotY;
-	local batPlot = Map.GetPlot(plotX, plotY);
-	local batType = g_DoNewAttackEffect.battleType;
+	local plotX = g_DoNewAttackEffect.PlotX
+	local plotY = g_DoNewAttackEffect.PlotY
+	local batPlot = Map.GetPlot(plotX, plotY)
+	local batType = g_DoNewAttackEffect.battleType
 
-	local bIsCity = g_DoNewAttackEffect.bIsCity;
-	local defUnit = nil;
-	local defPlot = nil;
-	local defCity = nil;
+	local bIsCity = g_DoNewAttackEffect.bIsCity
+	local defUnit = nil
+	local defPlot = nil
+	local defCity = nil
 
-	local attFinalUnitDamage = attUnit:GetDamage();
-	local defFinalUnitDamage = 0;
-	local attUnitDamage = attFinalUnitDamage - g_DoNewAttackEffect.attODamage;
-	local defUnitDamage = 0;
+	local attFinalUnitDamage = attUnit:GetDamage()
+	local defFinalUnitDamage = 0
+	local attUnitDamage = attFinalUnitDamage - g_DoNewAttackEffect.attODamage
+	local defUnitDamage = 0
 
 	if not bIsCity and defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID) then
-		defUnit = defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID);
-		defPlot = defUnit:GetPlot();
-		defFinalUnitDamage = defUnit:GetDamage();
-		defUnitDamage = defFinalUnitDamage - g_DoNewAttackEffect.defODamage;
+		defUnit = defPlayer:GetUnitByID(g_DoNewAttackEffect.defUnitID)
+		defPlot = defUnit:GetPlot()
+		defFinalUnitDamage = defUnit:GetDamage()
+		defUnitDamage = defFinalUnitDamage - g_DoNewAttackEffect.defODamage
 	elseif bIsCity and defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID) then
-		defCity = defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID);
+		defCity = defPlayer:GetCityByID(g_DoNewAttackEffect.defCityID)
 	end
 
-	g_DoNewAttackEffect = nil;
+	g_DoNewAttackEffect = nil
 
 	--Complex Effects Only for Human VS AI(reduce time and enhance stability)
 	-- if not attPlayer:IsHuman() and not defPlayer:IsHuman() then
-	-- 	return;
+	-- 	return
 	-- end
 
 	if attUnit and attUnit:IsHasPromotion(HanNuID)
@@ -578,11 +507,32 @@ function NewAttackEffect()
 			attUnit:ChangeDamage(-10)
 		elseif batType == GameInfoTypes["BATTLETYPE_RANGED"] then
 			attUnit:SetMoves(attUnit:MovesLeft() + GameDefines["MOVE_DENOMINATOR"] * 2)
-			local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()));
-            Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", 2));
+			local hex = ToHexFromGrid(Vector2(attPlot:GetX(), attPlot:GetY()))
+            Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", 2))
 		end
  	end
 
 end --function END
 
-GameEvents.BattleFinished.Add(NewAttackEffect);
+GameEvents.BattleFinished.Add(NewAttackEffect)
+--------------------------------------------------------------
+-- 升级
+--------------------------------------------------------------
+function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
+	if Players[iPlayer] == nil or not Players[iPlayer]:IsAlive()
+		or Players[iPlayer]:GetUnitByID(iOldUnit) == nil
+		or Players[iPlayer]:GetUnitByID(iOldUnit):IsDead()
+		or Players[iPlayer]:GetUnitByID(iOldUnit):IsDelayedDeath()
+	then
+		return
+	end
+
+	local pOldUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
+	local pNewUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
+	local dCombatStrenghth 			= pOldUnit:GetBaseCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].Combat
+	local dRangedCombatStrenghth 	= pOldUnit:GetBaseRangedCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].RangedCombat
+	pNewUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + dCombatStrenghth)
+	pNewUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + dRangedCombatStrenghth)
+
+end
+GameEvents.UnitUpgraded.Add(HanUnitUpgraded)

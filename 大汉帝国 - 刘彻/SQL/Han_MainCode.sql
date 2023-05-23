@@ -1,11 +1,14 @@
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE';	-- 开启单位减伤事件
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_CREATED';			-- 开启单位产生事件
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'IMPROVEMENTS_UPGRADE';			-- 开启设施升级事件
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTION_SPLASH_DAMAGE';		-- 开启单位溅射
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'ROG_CORE';						-- 开启单位强权效果
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_DO_TURN';			-- 开启单位过回合事件
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';		-- 开启城邦赠送豁免
-UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';		-- 开启单位远程攻击事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_UPGRADES';				-- 开启单位升级事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE';		-- 开启单位减伤事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_CREATED';				-- 开启单位产生事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'IMPROVEMENTS_UPGRADE';				-- 开启设施升级事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'ROG_CORE';							-- 开启单位强权效果
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_DO_TURN';				-- 开启单位过回合事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';			-- 开启城邦赠送豁免
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';			-- 开启单位远程攻击事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'IMPROVEMENT_TRADE_ROUTE_BONUSES';	-- 开启设施商路加成
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'DEFENSE_MOVES_BONUS';				-- 开启移动力防御加成
 --==========================================================================================================================
 -- Civilizations
 --==========================================================================================================================
@@ -234,8 +237,8 @@ VALUES		('LEADER_SP_LIUCHE', 	'TRAIT_SP_HAN');
 -- Traits
 --==========================================================================================================================	
 INSERT INTO Traits 
-			(Type, 				Description, 				ShortDescription)
-VALUES		('TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN_SHORT');
+			(Type, 				Description, 				ShortDescription,				GoldenAgeMinorPerTurnInfluence)
+VALUES		('TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN_SHORT',	200);
 --==========================================================================================================================	
 -- Trait_BuildingClassYieldChanges
 --==========================================================================================================================	
@@ -262,13 +265,26 @@ VALUES		('TRAIT_SP_HAN',	'UNITCOMBAT_MELEE',			'PROMOTION_SP_HAN_TRAIT_LAND'),
 			('TRAIT_SP_HAN',	'UNITCOMBAT_SIEGE',			'PROMOTION_SP_HAN_TRAIT_LAND'),
 			('TRAIT_SP_HAN',	'UNITCOMBAT_BOMBER',		'PROMOTION_SP_HAN_TRAIT_LAND'),
 			('TRAIT_SP_HAN',	'UNITCOMBAT_RECON',			'PROMOTION_SP_HAN_TRAIT_LAND');
+--==========================================================================================================================	
+-- Plocies--显示用，无任何实际用途
+--==========================================================================================================================	
+INSERT INTO Policies 
+			(Type, 				Description)
+VALUES		('POLICY_SP_HAN', 	'TXT_KEY_POLICY_SP_HAN');
+--==========================================================================================================================	
+-- Policy_BuildingClassYieldChanges
+--==========================================================================================================================	
+INSERT INTO Policy_BuildingClassYieldChanges
+		(PolicyType, 	BuildingClassType, YieldType, YieldChange)
+SELECT 'POLICY_SP_HAN', BuildingClassType, YieldType, YieldChange
+FROM Trait_BuildingClassYieldChanges WHERE TraitType = 'TRAIT_SP_HAN';
 --==========================================================================================================================
 -- AUDIO
 --==========================================================================================================================	
 -- Audio_Sounds
 ------------------------------	
 INSERT INTO Audio_Sounds 
-			(SoundID, 								Filename, 			LoadType)
+			(SoundID, 								Filename, 		LoadType)
 VALUES		('SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'Han_Peace', 	'DynamicResident'),
 			('SND_LEADER_MUSIC_SP_LIUCHE_WAR',		'Han_War', 		'DynamicResident');		
 ------------------------------
@@ -276,5 +292,5 @@ VALUES		('SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'Han_Peace', 	'DynamicResident'),
 ------------------------------	
 INSERT INTO Audio_2DSounds 
 			(ScriptID, 										SoundID, 								SoundType, 		MinVolume, 	MaxVolume,	IsMusic,	Looping)
-VALUES		('AS2D_LEADER_MUSIC_SP_LIUCHE_PEACE', 			'SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'GAME_MUSIC', 	60, 		60, 		1, 			0),
-			('AS2D_LEADER_MUSIC_SP_LIUCHE_WAR', 			'SND_LEADER_MUSIC_SP_LIUCHE_WAR', 		'GAME_MUSIC',	60, 		60, 		1,			0);
+VALUES		('AS2D_LEADER_MUSIC_SP_LIUCHE_PEACE', 			'SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'GAME_MUSIC', 	60, 		85, 		1, 			0),
+			('AS2D_LEADER_MUSIC_SP_LIUCHE_WAR', 			'SND_LEADER_MUSIC_SP_LIUCHE_WAR', 		'GAME_MUSIC',	60, 		85, 		1,			0);

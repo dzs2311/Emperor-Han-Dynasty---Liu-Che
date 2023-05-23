@@ -11,6 +11,7 @@
 			<IgnoreTerrainCost>true</IgnoreTerrainCost>
 			<PortraitIndex>23</PortraitIndex>
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<!-- <AttackInflictDamageChange>5</AttackInflictDamageChange> -->
 			<ChangeDamageValue>-5</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND</PediaEntry>
@@ -22,14 +23,17 @@
 			<Description>TXT_KEY_PROMOTION_XILIUYING</Description>
 			<Help>TXT_KEY_PROMOTION_XILIUYING_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<MovesChange>1</MovesChange>
 			<DefenseMod>33</DefenseMod>
-			<EnemyHealChange>10</EnemyHealChange>
+			<!-- <EnemyHealChange>10</EnemyHealChange> -->
 			<!--敌人领地额外恢复量-->
-			<NeutralHealChange>10</NeutralHealChange>
+			<!-- <NeutralHealChange>10</NeutralHealChange> -->
 			<!--中立领地额外恢复量-->
-			<FriendlyHealChange>10</FriendlyHealChange>
+			<!-- <FriendlyHealChange>10</FriendlyHealChange> -->
 			<!--友方领地额外恢复量-->
+			<MoveLeftDefenseMod>15</MoveLeftDefenseMod>
+			<!--剩余移动力防御加成-->
+			<DefenseInflictDamageChange>5</DefenseInflictDamageChange>
+			<!--防御反击造成固定伤害-->
 			<PortraitIndex>14</PortraitIndex>
 			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>

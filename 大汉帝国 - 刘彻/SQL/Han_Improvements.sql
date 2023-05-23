@@ -24,7 +24,7 @@ VALUES	('IMPROVEMENT_SP_HAN_POST',		'TERRAIN_GRASS'),
 --==========================================================================================================================	
 -- Improvement_ValidFeatures
 --==========================================================================================================================	
-INSERT INTO Improvement_ValidTerrains
+INSERT INTO Improvement_ValidFeatures
 		(ImprovementType,				FeatureType)
 VALUES	('IMPROVEMENT_SP_HAN_POST',		'FEATURE_JUNGLE'),
 		('IMPROVEMENT_SP_HAN_POST',		'FEATURE_OASIS');
@@ -53,69 +53,43 @@ VALUES	('IMPROVEMENT_SP_HAN_POST',		'ROUTE_ROAD',		'YIELD_CULTURE',	1),
 		('IMPROVEMENT_SP_HAN_FORT',		'ROUTE_ROAD',		'YIELD_PRODUCTION',	1),
 		('IMPROVEMENT_SP_HAN_FORT',		'ROUTE_RAILROAD',	'YIELD_PRODUCTION',	2);
 --==========================================================================================================================	
--- Improvement_AdjacentMountainYieldChanges
+-- Improvement_TradeRouteYieldChanges
 --==========================================================================================================================	
--- INSERT INTO Improvement_AdjacentMountainYieldChanges
--- 		(ImprovementType,				YieldType,				Yield)
--- VALUES	('IMPROVEMENT_SP_HAN_POST',		'YIELD_PRODUCTION',		1),
--- 		('IMPROVEMENT_SP_HAN_POST',		'YIELD_SCIENCE',		1),
-
--- 		('IMPROVEMENT_SP_HAN_FORT',		'YIELD_PRODUCTION',		2),
--- 		('IMPROVEMENT_SP_HAN_FORT',		'YIELD_SCIENCE',		2);
---==========================================================================================================================	
--- Improvement_AdjacentImprovementYieldChanges
---==========================================================================================================================	
--- INSERT INTO Improvement_AdjacentImprovementYieldChanges 
--- 		(ImprovementType,			OtherImprovementType,	YieldType, 		Yield)
--- VALUES	('IMPROVEMENT_SP_HAN_POST',	'IMPROVEMENT_FARM',		'YIELD_FOOD',	1),
--- 		('IMPROVEMENT_SP_HAN_POST',	'IMPROVEMENT_FARM',		'YIELD_GOLD',	1),
-
--- 		('IMPROVEMENT_SP_HAN_FORT',	'IMPROVEMENT_FARM',		'YIELD_FOOD',	2),
--- 		('IMPROVEMENT_SP_HAN_FORT',	'IMPROVEMENT_FARM',		'YIELD_GOLD',	2);
---==========================================================================================================================	
--- Improvement_ResourceTypes
---==========================================================================================================================	
--- INSERT INTO Improvement_ResourceTypes
--- 		(ImprovementType,				ResourceType)
--- VALUES	('IMPROVEMENT_SP_HAN_POST',		'RESOURCE_IRON'),
--- 		('IMPROVEMENT_SP_HAN_POST',		'RESOURCE_HORSE'),
--- 		('IMPROVEMENT_SP_HAN_POST',		'RESOURCE_TEA'),
--- 		('IMPROVEMENT_SP_HAN_POST',		'RESOURCE_GOLD'),
--- 		('IMPROVEMENT_SP_HAN_POST',		'RESOURCE_SALT'),
-		
--- 		('IMPROVEMENT_SP_HAN_FORT',		'RESOURCE_IRON'),
--- 		('IMPROVEMENT_SP_HAN_FORT',		'RESOURCE_HORSE'),
--- 		('IMPROVEMENT_SP_HAN_FORT',		'RESOURCE_TEA'),
--- 		('IMPROVEMENT_SP_HAN_FORT',		'RESOURCE_GOLD'),
--- 		('IMPROVEMENT_SP_HAN_FORT',		'RESOURCE_SALT');
+INSERT INTO Improvement_TradeRouteYieldChanges
+		(ImprovementType,				DomainType,			YieldType,			Yield)
+VALUES	('IMPROVEMENT_SP_HAN_POST',		'DOMAIN_LAND',		'YIELD_CULTURE',	1),
+		('IMPROVEMENT_SP_HAN_POST',		'DOMAIN_LAND',		'YIELD_GOLD',		1);
 --==========================================================================================================================	
 -- Improvement_TechYieldChanges
 --==========================================================================================================================
 INSERT INTO Improvement_TechYieldChanges
 		(ImprovementType,				TechType,				YieldType,				Yield)
 VALUES	('IMPROVEMENT_SP_HAN_POST',		'TECH_CIVIL_SERVICE',	'YIELD_FOOD',			1),
-		('IMPROVEMENT_SP_HAN_POST',		'TECH_CHIVALRY',		'YIELD_PRODUCTION',		1),
-		('IMPROVEMENT_SP_HAN_POST',		'TECH_ADMINISTRATION',	'YIELD_GOLD',			1),
-		('IMPROVEMENT_SP_HAN_POST',		'TECH_THEOLOGY',		'YIELD_FAITH',			1),
 		('IMPROVEMENT_SP_HAN_POST',		'TECH_ARCHAEOLOGY',		'YIELD_CULTURE',		1),
 
-		('IMPROVEMENT_SP_HAN_FORT',		'TECH_CIVIL_SERVICE',	'YIELD_FOOD',			2),
-		('IMPROVEMENT_SP_HAN_FORT',		'TECH_CHIVALRY',		'YIELD_PRODUCTION',		2),
-		('IMPROVEMENT_SP_HAN_FORT',		'TECH_ADMINISTRATION',	'YIELD_GOLD',			2),
-		('IMPROVEMENT_SP_HAN_FORT',		'TECH_THEOLOGY',		'YIELD_FAITH',			2),
-		('IMPROVEMENT_SP_HAN_FORT',		'TECH_ARCHAEOLOGY',		'YIELD_CULTURE',		2);
+		('IMPROVEMENT_SP_HAN_FORT',		'TECH_CHIVALRY',		'YIELD_PRODUCTION',		1),
+		('IMPROVEMENT_SP_HAN_FORT',		'TECH_THEOLOGY',		'YIELD_FAITH',			1);
+
+INSERT INTO Improvement_TechYieldChanges
+		(ImprovementType,				TechType, 				YieldType, 				Yield)
+SELECT 	 'IMPROVEMENT_SP_HAN_POST',		TechType, 				YieldType, 				Yield
+FROM Improvement_TechYieldChanges WHERE ImprovementType = 'IMPROVEMENT_TRADING_POST' AND Yield > 0;
 --==========================================================================================================================	
 -- Policy_ImprovementYieldChanges
 --==========================================================================================================================
 INSERT INTO Policy_ImprovementYieldChanges
-		(ImprovementType,				PolicyType,						YieldType,			Yield)
-VALUES	('IMPROVEMENT_SP_HAN_POST',		'POLICY_TRADITION_FINISHER',	'YIELD_FOOD',		1),
-		('IMPROVEMENT_SP_HAN_POST',		'POLICY_COMMERCE_FINISHER',		'YIELD_GOLD',		1),
-		('IMPROVEMENT_SP_HAN_POST',		'POLICY_PIETY_FINISHER',		'YIELD_FAITH',		1),
+		(ImprovementType,				PolicyType,				YieldType,				Yield)
+VALUES	('IMPROVEMENT_SP_HAN_POST',		'POLICY_TRADITION',		'YIELD_FOOD',			1),
+		('IMPROVEMENT_SP_HAN_POST',		'POLICY_COMMERCE',		'YIELD_GOLD',			1),
+		('IMPROVEMENT_SP_HAN_POST',		'POLICY_HONOR',			'YIELD_PRODUCTION',		1),
 
-		('IMPROVEMENT_SP_HAN_FORT',		'POLICY_TRADITION_FINISHER',	'YIELD_FOOD',		2),
-		('IMPROVEMENT_SP_HAN_FORT',		'POLICY_COMMERCE_FINISHER',		'YIELD_GOLD',		2),
-		('IMPROVEMENT_SP_HAN_FORT',		'POLICY_PIETY_FINISHER',		'YIELD_FAITH',		2);
+		('IMPROVEMENT_SP_HAN_FORT',		'POLICY_TRADITION',		'YIELD_CULTURE',		1),
+		('IMPROVEMENT_SP_HAN_FORT',		'POLICY_HONOR',			'YIELD_PRODUCTION',		1);
+
+INSERT INTO Policy_ImprovementYieldChanges
+		(ImprovementType,				PolicyType,				YieldType,				Yield)
+SELECT 	 'IMPROVEMENT_SP_HAN_POST',		PolicyType, 			YieldType, 				Yield
+FROM Policy_ImprovementYieldChanges WHERE ImprovementType = 'IMPROVEMENT_TRADING_POST' AND Yield > 0;
 --==========================================================================================================================	
 -- Improvement_Flavors
 --==========================================================================================================================	
