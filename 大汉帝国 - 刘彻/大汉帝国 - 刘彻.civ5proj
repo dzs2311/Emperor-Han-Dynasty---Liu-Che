@@ -137,7 +137,6 @@
     <Folder Include="Art\Graphics\Post" />
     <Folder Include="Art\Graphics\Han_JiShi" />
     <Folder Include="Art\Graphics\Han_Rider\" />
-    <Folder Include="Art\Graphics\Eagle" />
     <Folder Include="Art\Graphics\Fort" />
     <Folder Include="Art\Graphics\Saka\" />
     <Folder Include="Art\Icons" />
@@ -299,42 +298,6 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Graphics\Eagle\bird_128.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle_bomb_anim.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle_die_anim.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle_fidget_anim.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle_idle_anim.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle_intercept_anim.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Eagle\eagle_run_anim.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\Graphics\Han_JiShi\hjk.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -432,30 +395,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\Graphics\Han_Rider\Han_Shuo_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Han_Rider\HorseArcher_Han.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Han_Rider\HorseArcher_Han.gr2">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Han_Rider\HorseArcher_Mongol.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Han_Rider\HorseArcher_Mongol_gloss.dds">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Han_Rider\HorseArcher_Zhao.fxsxml">
-      <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\Graphics\Han_Rider\HorseArcher_Zhao.gr2">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
