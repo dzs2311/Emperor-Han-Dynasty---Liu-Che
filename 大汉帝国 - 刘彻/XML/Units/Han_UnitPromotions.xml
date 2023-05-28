@@ -24,11 +24,12 @@
 			<Help>TXT_KEY_PROMOTION_XILIUYING_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<DefenseMod>33</DefenseMod>
-			<!-- <EnemyHealChange>10</EnemyHealChange> -->
+			<AlwaysHeal>true</AlwaysHeal>
+			<EnemyHealChange>20</EnemyHealChange>
 			<!--敌人领地额外恢复量-->
-			<!-- <NeutralHealChange>10</NeutralHealChange> -->
+			<NeutralHealChange>20</NeutralHealChange>
 			<!--中立领地额外恢复量-->
-			<!-- <FriendlyHealChange>10</FriendlyHealChange> -->
+			<FriendlyHealChange>20</FriendlyHealChange>
 			<!--友方领地额外恢复量-->
 			<MoveLeftDefenseMod>15</MoveLeftDefenseMod>
 			<!--剩余移动力防御加成-->
@@ -82,10 +83,166 @@
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
-
-		
-  </UnitPromotions>
-  <UnitPromotions_PromotionModifiers>
+		<!--期门待诏-->
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<MovesChange>1</MovesChange>
+			<MoveUsedAttackMod>10</MoveUsedAttackMod>
+			<IgnoreTerrainCost>true</IgnoreTerrainCost>
+			<ChangeDamageValue>-5</ChangeDamageValue>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!--长平烈烈-->
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER1</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<MoveUsedAttackMod>10</MoveUsedAttackMod>
+			<AttackInflictDamageChangeMaxHPPercent>15</AttackInflictDamageChangeMaxHPPercent>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!--骠骑冠军-->
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER2</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!--电击雷震-->
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER_THUNDER1</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER1</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<SplashDamageRadius>1</SplashDamageRadius>
+			<SplashDamagePercent>20</SplashDamagePercent>
+			<SplashDamagePlotUnitLimit>2</SplashDamagePlotUnitLimit>
+			<SplashXP>1</SplashXP>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER1</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER_THUNDER2</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER2</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER2_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<SplashDamageRadius>2</SplashDamageRadius>
+			<SplashDamagePercent>20</SplashDamagePercent>
+			<SplashDamagePlotUnitLimit>2</SplashDamagePlotUnitLimit>
+			<SplashXP>1</SplashXP>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER2</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER_THUNDER3</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER3</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER3_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<SplashDamageRadius>3</SplashDamageRadius>
+			<SplashDamagePercent>20</SplashDamagePercent>
+			<SplashDamagePlotUnitLimit>2</SplashDamagePlotUnitLimit>
+			<SplashXP>1</SplashXP>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER3</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!--幕府将军-->
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_RIDER_EFFECT</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- 九天玄女 -->
+		<Row>
+			<Type>PROMOTION_HAN_XUANNV</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_XUANNV</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_XUANNV_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<AirSweepCombatModifier>200</AirSweepCombatModifier>
+			<InterceptionCombatModifier>400</InterceptionCombatModifier>
+			<EvasionChange>50</EvasionChange>
+			<ExtraAttacks>1</ExtraAttacks>
+			<MovesChange>1</MovesChange>
+			<NumInterceptionChange>1</NumInterceptionChange>
+			<AlwaysHeal>true</AlwaysHeal>
+			<FriendlyHealChange>100</FriendlyHealChange>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_XUANNV</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- 天子剑 -->
+		<Row>
+			<Type>PROMOTION_HAN_ELITE_MECH</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_ELITE_MECH</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_MECH_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<HoveringUnit>true</HoveringUnit>
+			<IgnoreZOC>true</IgnoreZOC>
+			<CanMoveAllTerrain>true</CanMoveAllTerrain>
+			<IgnoreTerrainCost>true</IgnoreTerrainCost>
+			<IgnoreTerrainDamage>true</IgnoreTerrainDamage>
+			<IgnoreFeatureDamage>true</IgnoreFeatureDamage>
+			<ExtraResourceType>RESOURCE_ELECTRICITY</ExtraResourceType>
+			<ExtraResourceCombatModifier>5</ExtraResourceCombatModifier>
+			<ExtraResourceCombatModifierMax>2000</ExtraResourceCombatModifierMax>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_MECH</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+  	</UnitPromotions>
+	<UnitPromotions_Terrains>
+		<!--骠骑冠军-->
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<TerrainType>TERRAIN_GRASS</TerrainType>
+			<Attack>30</Attack>
+			<Defense>30</Defense>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<TerrainType>TERRAIN_DESERT</TerrainType>
+			<Attack>30</Attack>
+			<Defense>30</Defense>
+			<DoubleMove>true</DoubleMove>
+		</Row>
+	</UnitPromotions_Terrains>
+  	<UnitPromotions_PromotionModifiers>
   		<!-- 细柳连营石堑牢 -->
   		<Row>
 			<PromotionType>PROMOTION_XILIUYING</PromotionType>
@@ -107,6 +264,36 @@
 			<OtherPromotionType>PROMOTION_GUNPOWDER_INFANTRY_COMBAT</OtherPromotionType>
 			<Defense>100</Defense>
 		</Row>
-  </UnitPromotions_PromotionModifiers>
-  
+		<!-- 幕府将军-->
+		<Row>
+			<PromotionType>PROMOTION_ANTI_MOUNTED</PromotionType>
+			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
+			<Modifier>-50</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FORMATION_1</PromotionType>
+			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
+			<Modifier>-25</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_FORMATION_2</PromotionType>
+			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
+			<Modifier>-25</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ANTI_TANK</PromotionType>
+			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
+			<Modifier>-50</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
+			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
+			<Modifier>-25</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
+			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
+			<Modifier>-25</Modifier>
+		</Row>
+  	</UnitPromotions_PromotionModifiers>
 </GameData>

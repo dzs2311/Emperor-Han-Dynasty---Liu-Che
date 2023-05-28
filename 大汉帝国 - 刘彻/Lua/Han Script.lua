@@ -13,6 +13,8 @@ local HanNuID               = GameInfo.UnitPromotions["PROMOTION_HAN_CROSSBOWMAN
 local HanRiderID            = GameInfo.UnitPromotions["PROMOTION_HUOQUBING_RIDER"].ID
 local HanSakaID             = GameInfo.UnitPromotions["PROMOTION_HAN_VASSAL_MOUNTEDXBOW"].ID
 local HanTraitLandID		= GameInfo.UnitPromotions["PROMOTION_SP_HAN_TRAIT_LAND"].ID
+local HanEliteRiderID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER"].ID
+local HanXuanNvID			= GameInfo.UnitPromotions["PROMOTION_HAN_XUANNV"].ID
 --------------------------------------------------------------
 -- 文明过回合
 --------------------------------------------------------------
@@ -69,8 +71,10 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
         then
             -- 汉文明特性加成
             additionalDamage = additionalDamage + 5
-			--冠军骠骑额外加成
-			if attUnit:IsHasPromotion(HanRiderID) then
+			--冠军骠骑&期门禁军额外加成
+			if attUnit:IsHasPromotion(HanRiderID) 
+			or attUnit:IsHasPromotion(HanEliteRiderID)
+			then
 				additionalDamage = additionalDamage + 2.5
 			end
         end
@@ -134,10 +138,10 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 		end
 	end
 
-	if unit:IsHasPromotion(HanInfantryID) then
-		--细柳连营
-		unit:ChangeDamage(-20);
-	end
+	-- if unit:IsHasPromotion(HanInfantryID) then
+	-- 	--细柳连营
+	-- 	unit:ChangeDamage(-20);
+	-- end
 
 end
 GameEvents.UnitDoTurn.Add(HanOnUnitDoTurn)
@@ -516,7 +520,7 @@ end --function END
 
 GameEvents.BattleFinished.Add(NewAttackEffect)
 --------------------------------------------------------------
--- 升级
+-- 单位升级
 --------------------------------------------------------------
 function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 	if Players[iPlayer] == nil or not Players[iPlayer]:IsAlive()
@@ -527,6 +531,7 @@ function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 		return
 	end
 
+	-- 解忧：乌孙弓骑兵保额外战斗力
 	local pOldUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
 	local pNewUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
 	local dCombatStrenghth 			= pOldUnit:GetBaseCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].Combat
@@ -536,3 +541,51 @@ function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 
 end
 GameEvents.UnitUpgraded.Add(HanUnitUpgraded)
+--------------------------------------------------------------
+-- 战机转场
+--------------------------------------------------------------
+function HanCanRebaseInCity( iPlayerID, iUnitID, iPlotX, iPlotY)
+	if Players[ iPlayerID ] == nil or not Players[ iPlayerID ]:IsAlive()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ) == nil
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
+	then
+		return
+	end
+	local cityPlot = Map.GetPlot(cityX, cityY)
+	local pCity = cityPlot:GetPlotCity()
+	if pCity == nil then return end
+
+	local unit = Players[ iPlayerID ]:GetUnitByID( iUnitID )
+    local player = Players[iPlayerID]
+
+	if unit:IsHasPromotion(HanXuanNvID) 
+	and pCity:GetOwner() == unit:GetOwner()
+	then
+		-- 九天玄女无限制转场
+		return true;
+	end
+end
+GameEvents.CanRebaseInCity.Add(HanCanRebaseInCity)
+
+function HanRebaseTo( iPlayerID, iUnitID, iPlotX, iPlotY)
+	if Players[ iPlayerID ] == nil or not Players[ iPlayerID ]:IsAlive()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ) == nil
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
+	then
+		return
+	end
+
+	local unit = Players[ iPlayerID ]:GetUnitByID( iUnitID )
+    local player = Players[iPlayerID]
+
+	if unit:IsHasPromotion(HanXuanNvID) 
+	then
+		-- 九天玄女转场回复全部移动力
+		local move_denominator = GameDefines["MOVE_DENOMINATOR"]
+		local max_moves = unit:MaxMoves() / move_denominator
+		unit:SetMoves(max_moves * move_denominator)
+	end
+end
+GameEvents.RebaseTo.Add(HanRebaseTo)

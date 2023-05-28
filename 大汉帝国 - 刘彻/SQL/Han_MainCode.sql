@@ -3,12 +3,15 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_BATTLES_CUSTOM_DAMAGE
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_CREATED';				-- 开启单位产生事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'IMPROVEMENTS_UPGRADE';				-- 开启设施升级事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTION_SPLASH_DAMAGE';			-- 开启单位溅射
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTION_COLLATERAL_DAMAGE';		-- 开启单位穿透
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'ROG_CORE';							-- 开启单位强权效果
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_DO_TURN';				-- 开启单位过回合事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'GLOBAL_EXCLUDE_FROM_GIFTS';			-- 开启城邦赠送豁免
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_UNIT_RANGEATTACK';			-- 开启单位远程攻击事件
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'IMPROVEMENT_TRADE_ROUTE_BONUSES';	-- 开启设施商路加成
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'DEFENSE_MOVES_BONUS';				-- 开启移动力防御加成
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTIONS_EXTRARES_BONUS';			-- 开启资源/笑脸加成
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_REBASE';						-- 开启飞机转场事件
 --==========================================================================================================================
 -- Civilizations
 --==========================================================================================================================
@@ -21,7 +24,7 @@ FROM Civilizations WHERE Type = 'CIVILIZATION_CHINA';
 --==========================================================================================================================	
 INSERT INTO	Civilization_BuildingClassOverrides
 			(CivilizationType,			BuildingClassType,						BuildingType)
-VALUES		('CIVILIZATION_SP_HAN',		'BUILDINGCLASS_CARAVANSARY',			'BUILDING_GUANYI'),			-- 驿传
+VALUES		('CIVILIZATION_SP_HAN',		'BUILDINGCLASS_DUHU_DUMMY',				'BUILDING_DUHU'),			-- 驿传
 			('CIVILIZATION_SP_HAN',		'BUILDINGCLASS_NATIONAL_LIBRARY',		'BUILDING_TAIXUE'),			-- 太学
 			('CIVILIZATION_SP_HAN',		'BUILDINGCLASS_GARDEN',					'BUILDING_HAN_GARDEN');		-- 上林苑
 --==========================================================================================================================

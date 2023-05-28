@@ -80,6 +80,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>SQL/Han_UnitPromotions.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>SQL/Han_Units.sql</FileName>
       </Action>
       <Action>
@@ -109,11 +114,17 @@
       </Action>
     </ModActions>
     <ModContent>
-      <Content xmlns="">
+      <Content>
         <Type>InGameUIAddin</Type>
         <Name>Han Script</Name>
         <Description>Han Script</Description>
         <FileName>Lua/Han Script.lua</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>HanHistory</Name>
+        <Description>HanHistory</Description>
+        <FileName>UI/Han_HistEvents.xml</FileName>
       </Content>
     </ModContent>
   </PropertyGroup>
@@ -147,6 +158,7 @@
     <Folder Include="Art\SV" />
     <Folder Include="Audio" />
     <Folder Include="Lua" />
+    <Folder Include="UI" />
     <Folder Include="XML" />
     <Folder Include="SQL" />
     <Folder Include="XML\Buildings" />
@@ -618,7 +630,35 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
+    <Content Include="SQL\Han_UnitPromotions.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
     <Content Include="SQL\Han_Units.sql">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Han_HistEvents1.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Han_HistEvents2.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Han_HistEvents3.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Han_HistEvents4.dds">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Han_HistEvents.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\Han_HistEvents.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
