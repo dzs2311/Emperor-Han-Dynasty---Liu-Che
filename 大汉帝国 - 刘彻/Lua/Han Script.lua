@@ -14,6 +14,9 @@ local HanRiderID            = GameInfo.UnitPromotions["PROMOTION_HUOQUBING_RIDER
 local HanSakaID             = GameInfo.UnitPromotions["PROMOTION_HAN_VASSAL_MOUNTEDXBOW"].ID
 local HanTraitLandID		= GameInfo.UnitPromotions["PROMOTION_SP_HAN_TRAIT_LAND"].ID
 local HanEliteRiderID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER"].ID
+local HanEliteRiderEffectID  = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER_EFFECT"].ID
+local HanEliteRider1ID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER1"].ID
+local HanEliteRider2ID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER2"].ID
 local HanXuanNvID			= GameInfo.UnitPromotions["PROMOTION_HAN_XUANNV"].ID
 --------------------------------------------------------------
 -- 文明过回合
@@ -65,7 +68,7 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
             additionalDamage = additionalDamage + numShangLinYuan
         end
 
-        if attUnit:ISHasPromotion(HanTraitLandID)
+        if attUnit:IsHasPromotion(HanTraitLandID)
         and attUnit:GetDomainType() == DomainTypes.DOMAIN_LAND
         and not attUnit:GetPlot():IsFriendlyTerritory(iAttackPlayerID)
         then
@@ -589,3 +592,112 @@ function HanRebaseTo( iPlayerID, iUnitID, iPlotX, iPlotY)
 	end
 end
 GameEvents.RebaseTo.Add(HanRebaseTo)
+--==========================================================================================================================
+-- CanHavePromotion EVENTS
+--==========================================================================================================================
+function HanCanHavePromotion(iPlayer, iUnit, iPromotionType)
+	local player = Players[iPlayer]; -----获取player
+	if player == nil then return end
+	if (not player:IsAlive()) then return end
+	if player:IsBarbarian() or player:IsMinorCiv() then return end
+
+	local pUnit = Players[iPlayer]:GetUnitByID(iUnit);
+
+	-- 期门禁军互斥晋升
+	if iPromotionType == GameInfoTypes.PROMOTION_HAN_ELITE_RIDER1 
+	and pUnit:IsHasPromotion(HanEliteRider2ID)
+	then
+		return false;
+	end
+
+	if iPromotionType == GameInfoTypes.PROMOTION_HAN_ELITE_RIDER2
+	and pUnit:IsHasPromotion(HanEliteRider1ID)
+	then
+		return false;
+	end
+
+	return true;
+end
+
+GameEvents.CanHavePromotion.Add(HanCanHavePromotion)
+--------------------------------------------------------------
+-- 光环效果
+--------------------------------------------------------------
+-- 遍历某单位(pUnit)附近单位，判断其是否拥有晋升A，若有则给与当前单位晋升B，没有则去掉当前单位晋升B
+--------------------------------------------------------------
+function plotDistancePromotion(pPlayer, pUnit, unitPromotionAID, unitPromotionBID, radius, pFlag)
+	local Patronage = 0;
+	if pFlag then 
+		for sUnit in pPlayer:Units() do
+			if sUnit:IsHasPromotion(unitPromotionAID) then
+				if Map.PlotDistance(pUnit:GetX(), pUnit:GetY(), sUnit:GetX(), sUnit:GetY()) < radius + 1 then -- 人类2格
+					Patronage = 1;
+					break;
+				end
+			end
+		end			
+		if Patronage == 1 then
+			if not pUnit:IsHasPromotion(unitPromotionBID) then
+				pUnit:SetHasPromotion(unitPromotionBID, true)
+			end
+		else
+			if pUnit:IsHasPromotion(unitPromotionBID) and not pUnit:IsHasPromotion(unitPromotionAID) then
+				pUnit:SetHasPromotion(unitPromotionBID, false)
+			end
+		end		
+	else
+		if pUnit:IsHasPromotion(unitPromotionBID) and not pUnit:IsHasPromotion(unitPromotionAID) then
+			pUnit:SetHasPromotion(unitPromotionBID, false)
+		end
+	end
+
+end
+
+function SPUE_Unit_Effect_UnitSetXY(playerID)
+	local pPlayer                = Players[playerID]
+
+	-- 期门禁军
+	if pPlayer:GetUnitCountFromHasPromotion() > 0 then
+		for pUnit in pPlayer:Units() do
+			-- local Patronage = 0;
+			local pFlag = false;
+			if (pUnit:IsHasPromotion(KnightID) or pUnit:IsHasPromotion(TankID))
+			and not pUnit:IsHasPromotion(HanEliteRiderID)
+			then
+				pFlag = true
+			end
+			plotDistancePromotion(pPlayer, pUnit, HanEliteRiderID, HanEliteRiderEffectID, 3, pFlag)
+		end
+	end
+end
+GameEvents.UnitSetXY.Add(SPUE_Unit_Effect_UnitSetXY)
+GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)
+--------------------------------------------------------------
+-- 单位命名
+--------------------------------------------------------------
+function SetEliteUnitName( iPlayerID, iUnitID )
+	if Players[ iPlayerID ] == nil or not Players[ iPlayerID ]:IsAlive()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ) == nil
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):HasName()
+	then
+		return;
+	end
+
+	local pUnit = Players[ iPlayerID ]:GetUnitByID( iUnitID );
+
+	-- 期门禁军特殊命名
+	if pUnit:IsHasPromotion(HanEliteRider1ID) and not pUnit:GetUnitType() == GameInfoTypes.UNIT_HAN_ELITE_RIDER
+	then
+		pUnit:SetName("TXT_KEY_UNIT_HAN_ELITE_RIDER1_NAME");
+	elseif pUnit:IsHasPromotion(HanEliteRider2ID) and not pUnit:GetUnitType() == GameInfoTypes.UNIT_HAN_ELITE_RIDER
+	then
+		pUnit:SetName("TXT_KEY_UNIT_HAN_ELITE_RIDER2_NAME");
+	elseif pUnit:IsHasPromotion(HanEliteRiderID) and not pUnit:GetUnitType() == GameInfoTypes.UNIT_HAN_ELITE_RIDER
+	then
+		pUnit:SetName("TXT_KEY_UNIT_HAN_ELITE_RIDER");
+	end
+
+end
+Events.SerialEventUnitCreated.Add(SetEliteUnitName)

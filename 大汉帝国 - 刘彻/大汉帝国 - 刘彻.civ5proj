@@ -126,6 +126,12 @@
         <Description>HanHistory</Description>
         <FileName>UI/Han_HistEvents.xml</FileName>
       </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>HanButton</Name>
+        <Description>HanButton</Description>
+        <FileName>Lua/Han Unit Buttonslua.lua</FileName>
+      </Content>
     </ModContent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
@@ -611,6 +617,10 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Lua\Han Script.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Lua\Han Unit Buttonslua.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

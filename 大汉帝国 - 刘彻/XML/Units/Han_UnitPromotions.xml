@@ -105,6 +105,7 @@
 			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1</Description>
 			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereq>PROMOTION_HAN_ELITE_RIDER</PromotionPrereq>
 			<MoveUsedAttackMod>10</MoveUsedAttackMod>
 			<AttackInflictDamageChangeMaxHPPercent>15</AttackInflictDamageChangeMaxHPPercent>
 			<PortraitIndex>23</PortraitIndex>
@@ -119,6 +120,7 @@
 			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2</Description>
 			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PromotionPrereq>PROMOTION_HAN_ELITE_RIDER</PromotionPrereq>
 			<PortraitIndex>23</PortraitIndex>
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -225,6 +227,25 @@
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
   	</UnitPromotions>
+	<UnitPromotions_UnitCombats>
+		<!--期门待诏-->
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+	</UnitPromotions_UnitCombats>
 	<UnitPromotions_Terrains>
 		<!--骠骑冠军-->
 		<Row>
@@ -296,4 +317,18 @@
 			<Modifier>-25</Modifier>
 		</Row>
   	</UnitPromotions_PromotionModifiers>
+
+	<UnitPromotions_UnitName>
+		<!--期门待诏-->
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER1</PromotionType>
+			<UnitType>UNIT_HAN_ELITE_RIDER</UnitType>
+			<Name>TXT_KEY_UNIT_HAN_ELITE_RIDER1_NAME</Name>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<UnitType>UNIT_HAN_ELITE_RIDER</UnitType>
+			<Name>TXT_KEY_UNIT_HAN_ELITE_RIDER2_NAME</Name>
+		</Row>
+	</UnitPromotions_UnitName>
 </GameData>
