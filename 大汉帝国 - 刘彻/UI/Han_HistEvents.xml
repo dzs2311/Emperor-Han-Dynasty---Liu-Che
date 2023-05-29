@@ -20,7 +20,7 @@
 		</Stack>
 		<Box Anchor="C,B" AnchorSide="I.I" Offset="0,0" Size="520,56" Color="255,255,255,0">
 			<GridButton ID="SelectButton" Size="400,30" Anchor="C,B" Offset="0,60" Style="BaseButton" ToolTip="TXT_KEY_EVENTS_HAN_HISTORY1_BUTTON">
-				<!-- <Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_EVENTS_HAN_HISTORY1_BUTTON" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" /> -->
+				<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_HAN_HISTORY_OK_BUTTON" Font="TwCenMT20" FontStyle="Shadow" ColorSet="Beige_Black_Alpha" />
 			</GridButton>
 		</Box>
 	</Grid>

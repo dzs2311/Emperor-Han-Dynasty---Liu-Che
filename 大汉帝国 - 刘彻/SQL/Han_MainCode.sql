@@ -284,6 +284,17 @@ INSERT INTO Policy_BuildingClassYieldChanges
 		(PolicyType, 	BuildingClassType, YieldType, YieldChange)
 SELECT 'POLICY_SP_HAN', BuildingClassType, YieldType, YieldChange
 FROM Trait_BuildingClassYieldChanges WHERE TraitType = 'TRAIT_SP_HAN';
+--==========================================================================================================================	
+-- Plocies--事件假政策
+--==========================================================================================================================	
+INSERT INTO Policies 
+			(Type, 							Description)
+VALUES		('POLICY_SP_HAN_HIST_EVENT2', 	'TXT_KEY_EVENTS_HAN_HISTORY2_TITLE'),
+			('POLICY_SP_HAN_HIST_EVENT3', 	'TXT_KEY_EVENTS_HAN_HISTORY3_TITLE');
+
+INSERT INTO Policy_FreePromotions 
+			(PolicyType, 					PromotionType)
+VALUES		('POLICY_SP_HAN_HIST_EVENT2', 	'PROMOTION_HAN_HISTORY2');		
 --==========================================================================================================================
 -- AUDIO
 --==========================================================================================================================	

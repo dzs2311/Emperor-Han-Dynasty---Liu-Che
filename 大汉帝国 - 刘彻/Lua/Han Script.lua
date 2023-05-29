@@ -14,10 +14,11 @@ local HanRiderID            = GameInfo.UnitPromotions["PROMOTION_HUOQUBING_RIDER
 local HanSakaID             = GameInfo.UnitPromotions["PROMOTION_HAN_VASSAL_MOUNTEDXBOW"].ID
 local HanTraitLandID		= GameInfo.UnitPromotions["PROMOTION_SP_HAN_TRAIT_LAND"].ID
 local HanEliteRiderID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER"].ID
-local HanEliteRiderEffectID  = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER_EFFECT"].ID
-local HanEliteRider1ID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER1"].ID
-local HanEliteRider2ID       = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER2"].ID
+local HanEliteRiderEffectID = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER_EFFECT"].ID
+local HanEliteRider1ID      = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER1"].ID
+local HanEliteRider2ID      = GameInfo.UnitPromotions["PROMOTION_HAN_ELITE_RIDER2"].ID
 local HanXuanNvID			= GameInfo.UnitPromotions["PROMOTION_HAN_XUANNV"].ID
+local HanEH1ID				= GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY1"].ID
 --------------------------------------------------------------
 -- 文明过回合
 --------------------------------------------------------------
@@ -73,7 +74,7 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
         and not attUnit:GetPlot():IsFriendlyTerritory(iAttackPlayerID)
         then
             -- 汉文明特性加成
-            additionalDamage = additionalDamage + 5
+            -- additionalDamage = additionalDamage + 5
 			--冠军骠骑&期门禁军额外加成
 			if attUnit:IsHasPromotion(HanRiderID) 
 			or attUnit:IsHasPromotion(HanEliteRiderID)
@@ -518,6 +519,16 @@ function NewAttackEffect()
             Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("+{1_Num}[ICON_MOVES]", 2))
 		end
  	end
+
+	-- 六郡良家子
+	if defUnit and attUnit then
+		if defUnit:IsHasPromotion(HanEH1ID) and not defUnit:IsDead()
+		and not attUnit:IsDead()
+		and batType == GameInfoTypes["BATTLETYPE_MELEE"] 
+		then
+			attUnit:SetMoves(0)
+		end
+	end
 
 end --function END
 

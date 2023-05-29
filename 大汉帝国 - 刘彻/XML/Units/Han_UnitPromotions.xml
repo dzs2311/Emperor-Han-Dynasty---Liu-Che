@@ -8,13 +8,59 @@
 			<Description>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND</Description>
 			<Help>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<IgnoreTerrainCost>true</IgnoreTerrainCost>
 			<PortraitIndex>23</PortraitIndex>
 			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
-			<!-- <AttackInflictDamageChange>5</AttackInflictDamageChange> -->
+			<AttackInflictDamageChange>5</AttackInflictDamageChange>
 			<ChangeDamageValue>-5</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- 六郡良家子 -->
+		<Row>
+			<Type>PROMOTION_HAN_HISTORY1</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_HISTORY1</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_HISTORY1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<!-- <StopAttacker>1</StopAttacker> -->
+			<ExtraHappinessCombatModifier>1</ExtraHappinessCombatModifier>
+			<ExtraHappinessCombatModifierMax>25</ExtraHappinessCombatModifierMax>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_HISTORY1</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- 西极天马 -->
+		<Row>
+			<Type>PROMOTION_HAN_HISTORY2</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_HISTORY2</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_HISTORY1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<MovesChange>1</MovesChange>
+			<ExtraResourceType>RESOURCE_HORSE</ExtraResourceType>
+			<ExtraResourceCombatModifier>1</ExtraResourceCombatModifier>
+			<ExtraResourceCombatModifierMax>25</ExtraResourceCombatModifierMax>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_HISTORY2</PediaEntry>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- 东方军团 -->
+		<Row>
+			<Type>PROMOTION_HAN_HISTORY4</Type>
+			<Description>TXT_KEY_PROMOTION_HAN_HISTORY4</Description>
+			<Help>TXT_KEY_PROMOTION_HAN_HISTORY4_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<RangedSupportFireMod>100</RangedSupportFireMod>
+			<NearbyUnitClassBonus>5</NearbyUnitClassBonus>
+			<NearbyUnitClassBonusRange>1</NearbyUnitClassBonusRange>
+			<CombatBonusFromNearbyUnitClass>UNITCLASS_HAN_CROSSBOWMAN</CombatBonusFromNearbyUnitClass>
+			<PortraitIndex>23</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HAN_HISTORY4</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<!-- 细柳连营石堑牢 -->
@@ -243,6 +289,15 @@
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<!--西极天马-->
+		<Row>
+			<PromotionType>PROMOTION_HAN_HISTORY2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_HISTORY2</PromotionType>
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
 		</Row>
 	</UnitPromotions_UnitCombats>

@@ -130,7 +130,7 @@
         <Type>InGameUIAddin</Type>
         <Name>HanButton</Name>
         <Description>HanButton</Description>
-        <FileName>Lua/Han Unit Buttonslua.lua</FileName>
+        <FileName>Lua/Han Unit Buttons.lua</FileName>
       </Content>
     </ModContent>
   </PropertyGroup>
@@ -620,7 +620,7 @@
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
-    <Content Include="Lua\Han Unit Buttonslua.lua">
+    <Content Include="Lua\Han Unit Buttons.lua">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

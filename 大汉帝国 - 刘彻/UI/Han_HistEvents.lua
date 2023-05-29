@@ -1,7 +1,7 @@
 include ("IconSupport");
 include ("MenuUtils");
 include ("FLuaVector.lua");
-print("=========================================================MarketEvents Load!=========================================================")
+print("=========================================================Han Events Load!=========================================================")
 
 -- Hide dialog by default.
 ContextPtr:SetHide(true);
@@ -30,23 +30,25 @@ local g_Texture         = { "Han_HistEvents1.dds",
                             "Han_HistEvents3.dds",
                             "Han_HistEvents4.dds"}
 
-local numEvent          = math.random(1, 4)
+local HanEH1ID				= GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY1"].ID  
+local numEvent              = 0                     
 --==========================================================================================
 -- Main Functions
 --==========================================================================================
 -- Initializes All Components.
-function initializeDialog(numEvent)
+function initializeDialog()
     print("initializeDialog")
 
-	local pPlayer = activePlayer;	
-	local building = GameInfo.Buildings["BUILDING_SONG_MARKET"];
+	local pPlayer   = activePlayer;	
+	local leader    = GameInfo.Leaders[pPlayer:GetLeaderType()];
 
-    IconHookup(building.PortraitIndex, 64, building.IconAtlas, Controls.CivIconBG)
-    Controls.Image:SetTextureAndResize(g_Texture[numEvent])
-    Controls.Title:SetText(Locale.ConvertTextKey(g_EventsTitle[numEvent]))
-    Controls.Summary:SetText(Locale.ConvertTextKey(g_EventsMessage[numEvent]))
-    Controls.SelectButton:SetText(Locale.ConvertTextKey(g_EventsButtton[numEvent]))
-
+    IconHookup(leader.PortraitIndex, 64, leader.IconAtlas, Controls.CivIconBG)
+    if numEvent > 0 then
+        Controls.Image:SetTextureAndResize(g_Texture[numEvent])
+        Controls.Title:SetText(Locale.ConvertTextKey(g_EventsTitle[numEvent]))
+        Controls.Summary:SetText(Locale.ConvertTextKey(g_EventsMessage[numEvent]))
+        Controls.SelectButton:SetToolTipString(Locale.ConvertTextKey(g_EventsButtton[numEvent]))
+    end
     -- Events.AudioPlay2DSound("AS2D_EVENT_MARKET_START")
 
 end
@@ -61,53 +63,6 @@ function onApplyButton()
 
 end
 Controls.SelectButton:RegisterCallback(Mouse.eLClick, onApplyButton)
-
-
--- function OnPlayerDoTurn(playerID)
---     local player = Players[playerID]	
---     if player == nil or player:IsBarbarian() then return end
-
---     print("do turn prepare")
---     if player:CountNumBuildings(GameInfoTypes["BUILDING_SONG_MARKET"]) > 0 then
---         --25%概率发生事件
---         print("bEvent")
---         local bEvent = math.random(0, 100)
---         if bEvent > 25 then return end
-
---         local bCargo = false
---         local bGeneral = false
-
---         for unit in player:Units() do
---             if unit:GetUnitType() == GameInfoTypes["UNIT_SONG_CARGOSHIP"] then
---                 bCargo= true
---             elseif unit:GetUnitType() == GameInfoTypes["UNIT_JIEDUSHI"] then
---                 bGeneral = true
---             end
---         end
-
---         numEvent = math.random(1, 4)
---         if bCargo and bGeneral then
---             numEvent = math.random(1, 6)
---         elseif bCargo and not bGeneral then
---             numEvent = math.random(1, 5)
---         elseif not bCargo and bGeneral then
---             numEvent = math.random(1, 5)
---             if numEvent == 5 then numEvent = 6 end
---         end
-
---         print("numEvent = "..numEvent)
-
---         if player:IsHuman() then
---             showDialog()
---         else
---             SongMarketEvents(player)
---         end
-
---     end
-
-
--- end
--- GameEvents.PlayerDoTurn.Add(OnPlayerDoTurn)
 --==========================================================================================
 -- Smaller Functions
 --==========================================================================================
@@ -131,59 +86,152 @@ function HanHistoryEvents(player)
     local pEraID = GameInfo.Eras[pEraType].ID
     -- print("numEvent2 = "..numEvent)
     if numEvent == 1 then
-        -- print("pEraID = "..pEraID)
-        for city in player:Cities() do
-            if city:GetNumBuilding(GameInfo.Buildings['BUILDING_SONG_MARKET'].ID) > 0 then
-                local cultureBonus = 15 * (1 + pEraID)
-                player:ChangeJONSCulture(cultureBonus)
-                if player:IsHuman() then
-                    local hex = ToHexFromGrid(Vector2(city:GetX(), city:GetY()));
-                    Events.AddPopupTextEvent(HexToWorld(hex), Locale.ConvertTextKey("[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE]", cultureBonus));
-                end
+        -- 仕汉羽林郎：建造第一个羽林禁军时触发
+        if GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID == nil then return end
+        for unit in player:Units() do
+            if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
+                unit:SetHasPromotion(HanEH1ID, true)
             end
         end
     elseif numEvent == 2 then
-        for city in player:Cities() do
-            if city:GetNumBuilding(GameInfo.Buildings['BUILDING_SONG_MARKET'].ID) > 0 then
-                local scienceBonus = 15 * (1 + pEraID)
-                player:ChangeOverflowResearch(scienceBonus)
-                if player:IsHuman() then
-                    local hex = ToHexFromGrid(Vector2(city:GetX(), city:GetY()));
-                    Events.AddPopupTextEvent(HexToWorld(hex), 
-                        Locale.ConvertTextKey("[COLOR_RESEARCH_STORED]+{1_Num}[ENDCOLOR][ICON_RESEARCH]", scienceBonus));
-                end
-            end
-        end
+        -- 天马极西徕：攻占城邦或希腊文明城市后触发
+        player:SetHasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT2"].ID, true, true)
     elseif numEvent == 3 then
-        for city in player:Cities() do
-            if city:GetNumBuilding(GameInfo.Buildings['BUILDING_SONG_MARKET'].ID) > 0 then
-                local productionBonus = 15 * (1 + pEraID)
-                city:SetOverflowProduction(city:GetOverflowProduction() + productionBonus)
-                if player:IsHuman() then
-                    local hex = ToHexFromGrid(Vector2(city:GetX(), city:GetY()));
-                    Events.AddPopupTextEvent(HexToWorld(hex), 
-                        Locale.ConvertTextKey("[COLOR_CITY_BROWN]+{1_Num}[ENDCOLOR][ICON_PRODUCTION]", productionBonus));
+        -- 历史的天空：与季汉文明第一次宣布友谊后触发
+        player:SetHasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT3"].ID, true, true)
+    elseif numEvent == 4 then 
+        -- 失落的军团：与罗马/希腊文明相遇后随机触发，只能在中古时代之前触发一次
+        local capCity = player:GetCapitalCity()
+		if capCity ~= nil then
+			local unitType = GameInfoTypes["UNIT_ROMAN_LEGION"]
+			local plotX = capCity:GetX()
+			local plotY = capCity:GetY()
+			
+			local NewUnit = player:InitUnit(unitType, plotX, plotY)
+            NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY4"].ID, true)
+			NewUnit:JumpToNearestValidPlot()
+			local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID
+			local LANDTotal =  capCity:GetFreeExperience() + capCity:GetDomainFreeExperience(domainLandID)
+			NewUnit:ChangeExperience(LANDTotal)
+		end
+    end
+    numEvent = 0
+end
+--==========================================================================================
+-- 触发事件
+--==========================================================================================
+--------------------------------------------------------------
+-- 单位产生
+--------------------------------------------------------------
+function HanEventUnitCreated( iPlayerID, iUnitID )
+	if Players[ iPlayerID ] == nil or not Players[ iPlayerID ]:IsAlive()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ) == nil
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDead()
+	or Players[ iPlayerID ]:GetUnitByID( iUnitID ):IsDelayedDeath()
+	then
+		return
+	end
+	local unit = Players[ iPlayerID ]:GetUnitByID( iUnitID )
+    local player = Players[iPlayerID]
+    if player:GetCivilizationType() ~= GameInfoTypes["CIVILIZATION_SP_HAN"] then return end
+    if GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID == nil then return end
+
+    if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
+    and player:GetUnitCountFromHasPromotion(HanEH1ID == 0)
+    then
+        -- 仕汉羽林郎：建造第一个羽林禁军时触发
+        numEvent = 1
+        showDialog()
+    end
+end
+GameEvents.UnitCreated.Add(HanEventUnitCreated)
+--------------------------------------------------------------
+-- 攻陷城市
+--------------------------------------------------------------
+function HanEventCaptureCity(hexPos, iPlayer, cityID, newiPlayer)
+
+    local pOldPlayer = Players[iPlayer]
+	local pCityPlot = Map.GetPlot( ToGridFromHex( hexPos.x, hexPos.y ) )------获取城市所在地块
+	local player = Players[newiPlayer]         -------获取玩家
+	local pCity = pCityPlot:GetPlotCity()                       -----获取城市
+	local citySize = pCity:GetPopulation()	-------获取城市人口规模
+
+    if pOldPlayer == nil or pOldPlayer:IsBarbarian() then return end
+	if player == nil or player:IsBarbarian() or player:IsMinorCiv()
+    or player:GetCivilizationType() ~= GameInfoTypes["CIVILIZATION_SP_HAN"]
+    then
+    	return
+	end
+
+    if (pOldPlayer:IsMinorCiv() or pOldPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_GREECE"])
+    and not player:HasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT2"].ID)
+    then
+        -- 天马极西徕：攻占城邦或希腊文明城市后触发
+        numEvent = 2
+        showDialog()
+    end
+end
+Events.SerialEventCityCaptured.Add(HanEventCaptureCity)
+--------------------------------------------------------------
+-- 过回合
+--------------------------------------------------------------
+function OnPlayerDoTurn(playerID)
+    local player = Players[playerID]	
+	if player == nil or player:IsBarbarian() or player:IsMinorCiv()
+    or player:GetCivilizationType() ~= GameInfoTypes["CIVILIZATION_SP_HAN"]
+    then
+    	return
+	end
+
+    local pEraType = player:GetCurrentEra()
+	local pEraID = GameInfo.Eras[pEraType].ID
+
+    if not player:HasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT3"].ID)
+    and GameInfoTypes["CIVILIZATION_JIHAN"] ~= nil
+    then
+        -- 历史的天空
+        if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_JIHAN) then
+            local iJiHaPlayer
+            for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
+                local pPlayer = Players[iPlayer]
+                if pPlayer:IsEverAlive() then
+                    if(player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_JIHAN"]) then
+                        iJiHaPlayer = iPlayer
+                    end
+                end
+            end
+            if iJiHaPlayer then
+                if player:IsFriends(iJiHaPlayer) then
+                    numEvent = 3
+                    showDialog()
+                end
+            end
+            
+        end
+    end
+
+    if player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY4"].ID) < 3
+    and pEraID <= GameInfo.Eras["ERA_MEDIEVAL"].ID
+    then
+        -- 失落的军团
+        local bHasMetMed = false
+        for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
+            local pPlayer = Players[iPlayer]
+            if pPlayer:IsEverAlive() then
+                local activeCivID = pPlayer:GetCivilizationType()
+                local activeCiv = GameInfo.Civilizations[activeCivID]
+                local activeCivSuffix = GameInfo.Civilizations[activeCivID].ArtStyleSuffix
+                if activeCivSuffix == '_MED' and Teams[player:GetTeam()]:IsHasMet(pPlayer:GetTeam()) then
+                    bHasMetMed = true
+                    break
                 end
             end
         end
-    elseif numEvent == 4 then 
-        for city in player:Cities() do
-            if city:GetNumBuilding(GameInfo.Buildings['BUILDING_SONG_MARKET'].ID) > 0 then
-                local productionBonus = 15 * (1 + pEraID)
-                city:SetWeLoveTheKingDayCounter(city:GetWeLoveTheKingDayCounter() + 5)
 
-                local goldRow = GameInfo.Resources["RESOURCE_GOLD"];
-
-                if player:IsHuman() then
-                    player:AddNotification(
-                        NotificationTypes.NOTIFICATION_DISCOVERED_LUXURY_RESOURCE, 
-                        Locale.ConvertTextKey("TXT_KEY_NOTIFICATION_CITY_WLTKD", goldRow.Description, city:GetNameKey()),
-                        Locale.ConvertTextKey("TXT_KEY_NOTIFICATION_SUMMARY_CITY_WLTKD", city:GetNameKey()), 
-                        city:GetX(), city:GetY(), 
-                        goldRow.ID);
-                end
-
-            end
+        if bHasMetMed and math.random(1, 4) < 2 then
+            numEvent = 4
+            showDialog()
         end
     end
 end
+GameEvents.PlayerDoTurn.Add(OnPlayerDoTurn)

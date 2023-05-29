@@ -266,7 +266,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY2_BUTTON">
-			<Text>所有骑兵单位获得晋升：[COLOR_POSITIVE_TEXT]汗血宝马[ENDCOLOR]。</Text>
+			<Text>所有单位获得晋升：[COLOR_POSITIVE_TEXT]西极天马[ENDCOLOR]。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY3_TITLE">
@@ -292,13 +292,52 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY4_BUTTON">
-			<Text>一支落败的[COLOR_POSITIVE_TEXT]罗马军团[ENDCOLOR]加入了我方阵营。</Text>
+			<Text>一支落败的拥有[COLOR_POSITIVE_TEXT]东方军团[ENDCOLOR]晋升的[COLOR_POSITIVE_TEXT]罗马军团[ENDCOLOR]加入了我方阵营。</Text>
 		</Row>
 
-		<Row Tag="TXT_KEY_HAN_HISTORY_OK_BUTTON_TT">
+		<Row Tag="TXT_KEY_HAN_HISTORY_OK_BUTTON">
 			<Text>制曰：可。</Text>
 		</Row>
+
+		<Row Tag='TXT_KEY_TITLE_UNIT_BUTTON_HAN_HISTORY3'>
+			<Text>诸葛元戎</Text>
+		</Row>
+		<Row Tag='TXT_KEY_COND_UNIT_BUTTON_HAN_HISTORY3'>
+			<Text>将单位转化为[COLOR_POSITIVE_TEXT]诸葛元戎弩[ENDCOLOR]。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY1">
+			<Text>六郡良家子</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY1_HELP">
+			<Text>
+				[ICON_BULLET]文明每点额外的快乐度提供+1%[ICON_STRENGHTH]战斗力，最高25%。
+				[NEWLINE][ICON_BULLET]防御时能够使进攻的单位失去全部[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY2">
+			<Text>西极天马</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY2_HELP">
+			<Text>
+				[ICON_BULLET]文明每点额外的马匹资源提供+1%[ICON_STRENGHTH]战斗力，最高25%。
+				[NEWLINE][ICON_BULLET]+1[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY4">
+			<Text>东方军团</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY4_HELP">
+			<Text>
+				[ICON_BULLET]先手远程打击火力的伤害比例提升。
+				[NEWLINE][ICON_BULLET]1格内的每个[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]为[COLOR_POSITIVE_TEXT]东方军团[ENDCOLOR]增加5%[ICON_STRENTH]战斗力。
+			</Text>
+		</Row>
 		<!--*******************************历史加成系统2：汉室宝物*******************************-->
+		<!-- 汉高斩白蛇剑
+		孔子屐
+		王莽头 -->
+		<!-- 有心情再做 -->
 		<!--*******************************建筑*******************************-->
 		<Row Tag="TXT_KEY_BUILDING_DUHU_DUMMY_DESC">
 			<Text>郡国</Text>
