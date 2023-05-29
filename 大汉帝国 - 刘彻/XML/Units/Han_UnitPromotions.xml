@@ -8,8 +8,8 @@
 			<Description>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND</Description>
 			<Help>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<AttackInflictDamageChange>5</AttackInflictDamageChange>
 			<ChangeDamageValue>-5</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -22,8 +22,8 @@
 			<Description>TXT_KEY_PROMOTION_HAN_HISTORY1</Description>
 			<Help>TXT_KEY_PROMOTION_HAN_HISTORY1_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<!-- <StopAttacker>1</StopAttacker> -->
 			<ExtraHappinessCombatModifier>1</ExtraHappinessCombatModifier>
 			<ExtraHappinessCombatModifierMax>25</ExtraHappinessCombatModifierMax>
@@ -41,8 +41,8 @@
 			<ExtraResourceType>RESOURCE_HORSE</ExtraResourceType>
 			<ExtraResourceCombatModifier>1</ExtraResourceCombatModifier>
 			<ExtraResourceCombatModifierMax>25</ExtraResourceCombatModifierMax>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>3</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_HISTORY2</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -57,8 +57,8 @@
 			<NearbyUnitClassBonus>5</NearbyUnitClassBonus>
 			<NearbyUnitClassBonusRange>1</NearbyUnitClassBonusRange>
 			<CombatBonusFromNearbyUnitClass>UNITCLASS_HAN_CROSSBOWMAN</CombatBonusFromNearbyUnitClass>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>4</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_HISTORY4</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -81,8 +81,8 @@
 			<!--剩余移动力防御加成-->
 			<DefenseInflictDamageChange>5</DefenseInflictDamageChange>
 			<!--防御反击造成固定伤害-->
-			<PortraitIndex>14</PortraitIndex>
-			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>5</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_XILIUYING</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -96,8 +96,8 @@
 			<MovesChange>1</MovesChange>
 			<MoveUsedAttackMod>10</MoveUsedAttackMod>
 			<IgnoreTerrainCost>true</IgnoreTerrainCost>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>6</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HUOQUBING_RIDER</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -108,8 +108,8 @@
 			<Description>TXT_KEY_PROMOTION_HAN_CROSSBOWMAN</Description>
 			<Help>TXT_KEY_PROMOTION_HAN_CROSSBOWMAN_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>7</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_CROSSBOWMAN</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -123,8 +123,8 @@
 			<NearbyUnitClassBonus>15</NearbyUnitClassBonus>
 			<NearbyUnitClassBonusRange>3</NearbyUnitClassBonusRange>
 			<CombatBonusFromNearbyUnitClass>UNITCLASS_HORSEMAN</CombatBonusFromNearbyUnitClass>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>8</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -139,8 +139,8 @@
 			<MoveUsedAttackMod>10</MoveUsedAttackMod>
 			<IgnoreTerrainCost>true</IgnoreTerrainCost>
 			<ChangeDamageValue>-5</ChangeDamageValue>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>9</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -154,8 +154,8 @@
 			<PromotionPrereq>PROMOTION_HAN_ELITE_RIDER</PromotionPrereq>
 			<MoveUsedAttackMod>10</MoveUsedAttackMod>
 			<AttackInflictDamageChangeMaxHPPercent>15</AttackInflictDamageChangeMaxHPPercent>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>13</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -167,8 +167,8 @@
 			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereq>PROMOTION_HAN_ELITE_RIDER</PromotionPrereq>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>14</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -183,8 +183,8 @@
 			<SplashDamagePercent>20</SplashDamagePercent>
 			<SplashDamagePlotUnitLimit>2</SplashDamagePlotUnitLimit>
 			<SplashXP>1</SplashXP>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>10</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER1</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -198,8 +198,8 @@
 			<SplashDamagePercent>20</SplashDamagePercent>
 			<SplashDamagePlotUnitLimit>2</SplashDamagePlotUnitLimit>
 			<SplashXP>1</SplashXP>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>11</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER2</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -213,8 +213,8 @@
 			<SplashDamagePercent>20</SplashDamagePercent>
 			<SplashDamagePlotUnitLimit>2</SplashDamagePlotUnitLimit>
 			<SplashXP>1</SplashXP>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>12</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER3</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -225,8 +225,8 @@
 			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT</Description>
 			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -245,8 +245,8 @@
 			<NumInterceptionChange>1</NumInterceptionChange>
 			<AlwaysHeal>true</AlwaysHeal>
 			<FriendlyHealChange>100</FriendlyHealChange>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>15</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_XUANNV</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
@@ -266,8 +266,8 @@
 			<ExtraResourceType>RESOURCE_ELECTRICITY</ExtraResourceType>
 			<ExtraResourceCombatModifier>5</ExtraResourceCombatModifier>
 			<ExtraResourceCombatModifierMax>2000</ExtraResourceCombatModifierMax>
-			<PortraitIndex>23</PortraitIndex>
-			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PortraitIndex>16</PortraitIndex>
+			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_MECH</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>

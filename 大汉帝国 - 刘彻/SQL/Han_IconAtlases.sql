@@ -24,3 +24,11 @@ VALUES		('SP_HAN_ATLAS', 					256, 		'Han_IconAtlas256.dds',				4,				4),
 			('SP_HAN_WUSUN_FLAG_ATLAS',			32,			'HanScythianUnitFlag.dds',			1, 				1),
 			('SP_HAN_NTM_FLAG_ATLAS',			32,			'NanTianMenFlag.dds',			    1, 				1),
 			('SP_HAN_JI_FLAG_ATLAS',			32,			'RelicHanJiFlag.dds',			    1, 				1);
+
+INSERT OR REPLACE INTO IconTextureAtlases	(Atlas, IconSize, Filename, IconsPerRow, IconsPerColumn) VALUES
+			('promoHan_atlas', 					256, 		'promoHan_256.dds', 				'8', 			'4'),
+			('promoHan_atlas', 					064, 		'promoHan_064.dds', 				'8', 			'4'),
+			('promoHan_atlas', 					045, 		'promoHan_045.dds', 				'8', 			'4'),
+			('promoHan_atlas', 					032, 		'promoHan_032.dds', 				'8', 			'4'),
+			('promoHan_atlas', 					016, 		'promoHan_016.dds', 				'8', 			'4');
+
