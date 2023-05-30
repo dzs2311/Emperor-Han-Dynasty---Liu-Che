@@ -201,7 +201,8 @@ function OnPlayerDoTurn(playerID)
                 end
             end
             if iJiHaPlayer then
-                if player:IsFriends(iJiHaPlayer) then
+                if player:IsDoF(iJiHaPlayer) then
+                    -- 友谊声明
                     numEvent = 3
                     showDialog()
                 end

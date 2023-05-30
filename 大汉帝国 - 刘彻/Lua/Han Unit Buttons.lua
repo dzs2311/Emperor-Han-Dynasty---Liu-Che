@@ -10,8 +10,8 @@ local Han_Emperor_Button = {
 	Name = "Han Transport",
 	Title = "TXT_KEY_TITLE_HAN_EMPEROR",
 	OrderPriority = 200,
-	IconAtlas = "PROMOTION_ATLAS",
-	PortraitIndex = 23,
+	IconAtlas = "promoHan_atlas",
+	PortraitIndex = 16,
 	ToolTip = "TXT_KEY_COND_HAN_EMPEROR", -- or a TXT_KEY_ or a function
 
 	Condition = function(action, unit)
@@ -102,3 +102,72 @@ function Han_SetInputHandler(uiMsg, wParam, lParam)
 end
 
 ContextPtr:SetInputHandler(Han_SetInputHandler)
+--------------------------------------------------------------
+-- 转化为诸葛元戎弩
+--------------------------------------------------------------
+if GameInfoTypes["CIVILIZATION_JIHAN"] ~= nil 
+and GameInfoTypes["UNIT_ZHUGE_YUANRONGNU"] ~= nil
+then
+	JiHan_Button = {
+		Name = "JiHan Button",
+		Title = "TXT_KEY_TITLE_UNIT_BUTTON_HAN_HISTORY3", -- or a TXT_KEY
+		OrderPriority = 200,                                      -- default is 200
+		IconAtlas = "JIHAN_ATLAS",                            -- 45 and 64 variations required
+		PortraitIndex = 4,
+		ToolTip = "TXT_KEY_COND_UNIT_BUTTON_HAN_HISTORY3", -- or a TXT_KEY_ or a function
+
+		Condition = function(action, unit)
+			local player = Players[unit:GetOwner()]
+			return unit:CanMove() 
+			and player:HasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT3"].ID)
+			and (unit:GetUnitType() == GameInfoTypes.UNIT_ARCHER
+			or unit:GetUnitType() == GameInfoTypes.UNIT_COMPOSITE_BOWMAN
+			or unit:GetUnitType() == GameInfoTypes.UNIT_CROSSBOWMAN);
+		end, -- or nil or a boolean, default is true
+
+		Disabled = function(action, unit)
+			local plot = unit:GetPlot();
+			return not plot:IsFriendlyTerritory(unit:GetOwner());
+		end, -- or nil or a boolean, default is false
+
+		Action = function(action, unit, eClick)
+			local player         = Players[unit:GetOwner()];
+
+			local plot           = unit:GetPlot();
+			local plotX          = plot:GetX();
+			local plotY          = plot:GetY();
+
+			local unitLevel      = unit:GetLevel();
+			local unitEXP        = unit:GetExperience();
+
+			local unitPromotions = {};
+			for row in GameInfo.UnitPromotions() do
+				if unit:IsHasPromotion(row.ID) and not row.LostWithUpgrade then
+					table.insert(unitPromotions, row.ID);
+				end
+			end
+
+			local unitName = nil;
+			if unit:HasName() then
+				unitName = unit:GetNameNoDesc();
+			end
+			-- unit:PushMission(GameInfoTypes.MISSION_FORTIFY);
+			unit:Kill();
+			local newUnit = nil;
+			newUnit = player:InitUnit(GameInfoTypes.UNIT_ZHUGE_YUANRONGNU, plot:GetX(), plot:GetY());
+
+			newUnit:SetMoves(0);
+			newUnit:SetLevel(unitLevel);
+			newUnit:SetExperience(unitEXP);
+			if #unitPromotions > 0 then
+				for _, unitPromotionID in ipairs(unitPromotions) do
+					newUnit:SetHasPromotion(unitPromotionID, true);
+				end
+			end
+			if unitName then
+				newUnit:SetName(unitName);
+			end
+		end
+	};
+	LuaEvents.UnitPanelActionAddin(JiHan_Button)
+end

@@ -141,12 +141,6 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 			unit:ChangeMoves(120)
 		end
 	end
-
-	-- if unit:IsHasPromotion(HanInfantryID) then
-	-- 	--细柳连营
-	-- 	unit:ChangeDamage(-20);
-	-- end
-
 end
 GameEvents.UnitDoTurn.Add(HanOnUnitDoTurn)
 --------------------------------------------------------------
@@ -712,3 +706,152 @@ function SetEliteUnitName( iPlayerID, iUnitID )
 
 end
 Events.SerialEventUnitCreated.Add(SetEliteUnitName)
+--==========================================================================================================================
+-- UB：都护府
+--==========================================================================================================================
+--------------------------------------------------------------
+-- 统计文明的城邦盟友及各城邦盟友的人口数量\关系\单位数\单元格数
+--------------------------------------------------------------
+function Han_AllyCityStateData(playerID)
+	local g_MinorCivsAndPopWithMajor = {};
+
+	local player = Players[playerID];
+
+	if (not player:IsAlive()) then return end;
+	if player:IsMinorCiv() or player:GetMinorAllyCount() < 1 then return false end
+	local index = 1;
+	if not (player:IsMinorCiv() or player:IsBarbarian()) then
+		for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
+			if  Players[iCS]:IsAlive() and Players[iCS]:IsMinorCiv()
+			and Players[iCS]:GetAlly() ~= -1 and Players[Players[iCS]:GetAlly()]:IsAlive()
+			and Players[iCS]:GetAlly() == playerID
+			then
+				local CityPop = Players[iCS]:GetTotalPopulation()
+				local iFriendShip = Players[iCS]:GetMinorCivFriendshipWithMajor(playerID)
+				local numUnits = Players[iCS]:GetNumUnits()
+				local numPlots = Players[iCS]:GetNumPlots()
+				g_MinorCivsAndPopWithMajor[index] = {iCS, CityPop, iFriendShip, numUnits, numPlots}
+				index = index + 1
+			end
+		end
+		if index == 1 then
+			return false
+		end
+	end
+
+	return g_MinorCivsAndPopWithMajor;
+end
+--------------------------------------------------------------
+-- 都护府建造城市限制
+--------------------------------------------------------------
+function HanUB(iPlayer, iCity, iBuilding)
+	if (iBuilding == GameInfoTypes.BUILDING_DUHU) then
+		-- 都护府不能在首都建造，且附近需要有城邦
+		local pPlayer = Players[iPlayer]
+		local pCity = pPlayer:GetCityByID(iCity)
+		local bNearCityState = false
+		if not pCity:IsCapital() then
+			for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
+				if  Players[iCS]:IsAlive() and Players[iCS]:IsMinorCiv()
+				then
+					local csPlot = Players[iCS]:GetCapitalCity():GetPlot()
+					local distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), csPlot:GetX(), csPlot:GetY())
+					if distanceToCity <= 10 then
+						-- 城邦首都位于该城市10格内
+						bNearCityState = true
+						break
+					end
+				end
+			end
+		end
+		return bNearCityState
+	end
+	return true
+end
+GameEvents.CityCanConstruct.Add(HanUB)
+--------------------------------------------------------------
+-- 统计盟友城邦数量、总人口、总单位数
+--------------------------------------------------------------
+function HanCountCityStatesData(iPlayer)
+	local player = Players[iPlayer]
+	local g_Allies = {}
+
+	if player:GetMinorAllyCount() > 0 then
+		local g_MinorCivsAndPopWithMajor = Han_AllyCityStateData(iPlayer);
+		local numAllies = player:GetMinorAllyCount()
+		local pops = 0
+		local numUnits = 0
+		
+		for i = 1, #g_MinorCivsAndPopWithMajor, 1 do
+			pops = pops + g_MinorCivsAndPopWithMajor[i][2]
+			numUnits = numUnits + g_MinorCivsAndPopWithMajor[i][3]
+		end
+		g_Allies = {numAllies, pops, numUnits}
+	else
+		return false
+	end
+
+	return g_Allies
+end
+function HanCityDoInstantYieldFromCityState(iPlayer, iCity)
+	local player = Players[iPlayer]
+	local city = player:GetCityByID(iCity)
+	local g_Allies = HanCountCityStatesData(iPlayer)
+	local pEraType = player:GetCurrentEra()
+	local pEraID = GameInfo.Eras[pEraType].ID
+	-- local totalCultureBonus = 0
+
+	local cultureBonus = g_Allies[1] * 5 * (1 + pEraID)
+	local foodBonus = g_Allies[2]
+	local productionBonus = g_Allies[3]
+
+	player:ChangeJONSCulture(cultureBonus)
+	city:ChangeFood(foodBonus)
+	city:SetOverflowProduction(city:GetOverflowProduction() + productionBonus)
+	if player:IsHuman() then
+        local hex = ToHexFromGrid(Vector2(city:GetX(), city:GetY()));
+        Events.AddPopupTextEvent(HexToWorld(hex), 
+            Locale.ConvertTextKey(
+				"[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_CITY_BROWN]+{3_Num}[ENDCOLOR][ICON_PRODUCTION]", 
+				cultureBonus, foodBonus, productionBonus))
+	end
+	
+	-- totalCultureBonus = totalCultureBonus + cultureBonus
+
+	-- if player:CountNumBuildings(GameInfoTypes["BUILDING_DUHU"]) > 0 then
+	-- 	for city in player:Cities() do
+	-- 		if city:IsHasBuilding(GameInfoTypes["BUILDING_DUHU"]) then
+	-- 			local cultureBonus = g_Allies[1] * 5 * (1 + pEraID)
+	-- 			local foodBonus = g_Allies[2]
+	-- 			local productionBonus = g_Allies[3]
+
+	-- 			totalCultureBonus = totalCultureBonus + cultureBonus
+	-- 			city:ChangeFood(foodBonus)
+	-- 			city:SetOverflowProduction(city:GetOverflowProduction() + productionBonus)
+	-- 			if player:IsHuman() then
+    --                 local hex = ToHexFromGrid(Vector2(city:GetX(), city:GetY()));
+    --                 Events.AddPopupTextEvent(HexToWorld(hex), 
+    --                     Locale.ConvertTextKey(
+	-- 						"[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_CITY_BROWN]+{3_Num}[ENDCOLOR][ICON_PRODUCTION]", 
+	-- 						cultureBonus, foodBonus, productionBonus));
+    --             end
+	-- 		end
+	-- 	end
+	-- end
+	-- player:ChangeJONSCulture(totalCultureBonus)
+end
+
+function HanCityProcessCompleted(iPlayer, iCity)
+	local player = Players[iPlayer]
+	if player == nil or not player:IsMajorCiv() then
+	 	return
+	end
+	local city = player:GetCityByID(iCity)
+
+	if city:IsHasBuilding(GameInfoTypes["BUILDING_DUHU"]) and player:GetMinorAllyCount() > 0 then
+		HanCityDoInstantYieldFromCityState(iPlayer, iCity)
+	end
+end
+GameEvents.CityTrained.Add(HanCityProcessCompleted)
+GameEvents.CityConstructed.Add(HanCityProcessCompleted)
+GameEvents.CityBoughtPlot.Add(HanCityProcessCompleted)

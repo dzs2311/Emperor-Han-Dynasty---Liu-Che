@@ -158,20 +158,18 @@
 			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1</PediaEntry>
-			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<!--骠骑冠军-->
 		<Row>
 			<Type>PROMOTION_HAN_ELITE_RIDER2</Type>
 			<Description>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2</Description>
-			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP</Help>
+			<Help>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereq>PROMOTION_HAN_ELITE_RIDER</PromotionPrereq>
+			<PromotionPrereqOr1>PROMOTION_HAN_ELITE_RIDER</PromotionPrereqOr1>
 			<PortraitIndex>14</PortraitIndex>
 			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER2</PediaEntry>
-			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 		<!--电击雷震-->
 		<Row>

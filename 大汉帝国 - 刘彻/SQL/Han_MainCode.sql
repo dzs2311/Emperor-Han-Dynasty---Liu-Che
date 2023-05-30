@@ -244,7 +244,7 @@ VALUES		('LEADER_SP_LIUCHE', 	'TRAIT_SP_HAN');
 --==========================================================================================================================	
 INSERT INTO Traits 
 			(Type, 				Description, 				ShortDescription,				GoldenAgeMinorPerTurnInfluence)
-VALUES		('TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN_SHORT',	200);
+VALUES		('TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN', 	'TXT_KEY_TRAIT_SP_HAN_SHORT',	300);
 --==========================================================================================================================	
 -- Trait_BuildingClassYieldChanges
 --==========================================================================================================================	

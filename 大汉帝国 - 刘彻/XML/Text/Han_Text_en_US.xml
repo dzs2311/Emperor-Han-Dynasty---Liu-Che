@@ -217,7 +217,7 @@
 		<Row Tag="TXT_KEY_TRAIT_SP_HAN">
 			<Text>
 				[ICON_BULLET]所有[ICON_PROMOTION_LIGHTNING_WARFARE][COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害，在境外造成[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点额外伤害，所有[ICON_PEACE]信仰/[ICON_CULTURE]文化建筑获得对等基础[ICON_CULTURE]文化/[ICON_PEACE]信仰，拥有独特的历史加成系统；
-				[NEWLINE][ICON_BULLET]成为城邦首个接触的文明时获得200[ICON_INFLUENCE]影响力，位于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+5[ICON_INFLUENCE]影响力，完成城邦任务后获得1队[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]成为城邦首个接触的文明时获得200[ICON_INFLUENCE]影响力，位于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+3[ICON_INFLUENCE]影响力，完成城邦任务后获得[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]。
 			</Text>
 		</Row>
 		
@@ -242,7 +242,7 @@
 		<!-- 仕汉羽林郎：建造第一个羽林禁军时触发 -->
 		<!-- 天马极西徕：攻占城邦或希腊文明城市后触发 -->
 		<!-- 历史的天空：与季汉文明第一次宣布友谊后触发 -->
-		<!-- 失落的军团：与罗马/希腊文明相遇后随机触发，只能在中古时代之前触发一次 -->
+		<!-- 失落的军团：与罗马/希腊文明相遇后随机触发，只能在中古时代之前触发 -->
 		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY1_TITLE">
 			<Text>仕汉羽林郎</Text>
 		</Row>
@@ -303,7 +303,10 @@
 			<Text>诸葛元戎</Text>
 		</Row>
 		<Row Tag='TXT_KEY_COND_UNIT_BUTTON_HAN_HISTORY3'>
-			<Text>将单位转化为[COLOR_POSITIVE_TEXT]诸葛元戎弩[ENDCOLOR]。</Text>
+			<Text>
+				将单位转化为[COLOR_POSITIVE_TEXT]诸葛元戎弩[ENDCOLOR]。
+				[NEWLINE]你只有在[COLOR_POSITIVE_TEXT]友方区域[ENDCOLOR]才能执行该命令。
+			</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY1">
@@ -354,14 +357,16 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_DUHU_HELP">
 			<Text>
-				都护府是大汉的独特建筑，城市10格内必须有城邦才能建造。
-				[NEWLINE][ICON_BULLET]本城诞生军事单位时根据单位[ICON_STRENTH]战斗力以及盟友城邦与文明的关系/盟友城邦自身人口/盟友城邦军事力量获得[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业产出。
-				[NEWLINE][ICON_BULLET]盟友城邦关系改变/人口增长/诞生军事单位时，文化/航海/军事/商业/宗教城邦分别为为本城提供[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业/[ICON_GOLD]金币/[ICON_PEACE]信仰产出。
-				[NEWLINE][ICON_BULLET]盟友城邦+50[ICON_STRENTH]城防，+5全产出。
+				都护府是大汉的独特建筑，只能建造在10格内有城邦的非首都城市。
+				[NEWLINE][ICON_BULLET]都护府可以提高城市行政等级，降低当地腐败程度。
+				[NEWLINE][ICON_BULLET]本城完成单位建造、完成建筑建造、购买单元格时根据盟友城邦数量/盟友城邦总人口/盟友城邦单位总数获得[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业产出。
 				[NEWLINE][ICON_BULLET]本城[ICON_RES_SILK][ICON_RES_INCENSE][ICON_RES_TEA][ICON_RES_JADE]特定奢侈品分别提供额外产出加成。
 				[NEWLINE][ICON_BULLET]修建完成后提供1队[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]。
 			</Text>
 		</Row>
+		<!-- [NEWLINE][ICON_BULLET]盟友城邦人口增长、诞生军事单位时，文化/航海/军事/商业/宗教城邦分别为本城提供[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业/[ICON_GOLD]金币/[ICON_PEACE]信仰产出。 -->
+		<!-- [NEWLINE][ICON_BULLET]盟友城邦+50[ICON_STRENTH]城防，+5全产出。 -->
+
 		<Row Tag="TXT_KEY_BUILDING_DUHU_PEDIA">
 			<Text>
 				西域都护府是汉朝时期在西域（今新疆）设置的管辖机构。西域都护是汉代西域官阶最高的官职。

@@ -34,11 +34,6 @@
 			<Flavor>60</Flavor>
 		</Row>
 		<Row>
-			<ProjectType>PROJECT_HAN_ELITE_AMB_TRAINING</ProjectType>
-			<FlavorType>FLAVOR_RANGED</FlavorType>
-			<Flavor>60</Flavor>
-		</Row>
-		<Row>
 			<ProjectType>PROJECT_HAN_ELITE_MECH_TRAINING</ProjectType>
 			<FlavorType>FLAVOR_RANGED</FlavorType>
 			<Flavor>60</Flavor>
