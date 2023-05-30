@@ -87,7 +87,7 @@ function HanHistoryEvents(player)
     -- print("numEvent2 = "..numEvent)
     if numEvent == 1 then
         -- 仕汉羽林郎：建造第一个羽林禁军时触发
-        if GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID == nil then return end
+        if GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"] == nil then return end
         for unit in player:Units() do
             if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
                 unit:SetHasPromotion(HanEH1ID, true)
@@ -134,7 +134,7 @@ function HanEventUnitCreated( iPlayerID, iUnitID )
 	local unit = Players[ iPlayerID ]:GetUnitByID( iUnitID )
     local player = Players[iPlayerID]
     if player:GetCivilizationType() ~= GameInfoTypes["CIVILIZATION_SP_HAN"] then return end
-    if GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID == nil then return end
+    if GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"] == nil then return end
 
     if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
     and player:GetUnitCountFromHasPromotion(HanEH1ID == 0)
