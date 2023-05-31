@@ -241,7 +241,7 @@ function OnPlayerDoTurn(playerID)
             end
         end
 
-        if bHasMetMed and math.random(1, 4) < 2 then
+        if bHasMetMed and math.random(1, 10) < 2 then
             numEvent = 4
             if player:IsHuman() then
                 showDialog()
