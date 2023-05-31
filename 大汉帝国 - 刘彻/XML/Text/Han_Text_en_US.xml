@@ -266,7 +266,7 @@
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY2_BUTTON">
-			<Text>所有单位获得晋升：[COLOR_POSITIVE_TEXT]西极天马[ENDCOLOR]。</Text>
+			<Text>所有重骑兵和装甲单位获得晋升：[COLOR_POSITIVE_TEXT]西极天马[ENDCOLOR]。</Text>
 		</Row>
 
 		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY3_TITLE">

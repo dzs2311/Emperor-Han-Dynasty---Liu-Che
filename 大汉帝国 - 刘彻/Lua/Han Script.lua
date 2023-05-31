@@ -74,7 +74,7 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
         and not attUnit:GetPlot():IsFriendlyTerritory(iAttackPlayerID)
         then
             -- 汉文明特性加成
-            -- additionalDamage = additionalDamage + 5
+            additionalDamage = additionalDamage + 5
 			--冠军骠骑&期门禁军额外加成
 			if attUnit:IsHasPromotion(HanRiderID) 
 			or attUnit:IsHasPromotion(HanEliteRiderID)
@@ -754,7 +754,7 @@ function HanUB(iPlayer, iCity, iBuilding)
 			for iCS = GameDefines.MAX_MAJOR_CIVS, GameDefines.MAX_PLAYERS-2, 1 do
 				if  Players[iCS]:IsAlive() and Players[iCS]:IsMinorCiv()
 				then
-					local csPlot = Players[iCS]:GetCapitalCity():GetPlot()
+					local csPlot = Map.GetPlot(Players[iCS]:GetCapitalCity():GetX(),Players[iCS]:GetCapitalCity():GetY())
 					local distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), csPlot:GetX(), csPlot:GetY())
 					if distanceToCity <= 10 then
 						-- 城邦首都位于该城市10格内
@@ -784,7 +784,7 @@ function HanCountCityStatesData(iPlayer)
 		
 		for i = 1, #g_MinorCivsAndPopWithMajor, 1 do
 			pops = pops + g_MinorCivsAndPopWithMajor[i][2]
-			numUnits = numUnits + g_MinorCivsAndPopWithMajor[i][3]
+			numUnits = numUnits + g_MinorCivsAndPopWithMajor[i][4]
 		end
 		g_Allies = {numAllies, pops, numUnits}
 	else

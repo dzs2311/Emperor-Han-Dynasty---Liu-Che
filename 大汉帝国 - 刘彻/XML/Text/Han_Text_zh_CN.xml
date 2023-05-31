@@ -1,10 +1,770 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Created by ModBuddy on 2023/5/17 21:13:37 -->
+<!-- Created by ModBuddy on 2023/5/17 21:14:19 -->
 <GameData>
-  <!-- TODO: Insert table creation example here. -->
- 
-  <!-- TODO: Insert table data example here.-->
-  
-  <!-- Enter your Game Data here. -->
+	<Language_zh_CN>
+		<!--*********************************** 文明 ***********************************-->
+		<Row Tag="TXT_KEY_CIV_SP_HAN_DESC">
+			<Text>大汉帝国</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_SP_HAN_SHORT_DESC">
+			<Text>大汉</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_SP_HAN_ADJECTIVE">
+			<Text>大汉帝国</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV_SP_HAN_ADJECTIVE_WORD">
+			<Text>大汉帝国</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SP_HAN_HEADING_1">
+			<Text>历史</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_SP_HAN_TEXT_1">
+			<Text>汉朝（前202年-8年,25年-220年）是继秦朝之后的大一统王朝，主要分为西汉、东汉时期，共历29帝，享国四百零五年。秦末天下大乱，刘邦在推翻秦朝后被封为汉王。公元前202年，楚汉之争获胜后称帝建立汉朝，史称西汉；定都长安。汉文帝、汉景帝推行休养生息国策开创“文景之治”；汉武帝即位后开辟丝路、攘夷拓土成就“汉武盛世”；至汉宣帝时期国力达到极盛。公元8年，王莽废西汉末帝，定都常安，史称新朝，西汉灭亡。[NEWLINE][NEWLINE]汉高祖刘邦是沛丰邑中阳里人，平时不参加农业劳动。到青年时代，秦始皇已统一中国，他当上了秦朝的泗水亭长，并与郡县小吏关系非常密切。刘邦在生活上有失检点，但他为人仗义，胸怀大志，待人宽厚，能孚众望。秦二世元年（前209年），秦末农民起义爆发。刘邦也在家乡沛县起兵，称沛公。后加入项氏叔侄的反秦义军。前207年，刘邦率部攻入关中，秦王子婴降，秦亡。秦朝灭亡以后，公元前206年，项羽封刘邦为汉王，后来项羽和刘邦展开了长达四年的楚汉之争。刘邦在手下萧何、韩信、张良、彭越等人的辅助下，在垓下之战打败了项羽，于前202年在定陶正式称皇帝，仍用“汉”号，定都长安（今陕西西安）。[NEWLINE][NEWLINE]汉高祖死后，又经历了吕后专政以及文景之治。虽然内乱接连不断、外敌肆意入侵，但是国家一直朝着良性的方向前进。到了汉武帝刘彻即位后，采取了一系列改革措施，锐意进取，开疆拓土，奠定了汉朝强盛的局面。[NEWLINE][NEWLINE]汉武帝在政治上加强皇权，首创年号，采纳主父偃的建议，施行推恩令，削弱了诸侯王的势力，从此，诸侯王的势力不再能够对中央构成威胁；后又以诸侯献上的黄金成色不纯为由，取消了百余位列侯的爵位，即史书上所称的“酎金失侯”事件。经此二次事件后，中央集权得到了大大的加强。文化上，废除了汉朝以“黄老学说、无为而治”治国的思想，积极治国；并采纳董仲舒的建议，开始重用儒术。尽管刘彻时期兼用儒、法、道、阴阳、纵横等各家人才，汉朝也一直采取集合霸道、王道的治国方针，但汉武帝对儒家的推崇，使儒家思想得到重视，并在以后逐渐成为中国历经二千年的主流思想。军事上，积极对付汉朝的最大外患—匈奴。汉武帝时期大幅提高军人的待遇，在巡视北方时，一次犒赏边防军就达100万匹丝绸和200万钱。这期间汉朝先后出现了卫青、霍去病、李广等优秀将领，终于击溃匈奴，修建外长城之光禄塞、居延塞，收复河套并将河西纳入版图，促使“漠南无王庭”的局面，又先后吞并南越、闽越、夜郎、滇国、卫满朝鲜等国，远征大宛降服西域诸国，使中国成为当时世界上首屈一指的强国。汉武帝时期奠定了汉地范围，也是汉朝走向强盛的重要时期。外交上，两次派张骞出使西域，开辟了丝绸之路。并先后以两位公主刘细君，刘解忧和亲西域乌孙，而达到了离间西域和匈奴，进而控制西域的目的，并开通了长安到中亚的丝绸之路，丝绸之路成为东西方经济文化交流的桥梁。[NEWLINE][NEWLINE]汉宣帝死后，汉元帝刘奭即位，西汉开始走向衰败。汉元帝，柔仁好儒，导致皇权旁落，外戚与宦官势力兴起。汉元帝死后，汉成帝刘骜即位。汉成帝好女色，先后宠爱许皇后、班婕妤和赵氏姐妹（赵飞燕、赵合德），由于赵氏姐妹不能生育，汉成帝与其他妃嫔的子女均为赵飞燕姐妹残害杀死，史称“燕啄皇孙”。由于“酒色侵骨”，汉成帝最后竟死在温柔乡中。汉成帝不理朝政，为外戚王氏集团的兴起提供了条件，皇太后王政君权力急剧膨胀。汉成帝死后，刘欣即位，是为汉哀帝。汉哀帝有断袖之癖，终日与宠男董贤厮混玩耍不理朝政。外戚王氏的权力进一步膨胀。国家已经呈现一片末世之象，民间“再受命”说法四起。公元前1年8月15日，汉哀帝去世。8月17日，太皇太后王政君派王莽接替董贤成为大司马，并迎接刘衎。10月17日，刘衎即位，是为汉平帝。但是，汉平帝已经沦为王莽的傀儡。公元6年2月3日，年仅14岁的汉平帝病死，王莽立仅两岁的刘婴为太子，自任“摄皇帝”。公元8年十二月，王莽废除孺子婴的皇太子之位，建立新朝，西汉灭亡。</Text>
+		</Row>
+    	<Row Tag="TXT_KEY_CIV5_DOM_SP_HAN_TEXT">
+    		<Text>您给了一个民族前所未有的尊严，您树立了一个民族挺立千秋的自信；您的国号，成为一个民族永远的称呼。您被宵小羞辱、被宵小以一些不良手段窃国之后依然照耀于汗青中，而当您王者归来之时，必将惊天动地。您能再次持剑振臂高呼，执敌酋之首悬于槀街蛮夷使馆中吗？您能再次率领汉家精兵扫清寰宇来向世界昭告“明犯强汉者，虽远必诛！”的名言吗？您能带领着汉家子弟来完成后世推背图中征服世界的预言吗？</Text>
+    	</Row>
+		<!--*********************************** 城市 ***********************************-->
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_00">
+			<Text>长安</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_01">
+			<Text>沛郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_02">
+			<Text>弘农</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_03">
+			<Text>栎阳</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_04">
+			<Text>河南郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_05">
+			<Text>河东郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_06">
+			<Text>郿县</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_07">
+			<Text>汉中郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_08">
+			<Text>蜀郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_09">
+			<Text>巴郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_10">
+			<Text>天水</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_11">
+			<Text>临洮</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_12">
+			<Text>上党</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_13">
+			<Text>上郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_14">
+			<Text>五原</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_15">
+			<Text>朔方</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_16">
+			<Text>马邑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_17">
+			<Text>信都</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_18">
+			<Text>常山</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_19">
+			<Text>代郡</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_20">
+			<Text>真定</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_21">
+			<Text>右北平</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_22">
+			<Text>济南</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_23">
+			<Text>张掖</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_24">
+			<Text>酒泉</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_25">
+			<Text>玉门</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_26">
+			<Text>敦煌</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_27">
+			<Text>乌垒城</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_28">
+			<Text>定陶</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_29">
+			<Text>彭城</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_30">
+			<Text>琅琊</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_31">
+			<Text>汝南</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_32">
+			<Text>广陵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_33">
+			<Text>九江</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_34">
+			<Text>吴县</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_35">
+			<Text>会稽</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_36">
+			<Text>云梦泽</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_37">
+			<Text>桂阳</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_38">
+			<Text>曲江</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CITY_NAME_SP_HAN_39">
+			<Text>苍梧</Text>
+		</Row>
+		<!--*********************************** 使者 ***********************************-->
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_0">
+			<Text>苏武</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_1">
+			<Text>常惠</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_2">
+			<Text>解忧公主</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_3">
+			<Text>王昭君</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_4">
+			<Text>刘细君</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_5">
+			<Text>终军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_6">
+			<Text>曹夫人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_7">
+			<Text>慎夫人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_8">
+			<Text>戚夫人</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_9">
+			<Text>陈平</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_10">
+			<Text>郦食其</Text>
+		</Row>
+		<Row Tag="TXT_KEY_SPY_NAME_SP_HAN_11">
+			<Text>金日磾</Text>
+		</Row>
+		<!--*******************************领袖*******************************-->
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE">
+			<Text>刘彻</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_PEDIA_NAME">
+			<Text>刘彻</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_PEDIA_SUBTITLE">
+			<Text>汉武帝</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_PEDIA_TITLES_1">
+			<Text>汉世宗</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_PEDIA_LIVED">
+			<Text>前156年－前87年3月29日</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_PEDIA_HEADING_1">
+			<Text>人物生平</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_PEDIA_TEXT_1">
+			<Text>
+				汉武帝刘彻（前156年－前87年3月29日），西汉第七位皇帝（前141—前87年在位），杰出的政治家、战略家、文学家。汉景帝刘启的儿子，母为王皇后。
+				[NEWLINE]刘彻初封胶东王，七岁被立为皇太子，十六岁继承皇位，在位五十四年，功业甚多：对内，为加强中央集权，颁行推恩令，又制订左官律和附益法，严格禁止诸侯王参与政事；不拘一格录用人才，提拔有才能的士人为侍从，以备顾问；裁抑丞相职权，依靠亲信和近臣参与决策，从而形成内朝（中朝）和外朝的政治体制；设十三州刺史部，加强对郡国的控制；为解决财政困难，改革币制，禁止郡国铸钱，又实行盐铁官营、均输平准等制度；颁布算缗、告缗令，向商人征收重税；建立正规的察举制度，令郡国举孝廉及秀才、贤良方正等；实行尊崇儒术的文化政策，设五经博士，在京师长安兴建太学，又令郡国皆立学官。对外，派卫青、霍去病多次出击匈奴，迫其远徙漠北；命张骞出使西域，沟通汉与西域各族联系；又征服闽越、东瓯、南越、卫氏朝鲜，经营西南夷，在其地设置郡县。
+				[NEWLINE]刘彻迷信神仙，热衷于封禅和郊祀，曾多次巡游各地，挥霍无度。在位晚年，社会矛盾日益尖锐，关东流民达二百万，农民起义频繁。宫廷发生“巫蛊之祸”，导致太子刘据自杀。征和四年（前89年）下轮台诏，拒绝桑弘羊募民屯田轮台的建议。后元二年（前87年），刘彻驾崩，享年七十岁。临终前立幼子刘弗陵为太子。 谥号孝武皇帝，庙号世宗，葬于茂陵。
+			</Text>
+		</Row>
+
+		<!--*******************************特性*******************************-->
+		<Row Tag="TXT_KEY_TRAIT_SP_HAN_SHORT">
+			<Text>维天有汉/率土之滨</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_SP_HAN">
+			<Text>
+				[ICON_BULLET]所有[ICON_PROMOTION_LIGHTNING_WARFARE][COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害，在境外造成[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点额外伤害，所有[ICON_PEACE]信仰/[ICON_CULTURE]文化建筑获得对等基础[ICON_CULTURE]文化/[ICON_PEACE]信仰，拥有独特的历史加成系统；
+				[NEWLINE][ICON_BULLET]成为城邦首个接触的文明时获得200[ICON_INFLUENCE]影响力，位于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+3[ICON_INFLUENCE]影响力，完成城邦任务后获得[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]。
+			</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_TRAIT_HAN_NOTI_1">
+			<Text>普天之下，莫非王土；率土之滨，莫非王臣。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_TRAIT_HAN_NOTI_2">
+			<Text>您是他们遇见的第一个伟大帝国，在大汉文明的赫赫威势之下，他们向您表示了臣服。[NEWLINE][NEWLINE]您对[ICON_CITY_STATE]城邦的[ICON_INFLUENCE]影响力提高了[COLOR_POSITIVE_TEXT]200点[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_POLICY_SP_HAN">
+			<Text>[COLOR_YIELD_GOLD]维天有汉[ENDCOLOR]</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND">
+			<Text>维天有汉</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND_HELP">
+			<Text>减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害，在境外造成[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点额外伤害。</Text>
+		</Row>
+		<!--*******************************历史加成系统1：历史事件*******************************-->
+		<!-- 仕汉羽林郎：建造第一个羽林禁军时触发 -->
+		<!-- 天马极西徕：攻占城邦或希腊文明城市后触发 -->
+		<!-- 历史的天空：与季汉文明第一次宣布友谊后触发 -->
+		<!-- 失落的军团：与罗马/希腊文明相遇后随机触发，只能在中古时代之前触发 -->
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY1_TITLE">
+			<Text>仕汉羽林郎</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY1_MESSAGE">
+			<Text>
+				出身仕汉羽林郎,初随骠骑战渔阳。
+				[NEWLINE]孰知不向边庭苦,纵死犹闻侠骨香。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY1_BUTTON">
+			<Text>[COLOR_CYAN]羽林禁军[ENDCOLOR]获得晋升：[COLOR_POSITIVE_TEXT]六郡良家子[ENDCOLOR]。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY2_TITLE">
+			<Text>天马极西徕</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY2_MESSAGE">
+			<Text>
+				天马徕，从西极，经万里兮归有德。
+				[NEWLINE]承灵威兮降外国，涉流沙兮四夷服。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY2_BUTTON">
+			<Text>所有重骑兵和装甲单位获得晋升：[COLOR_POSITIVE_TEXT]西极天马[ENDCOLOR]。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY3_TITLE">
+			<Text>历史的天空</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY3_MESSAGE">
+			<Text>
+				长江有意化作泪，长江有情起歌声；
+				[NEWLINE]历史的天空闪烁几颗星，人间一股英雄气，在驰骋纵横。			
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY3_BUTTON">
+			<Text>所有复合弓手/弩手可以转化为单位：[COLOR_POSITIVE_TEXT]诸葛元戎弩[ENDCOLOR]。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY4_TITLE">
+			<Text>失落的军团</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY4_MESSAGE">
+			<Text>
+				其人民皆长大平正，有类中国。
+				[NEWLINE]都城尤绝高峻，诸国仰之如周京，居然大一统之势。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_EVENTS_HAN_HISTORY4_BUTTON">
+			<Text>一支落败的拥有[COLOR_POSITIVE_TEXT]东方军团[ENDCOLOR]晋升的[COLOR_POSITIVE_TEXT]罗马军团[ENDCOLOR]加入了我方阵营。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_HAN_HISTORY_OK_BUTTON">
+			<Text>制曰：可。</Text>
+		</Row>
+
+		<Row Tag='TXT_KEY_TITLE_UNIT_BUTTON_HAN_HISTORY3'>
+			<Text>诸葛元戎</Text>
+		</Row>
+		<Row Tag='TXT_KEY_COND_UNIT_BUTTON_HAN_HISTORY3'>
+			<Text>
+				将单位转化为[COLOR_POSITIVE_TEXT]诸葛元戎弩[ENDCOLOR]。
+				[NEWLINE]你只有在[COLOR_POSITIVE_TEXT]友方区域[ENDCOLOR]才能执行该命令。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY1">
+			<Text>六郡良家子</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY1_HELP">
+			<Text>
+				[ICON_BULLET]文明每点额外的快乐度提供+1%[ICON_STRENGHTH]战斗力，最高25%。
+				[NEWLINE][ICON_BULLET]防御时能够使进攻的单位失去全部[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY2">
+			<Text>西极天马</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY2_HELP">
+			<Text>
+				[ICON_BULLET]文明每点额外的马匹资源提供+1%[ICON_STRENGHTH]战斗力，最高25%。
+				[NEWLINE][ICON_BULLET]+1[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY4">
+			<Text>东方军团</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY4_HELP">
+			<Text>
+				[ICON_BULLET]先手远程打击火力的伤害比例提升。
+				[NEWLINE][ICON_BULLET]1格内的每个[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]为[COLOR_POSITIVE_TEXT]东方军团[ENDCOLOR]增加5%[ICON_STRENTH]战斗力。
+			</Text>
+		</Row>
+		<!--*******************************历史加成系统2：汉室宝物*******************************-->
+		<!-- 汉高斩白蛇剑
+		孔子屐
+		王莽头 -->
+		<!-- 有心情再做 -->
+		<!--*******************************建筑*******************************-->
+		<Row Tag="TXT_KEY_BUILDING_DUHU_DUMMY_DESC">
+			<Text>郡国</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_DUHU_DUMMY_HELP">
+			<Text>郡国</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_DUHU_DUMMY_PEDIA">
+			<Text>所谓郡是指郡县，国是指封国，而郡国制则为西汉初实行的一种政治制度。郡和封国同是汉初地方高级的行政区划，郡直属于中央，封国则由分封诸王统治。由是二者并行，使全国形成封国与郡国并存的郡国制度。但由于时间一久，封国势力逐渐坐大，形成尾大不掉之势，中央难于驾驭。故文帝时，贾谊曾建议削弱诸侯；至景帝，晁错更进一步提议削减诸王封地，由是诸王为求保障自身利益，起兵反对汉室，史称「七国之乱」。及后景帝派周亚夫平定叛乱，诸王被杀。自此，景帝将王国军政大权、官吏任免权全归中央，分封王国名存实亡。</Text>
+		</Row>
+		
+		<Row Tag="TXT_KEY_BUILDING_DUHU_DESC">
+			<Text>都护府</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_DUHU_HELP">
+			<Text>
+				都护府是大汉的独特建筑，只能建造在10格内有城邦的非首都城市。
+				[NEWLINE][ICON_BULLET]都护府可以提高城市行政等级，降低当地腐败程度。
+				[NEWLINE][ICON_BULLET]本城完成单位建造、完成建筑建造、购买单元格时根据盟友城邦数量/盟友城邦总人口/盟友城邦单位总数获得[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业产出。
+				[NEWLINE][ICON_BULLET]本城[ICON_RES_SILK][ICON_RES_INCENSE][ICON_RES_TEA][ICON_RES_JADE]特定奢侈品分别提供额外产出加成。
+				[NEWLINE][ICON_BULLET]修建完成后提供1队[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]。
+			</Text>
+		</Row>
+		<!-- [NEWLINE][ICON_BULLET]盟友城邦人口增长、诞生军事单位时，文化/航海/军事/商业/宗教城邦分别为本城提供[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业/[ICON_GOLD]金币/[ICON_PEACE]信仰产出。 -->
+		<!-- [NEWLINE][ICON_BULLET]盟友城邦+50[ICON_STRENTH]城防，+5全产出。 -->
+
+		<Row Tag="TXT_KEY_BUILDING_DUHU_PEDIA">
+			<Text>
+				西域都护府是汉朝时期在西域（今新疆）设置的管辖机构。西域都护是汉代西域官阶最高的官职。
+				[NEWLINE]“都护”是汉西域地方最高长官，“秩比二千石”，相当于汉地的“郡都尉”。“郡都尉”是一郡首脑太守的副职，掌管军事。西域因地位特殊，故设“都护”，实际上与郡级区划相等。
+				[NEWLINE]其主要职责在于守境安土，协调西域各国间的矛盾和纠纷，制止外来势力的侵扰，维护西域地方的社会秩序，确保丝绸之路的畅通。
+				[NEWLINE]“都护”统管着大宛以东、乌孙以南的三十多个国家，各国“自译长、域长、君、监、吏、大禄、百长、千长、都尉、且渠、当户、将、相至侯王，皆佩汉印绶”，确认是汉的官员。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_TAIXUE_DESC">
+			<Text>太学</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TAIXUE_HELP">
+			<Text>
+				太学是国内的最高学府，建成后获得一项[COLOR_MAGENTA]免费政策[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]本城+25%[ICON_CULTURE]文化产出，每位[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]+1[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。
+				[NEWLINE][ICON_BULLET]建成后每座[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]获得一名[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]席位，完成[COLOR_MAGENTA]传统政策[ENDCOLOR]使全国+10%[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。
+				[NEWLINE][ICON_BULLET]必须在文明的所有[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]中建造[ICON_RESEARCH]学院。[ICON_PRODUCTION]建造花费随[ICON_CITYBANNER_CITY_TOWN][COLOR_SELECTED_TEXT]城市[ENDCOLOR]数量增加。
+				[NEWLINE][ICON_BULLET]无需开启[COLOR_MAGENTA]美学政策[ENDCOLOR]树。
+				[NEWLINE][ICON_BULLET]学而优则仕，希望学子们能有好的表现，将来能给国家建言献策。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_TAIXUE_PEDIA">
+			<Text>太学是中国古代的国立最高学府。太学之名始于西周。夏、商、周，大学的称谓各有不同，五帝时期的大学名为成均，在夏为东序，在商为右学，周代的大学名为上庠，在洛邑王城西郊。汉武帝时，采纳董仲舒“天人三策”，“愿陛下兴太学，置明师，以养天下之士”的建议，于京师长安设立太学。王莽时天下散乱“礼乐分崩，典文残落”，“四方学士多怀协图书，遁逃林薮”，太学零落。当东汉光武帝刘秀称帝后，戎马未歇，即先兴文教。东汉太学始创于建武五年十月(公元29年)，汉光武帝起营太学，访雅儒，采求经典阙文，四方学士云会京师洛阳，于是立五经博士。建武二十七年，建造的太学讲堂"长十（丈）丈，宽三丈"。永建六年(130)，汉顺帝诏修：赶学，"凡所造构二百四十房，千八百五十室"。每年用工徒竟达11．2万人，营建规模达到了空前的水平。至汉质帝时，太学生人数已有3万余人。[NEWLINE][NEWLINE]“太学”一词西周时已经有了，《大戴记》中说：“帝入太学，承师问道。”西周太学又名大学，天子和诸侯均设之，“，大学在郊，天子曰辟雍，诸侯曰泮宫”。不过辟雍和泮宫不是纯粹的大学，这地方亦如宫廷，贵族们常在这里祭祀、举行宴会、选拔武士、议定作战计划。打了胜仗，也到这里“献俘”“告功”。这是因为：“古人宫室无多，凡祭礼、军礼、学礼，及望气、治历、养老、习射、遵贤之典，咸行于明堂。而明堂、太庙、太学、灵台咸为一地。”上古虽然有太学，但明堂、太学混而不分，布政、祭祀、学习各种活动都搅和在一块儿，不具备封建教育的专业性与系统性，这只能说是太学的萌芽。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SIXUE">
+			<Text>[ICON_CULTURE]私学</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_SIXUE_HELP">
+			<Text>提供一名[ICON_GREAT_WRITER][COLOR_MAGENTA]文学家[ENDCOLOR]席位，完成[COLOR_MAGENTA]传统政策[ENDCOLOR]使本城+10%[ICON_CULTURE]文化、[ICON_PEACE]信仰产出。</Text>
+		</Row>
+
+		<Row>
+			<Tag>TXT_KEY_BUILDING_HAN_GARDEN</Tag>
+			<Text>[ICON_GREAT_PEOPLE]上林苑</Text>
+		</Row>
+		<Row>
+			<Tag>TXT_KEY_BUILDING_HAN_GARDEN_TEXT</Tag>
+			<Text>
+				上林苑，是汉代园林建筑，汉武帝刘彻于建元三年（公元前138年）在秦代的一个旧苑址上扩建而成的宫苑，规模宏伟，宫室众多，有多种功能和游乐内容，今已无存。
+				[NEWLINE]上林苑地跨长安区、鄠邑区、咸阳、周至县、蓝田县五区县境，纵横340平方公里，有渭、泾、沣、涝、潏、滈、浐、灞八水出入其中。
+				[NEWLINE]上林苑既有优美的自然景物，又有华美的宫室组群分布其中，是包罗多种多样生活内容的园林总体，可以说是我国最早的植物园动物园，更是秦汉时期建筑宫苑的典型。
+				[NEWLINE]上林苑亦是当时汉武帝尚武之地，在此处有皇帝的亲兵羽林军，并由后来的大将军卫青统领。汉武帝从此走向一个崭新的历史舞台。
+			</Text>
+		</Row>
+		<Row>
+			<Tag>TXT_KEY_BUILDING_HAN_GARDEN_HELP</Tag>
+			<Text>
+				只能在大型城市（26人口）建造。
+				[NEWLINE][ICON_BULLET]本城市+25%[ICON_GREAT_PEOPLE]伟人点数积累。
+				[NEWLINE][ICON_BULLET]+10[ICON_RES_HORSE]资源，全国所有的牲畜资源全产出+1。
+				[NEWLINE][ICON_BULLET]+1[ICON_HAPPINESS_1]全局快乐。
+				[NEWLINE][ICON_BULLET]每座[ICON_GREAT_PEOPLE]上林苑可以为轻重骑兵和相应的装甲单位提供1点额外伤害，最高叠加10点。
+				[NEWLINE][ICON_BULLET][ICON_GREAT_PEOPLE]上林苑为1/2级城市提供额外4/2点[ICON_FOOD]食物和[ICON_RESEARCH]科研产出。
+			</Text>
+		</Row>
+
+		<!--*******************************UU单位*******************************-->
+		<Row Tag="TXT_KEY_UNIT_HAN_CROSSBOWMAN">
+			<Text>佽飞射士</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_CROSSBOWMAN_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]是大汉的特有单位，只能通过驿传赠送获得，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，每回合获得相当于远程最大[ICON_STRENGTH]攻击力的[ICON_GOLD]金币。	
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]时，每回合额外回复5点血量，获得相当于基础远程[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化。		
+				[NEWLINE][ICON_BULLET]根据驻守回合数可造成额外伤害，最多额外增加[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点。
+				[NEWLINE][ICON_BULLET]所攻击的敌人失去全部[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_CROSSBOWMAN_TEXT">
+			<Text>
+				西汉兵士，属佽飞令，屯上林苑中，射飞禽以供宗庙、太官。兼从征伐。宣帝、元帝时均曾征发佽飞射士，会同诸军击西羌。			
+				[NEWLINE]大黄弩，又称黄肩弩，是中国著名冷兵器，是汉代制作的弩。弩是古代兵车战法中的重要组成部分。是步兵有效克制骑兵的一种武器。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_CROSSBOWMAN">
+			<Text>佽飞射士彍强弩</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_CROSSBOWMAN_HELP">
+			<Text>
+				[ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，每回合获得相当于远程最大[ICON_STRENGTH]攻击力的[ICON_GOLD]金币。	
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]时，每回合额外回复5点血量，获得相当于基础远程[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化。		
+				[NEWLINE][ICON_BULLET]根据驻守回合数可造成额外伤害，最多额外增加[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点。
+				[NEWLINE][ICON_BULLET]所攻击的敌人失去全部[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_XILIUYING">
+			<Text>细柳营</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_XILIUYING_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]细柳营[ENDCOLOR]是大汉的特色单位，代替[COLOR_POSITIVE_TEXT]长枪兵[ENDCOLOR]，解锁科技提前至[COLOR_CYAN]工程学[ENDCOLOR]，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]列阵迎敌：防御时造成的伤害+5，自带+33%[ICON_STRENGTH]防御力，每点未使用的[ICON_MOVES]移动力+15%[ICON_STRENGTH]防御力，且每回合[COLOR_POSITIVE_TEXT]额外恢复[ENDCOLOR]20[ICON_PROMOTION_MEDIC]生命。在没有时代优势的情况下几乎无法正面突破细柳营的防线。
+				[NEWLINE][ICON_BULLET]坚壁营垒：对抗[ICON_PROMOTION_INFANTRY_COMBAT][COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]、[ICON_PROMOTION_ARCHERY_COMBAT][COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]、[ICON_PROMOTION_HITANDRUN][COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]、[ICON_PROMOTION_GUNPOWDER_INFANTRY][COLOR_POSITIVE_TEXT]火药步兵[ENDCOLOR]时+100%[ICON_STRENGTH]防御力。[COLOR_POSITIVE_TEXT][ENDCOLOR]
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_XILIUYING_TEXT">
+			<Text>细柳营是指周亚夫当年驻扎在细柳的部队。文帝后元四年（公元前160年），老上稽粥单于死，其子军臣立为单于，仍以中行说为亲信，积极准备攻汉。文帝后元六年（公元前158年），军臣单于拒绝和亲之约，对汉发动战争。他以6万骑兵，分两路，每路3万骑，分别侵入上郡及云中郡，杀略甚众。刘恒急忙以中大夫令勉为车骑将军，率军进驻飞狐（今山西上党）；以原楚相苏意为将军，将兵入代地，进驻句注（今山西雁门关附近）；又派将军张武屯兵北地，同时，置三将军，其中命河内守周亚夫驻屯细柳，祝兹侯徐悍驻棘门，宗正刘礼驻霸上，保卫长安。由于周亚夫治军有方最后赢取了胜利，所以他的部队称为细柳营。[NEWLINE][NEWLINE] 文帝之后六年，匈奴大入边。乃以宗正刘礼为将军，军霸上；祝兹侯徐厉为将军，军棘门；以河内守亚夫为将军，军细柳，以备胡。[NEWLINE][NEWLINE] 上自劳军。至霸上及棘门军，直驰入，将以下骑送迎。已而之细柳军，军士吏被甲，锐兵刃，彀弓弩，持满。天子先驱至，不得入。先驱曰：“天子且至！”军门都尉曰：“将军令曰：‘军中闻将军令，不闻天子之诏。’”居无何，上至，又不得入。于是上乃使使持节诏将军：“吾欲入劳军。”亚夫乃传言开壁门。壁门士吏谓从属车骑曰：“将军约，军中不得驱驰。”于是天子乃按辔徐行。至营，将军亚夫持兵揖曰：“介胄之士不拜，请以军礼见。”天子为动，改容式车，使人称谢：“皇帝敬劳将军。”成礼而去。[NEWLINE][NEWLINE] 既出军门，群臣皆惊。文帝曰：“嗟呼，此真将军矣！曩者霸上、棘门军，若儿戏耳，其将固可袭而虏也。至于亚夫，可得而犯邪？”称善者久之。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_XILIUYING">
+			<Text>细柳连营石堑牢</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_XILIUYING_HELP">
+			<Text>
+				[ICON_BULLET]列阵迎敌：防御时造成的伤害+5，自带+33%[ICON_STRENGTH]防御力，每点未使用的[ICON_MOVES]移动力+15%[ICON_STRENGTH]防御力，且每回合[COLOR_POSITIVE_TEXT]额外恢复[ENDCOLOR]20[ICON_PROMOTION_MEDIC]生命。在没有时代优势的情况下几乎无法正面突破细柳营的防线。
+				[NEWLINE][ICON_BULLET]坚壁营垒：对抗[ICON_PROMOTION_INFANTRY_COMBAT][COLOR_POSITIVE_TEXT]重装步兵[ENDCOLOR]、[ICON_PROMOTION_ARCHERY_COMBAT][COLOR_POSITIVE_TEXT]陆军远程[ENDCOLOR]、[ICON_PROMOTION_HITANDRUN][COLOR_POSITIVE_TEXT]陆军游猎[ENDCOLOR]、[ICON_PROMOTION_GUNPOWDER_INFANTRY][COLOR_POSITIVE_TEXT]火药步兵[ENDCOLOR]时+100%[ICON_STRENGTH]防御力。[COLOR_POSITIVE_TEXT][ENDCOLOR]
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HUOQUBING_RIDER">
+			<Text>冠军骠骑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HUOQUBING_RIDER_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]是大汉的特色单位，代替[COLOR_POSITIVE_TEXT]骑手[ENDCOLOR]，且拥有更高的战斗力（32[ICON_STRENGTH]），可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]封狼居胥：来自维天有汉的额外伤害+50%。
+				[NEWLINE][ICON_BULLET]马踏匈奴：自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响，每点已使用的[ICON_MOVES]移动力增加10%[ICON_STRENGTH]攻击力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HUOQUBING_RIDER_TEXT">
+			<Text>《史记·卫将军骠骑列传》：“元狩二年春，以冠军侯去病为骠骑将军。”[NEWLINE][NEWLINE]作为农耕文明的中华大地，其实一直缺乏培养骑兵部队的沃土，骑兵作为一种贵族部队，除了战马培养贵以外，骑兵的人才培养也是一种需要长期投入的成本。而中国历代上，能够长期延续这种贵族传统的时期本就不多。而且因为各种政治因素，出身边疆的骑士很难成为朝中重臣，朝中无人不好办事，这就导致历代中华朝代在与草原民族的对攻战斗中往往处于劣势。[NEWLINE][NEWLINE]霍去病，汉朝大将军卫青的外甥，汉武帝皇后卫子夫的内侄，汉武帝亲自调教的得意门生兼大弟子。自幼在皇宫里长大，从上到下便流满着贵族的血，有资料记载，霍去病吃饭可谓是割不正不食，在军中行军也必带厨子。但是，正因为诸多元素成就了中华历史上一名骑兵指挥大师。霍去病出生的时机刚好是汉朝最为鼎盛的时期，汉武帝正在大规模的组织骑兵部队。[NEWLINE][NEWLINE]元朔六年（公元前123年），十七岁的霍去病被汉武帝任命为骠姚校尉（故霍去病又称霍骠姚），随卫青击匈奴于漠南（今蒙古高原大沙漠以南），与轻勇骑八百直弃大军数百里赴利，斩捕首虏过当，斩获敌人2028人，其中包括相国、当户的官员，同时也斩杀了单于的祖父辈籍若侯产（籍若侯乃封号，名产），并且俘虏了单于的叔父罗姑比，勇冠全军，以一千六百户受封冠军侯。[NEWLINE][NEWLINE]霍去病的初展锋芒让汉武帝大喜过望，霍去病的成功成才让汉武帝的雄才大略得到了展望，比如，在霍去病取得初战胜利后，汉武帝便下令改年号由元朔变为元狩，实际上便是一次巨大的战略转折点。我们不妨来分析一下，汉武帝改年号都是有其特殊意义的，比如，建元年间，是汉武帝初登大位却尚未掌权的期间，建元，着力于建的意思；元光年间，是汉武帝正式掌权的时间，元光，建元，元光，即发扬光大的意思；元朔，是纪念卫青摧毁匈奴龙城圣地的年号，元朔，意思便是期图朔方的意思，即，意在收复河套草原；元狩，重在“狩”字，意思是汉庭对对匈奴的态度倾向于“狩”，即游猎一般。从这些年号上便可以看出其中相应的战略意义。[NEWLINE][NEWLINE]元狩二年（公元前121年），汉武帝任命十九岁的霍去病为骠骑将军。于春、夏两次率兵出击占据河西（今河西走廊及湟水流域）地区浑邪王、休屠王部，歼敌4万余人。俘虏匈奴王5人及王母、单于阏氏、王子、相国、将军等120多人，同年秋，奉命迎接率众降汉的匈奴浑邪王，在部分降众变乱的紧急关头，率部驰入匈奴军中，斩杀变乱者，稳定了局势，浑邪王得以率4万余众归汉。从此，汉朝控制了河西地区，为打通了西域道路奠定基础。匈奴为此悲歌：“失我祁连山，使我六畜不蕃息；失我焉支山，使我嫁妇无颜色。”[NEWLINE][NEWLINE]霍去病的作战方略可以说是对汉军战术观念的革新。他的作战可谓是迂回纵深，穿插包围，以最快的速度完成迂回穿插，对匈奴实行合围，从最薄弱的环节入手对其实行毁灭性打击，从而调动敌军，按着敌军最不痛快的方式与敌军打仗，在机动战的支持下让敌军疲于奔命。关于霍去病征西，仅率领一万余骑，这是一支从八万骑兵中选拔出来的精锐之师，霍去病仔细的计算了沿途的补给能力，恰好就够供养一万骑的兵马，在霍去病西征中，全军不带粮草辎重，一律就地取食取水。河西战役使得匈奴右贤西线诸王战败投降，匈奴失去了西边对汉庭的进攻威胁。伊稚斜单于被迫后撤，将王庭以及大部分的民众牛羊等北迁，在漠南仅留下作战部队，这是匈奴帝国的一次战略后撤。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HUOQUBING_RIDER">
+			<Text>初随骠骑战渔阳</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HUOQUBING_RIDER_HELP">
+			<Text>
+				[NEWLINE][ICON_BULLET]封狼居胥：来自维天有汉的额外伤害+50%。
+				[NEWLINE][ICON_BULLET]马踏匈奴：自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响，每点已使用的[ICON_MOVES]移动力增加10%[ICON_STRENGTH]战斗力。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_VASSAL_MOUNTEDXBOW">
+			<Text>乌孙弓骑兵</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_VASSAL_MOUNTEDXBOW_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]是大汉特有的的古典陆军轻骑兵辅助单位，死亡时不会造成人口损失，只能在完成城邦任务时获得，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]3格内的每个[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力。
+				[NEWLINE][ICON_BULLET]每个新产生的[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]或新发现的城邦增加1点基础[ICON_STRENTH]战斗力，升级后可保留。
+				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位获取相当于造成伤害的[ICON_PEACE]信仰，随时代增加。
+				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位获取相当于造成伤害的[ICON_RESEARCH]科研，随时代增加。
+				[NEWLINE][ICON_BULLET]每次近战攻击回复2[ICON_MOVES]移动力，每次远程攻击回复10血量。
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，回合开始时额外+2[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_VASSAL_MOUNTEDXBOW_TEXT">
+			<Text>乌孙，是汉代连接东西方草原交通的最重要国家之一，乌孙人的首领称为“昆莫”或“昆弥”。公元前2世纪初叶，乌孙人与月氏人均在今甘肃境内敦煌祁连间游牧，北邻匈奴人。乌孙王难兜靡被月氏人攻杀（据《汉书·张骞传》），他的儿子猎骄靡刚刚诞生，由匈奴冒顿单于收养成人，后来得以复兴故国。公元前177～公元前176年间，冒顿单于进攻月氏。月氏战败西迁至伊犁河流域。后老上单于与乌孙昆莫猎骄靡合力进攻迁往伊犁河流域的月氏，月氏不敌，南迁大夏境内，但也有少数人仍然留居当地。在塞种人与月氏大部南下以后，乌孙人迁至伊犁河流域与留下来的塞种人、月氏人一道游牧。从此乌孙日益强大，逐渐摆脱了匈奴的控制。根据考古学家发现的乌孙古墓群和其他遗迹表明，其政治中心在赤谷城。南北朝时，乌孙与北魏关系密切。辽代曾遣使入贡。乌孙人以游牧的畜牧业为主，兼营狩猎，养马业特别繁盛。</Text>
+		</Row>	
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW">
+			<Text>解忧</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW_HELP">
+			<Text>
+				[ICON_BULLET]3格内的每个[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力。
+				[NEWLINE][ICON_BULLET]每个新产生的[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]或新发现的城邦增加1点基础[ICON_STRENTH]战斗力，升级后可保留。
+				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位获取相当于造成伤害的[ICON_PEACE]信仰，随时代增加。
+				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位获取相当于造成伤害的[ICON_RESEARCH]科研，随时代增加。
+				[NEWLINE][ICON_BULLET]每次近战攻击回复2[ICON_MOVES]移动力，每次远程攻击回复10血量。
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，回合开始额外+2[ICON_MOVES]移动力。
+			</Text>
+		</Row>
+		<!--*******************************UI*******************************-->
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST">
+			<Text>丝路驿站</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]是大汉的特色设施，不可相邻建造，不可修建于资源之上，建成后不会移除地貌。[NEWLINE]
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]驻扎[ENDCOLOR]于此的单位[ICON_STRENGTH]战斗力+25%，且附近友军每回合额外回复5点血量。
+				[NEWLINE][ICON_BULLET]每条经过[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]的商路提供1点[ICON_GOLD]金钱和[ICON_CULTURE]文化。
+				[NEWLINE][ICON_BULLET]若与[ICON_PROMOTION_PROMO_VP_03_53][COLOR_POSITIVE_TEXT]河流[ENDCOLOR]相邻，则额外+1[ICON_FOOD]食物、[ICON_GOLD]金钱。
+				[NEWLINE][ICON_BULLET]若在[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]道路[ENDCOLOR]/[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]铁路[ENDCOLOR]上，则额外+1/+2[ICON_CULTURE]文化。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_POST_PEDIA">
+			<Text>
+				古代专门接待往来官员和政府文书传递业务的组织制度以及为此而征发的徭役制度。始于殷商。甲骨文有“骑士”、“车”、“驿传”等记载。春秋战国已有邮驿，《孟子·公孙丑上》：“孔子曰：‘德之流行，速于置邮而传命’。”秦统一后，广建驿道，邮驿发展迅速。汉承秦制，在通路上每30里置一驿所，供停留；各地设传舍，供歇宿。唐有车、马、船之分，设水驿、陆驿、水陆兼办三种，由兵部统辖。宋驿传由军队统管，设军邮局，置日夜兼行的急递铺，专递送军事文书。元代设有蒙古站赤（驿传之音译）及汉地的驿站。明代驿传有陆驿、水驿、驿站、递运所、急递铺、马快船等。清代有驿站、塘、台、所、铺等。古代驿站一般备有人夫、车马，并指办禀给、口粮，供传递文书及过境官员使用。清光绪时，随着新式邮政的建立而渐被废止。
+				[NEWLINE]1987年，考古工作者在甘肃安敦公路甜水井道班南侧1.5公里处的戈壁荒漠中发现了一处遗址。
+				[NEWLINE]遗址出土的竹简记载，此处为一处大型的驿站遗址。汉武帝元鼎六年（前111年）开始使用，初称“悬泉亭”，昭帝时期改称“悬泉置”。东汉后期又改称“悬泉邮”，魏晋时废弃，时间长达400多年之久。
+				[NEWLINE]驿站南依三危余脉火焰山，北临西沙窝，东去瓜州56公里，西去敦煌64公里，由于附近有泉水，从山崖上流下而成悬泉，因而得名“悬泉”。从长安到敦煌在丝绸之路沿线设有80多个驿站，“悬泉置”是瓜州与敦煌之间往来人员和邮件的接待、中转驿站。
+				[NEWLINE]由于是驿站，故而悬泉置具有一定的接待和军事防御功能，从考古勘探的结果来看，悬泉置遗址是一座方形小城堡，门朝东，四周为高大的院墙，边长50米，西南角设突出坞体的角楼。坞墙系用长、宽、厚约40、20、11厘米的土坯垒砌而成。坞内依西壁、北壁建有不同时期的土坯墙体平房3组12间（内含一个套间），为住宿区；东、北侧为办公区房舍；西南角、北部有马厩3间；坞外西南部建有一组长约50米，呈南北向的马厩3间。坞外西部为废物堆积区。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_POST">
+			<Text>修建一座[LINK=IMPROVEMENT_SP_HAN_POST]丝路驿站[\LINK]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_POST_REC">
+			<Text>[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]能够提供带来额外的金钱和文化，并在一定程度上增强军事单位的作战能力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT">
+			<Text>汉塞</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]是大汉的独有设施，只能由大汉的特色单位建造，可以修建在友方或相邻领土，不可相邻建造，不可修建于资源之上，建成后会移除地貌。[NEWLINE]
+				[NEWLINE][ICON_BULLET][COLOR_POSITIVE_TEXT]驻扎[ENDCOLOR]于此的单位[ICON_STRENGTH]战斗力+50%，并对相邻的敌军造成[COLOR_POSITIVE_TEXT]10[ENDCOLOR]伤害。。
+				[NEWLINE][ICON_BULLET]地块作战单位最大容量+1。
+				[NEWLINE][ICON_BULLET]若在[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]道路[ENDCOLOR]/[ICON_SGM_GROUP_OFF][COLOR_POSITIVE_TEXT]铁路[ENDCOLOR]上，则额外+1/+2[ICON_PRODUCTION]产能
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_IMPROVEMENT_SP_HAN_FORT_PEDIA">
+			<Text>汉武帝元狩年间，大将霍去病北征出击匈奴，即由北地郡，经银川平原，沿黄河北行，出鸡鹿塞直达居延，取得了军事上的很大胜利。但是史书上也留下了许多汉匈和平往来的记载。汉宣帝甘露三年(公元前51年)，匈奴呼韩邪单于首次入朝长安，汉宣帝令沿途七郡列骑二千欢迎。单于抵长安，受到宣帝殊礼相待。当其由长安返回漠北，就是由鸡鹿塞穿越阴山北上的。汉王朝不但派兵护送，“又转边谷米鞴前后三万四千斛，给赡其食。”自此，出现了“朔方无复兵之踪六十余年”，“数世不见烟火之警，人民炽盛，牛马布野”的繁荣和平景象。西汉竟宁元年(公元前33年)，单于复入朝，元帝以后宫良家女王昭君赐单于。昭君偕单于出塞，就是从鸡鹿塞经由哈隆格乃峡谷，前往漠北的。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_FORT">
+			<Text>修建一座[LINK=IMPROVEMENT_SP_HAN_FORT]汉塞[\LINK]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILD_SP_HAN_FORT_REC">
+			<Text>[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]是大汉的独有设施，只能有大汉的特色单位建造。</Text>
+		</Row>
+		<!--*********************************** Projects ***********************************-->
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING">
+			<Text>郎卫军制改革</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING_HELP">
+			<Text>只有[COLOR_POSITIVE_TEXT]首个[ENDCOLOR]完成此军事项目的文明可以训练或购买精英重骑禁卫军单位：[COLOR_YIELD_GOLD]期门禁军[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING_PEDIA">
+			<Text>期门、羽林皆为汉代宫廷禁军。期门军是汉武帝于建元三年(前138)建立的。有侍中、常侍、武骑及待诏陇西、北地等六郡的良家子能骑射者组成，共约有一千人，归光禄勋掌管。因常为侍从武帝而期待于殿门，故有“期门”之名。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING">
+			<Text>复置西域都护府</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING_HELP">
+			<Text>只有[COLOR_POSITIVE_TEXT]首个[ENDCOLOR]完成此军事项目的文明可以训练或购买精英使者轻骑兵单位：[COLOR_YIELD_GOLD]绝域轻骑[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_AMB_TRAINING_PEDIA">
+			<Text>
+				汉宣帝时，始设西域都护，为西域最高军政长官。
+				[NEWLINE]王莽时期，西域分割为55个小国，其中北道诸国，复受制于匈奴。
+				[NEWLINE]东汉时期，西域诸国纷纷要求东汉王朝恢复“都护”管辖。南道上的莎车组织力量抗拒匈奴，保护着居留在西域的“故都护吏士妻子千余口”。不久，汉立莎车王为汉“西域大都尉”，五十余国都属于莎车统领。尔后莎车、鄯善、车师、焉耆等国又派人到洛阳“请立都护”，东汉光武帝刘秀因“天下初定”，“匈奴未服”而没有允诺。
+				[NEWLINE]东汉明帝时，东汉开始发动对匈奴的战争。又遣班超出使西域，西域遂平。后以西域长史行都护职。			
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_MECH_TRAINING">
+			<Text>南天门计划</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_MECH_TRAINING_HELP">
+			<Text>只有[COLOR_POSITIVE_TEXT]首个[ENDCOLOR]完成此军事项目的文明可以训练或购买精英空天战机和精英战术机甲：[COLOR_YIELD_GOLD]“玄女”空天战机[ENDCOLOR]和[COLOR_YIELD_GOLD]“承影”战术机甲[ENDCOLOR]。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROJECT_HAN_ELITE_MECH_TRAINING_PEDIA">
+			<Text>
+				为了应对来自外星和硅基生命体的威胁，2043年，南天门计划正式启动，由大型战略空天载机平台——“鸾鸟”、空天战机——“玄女”、战术机器人——”承影”等构成了全球性综合战略防卫体系。
+				[NEWLINE]该计划在罗布泊事件中发挥了重要作用，但随着对“潘多拉”带来的科技的研究，以及外星文明久久不至，以美国为首的西方国家开始了另外的谋划，直到他们直面了远征而来的裂隙飞船……			
+			</Text>
+		</Row>
+		<!--*******************************Elite Units*******************************-->
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER">
+			<Text>[COLOR_YIELD_GOLD]期门禁军[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER1_NAME">
+			<Text>[COLOR_YIELD_GOLD]长平烈侯[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER2_NAME">
+			<Text>[COLOR_YIELD_GOLD]冠军景桓候[ENDCOLOR]</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_RIDER_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]期门禁军[ENDCOLOR]是精英皇家禁卫骑兵单位，你只能建造1队。
+				[NEWLINE][ICON_BULLET]可以在[COLOR_YIELD_GOLD]长平烈烈[ENDCOLOR]和[COLOR_YIELD_GOLD]骠骑冠军[ENDCOLOR]两个特殊晋升之间2选1。
+				[NEWLINE][ICON_BULLET]马踏匈奴：自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响，每点已使用的[ICON_MOVES]移动力增加10%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]虎贲拥仗：来自维天有汉的额外伤害+50%，3点减伤。
+				[NEWLINE][ICON_BULLET]幕府将军：3格内的重骑兵单位和装甲单位受到的克制减少50%。
+				[NEWLINE][ICON_BULLET]电击雷震：对1/2/3格内的敌方单位分别造成60/40/20%的AOE伤害。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_ELITE_RIDER_TEXT">
+			<Text>
+				为了加强中央集权，网罗人才，对抗匈奴与旧贵族势力，军事改革尤其是对禁卫军的改革是汉武帝改革中的重要环节。公元前138年，汉武帝即位的第三年，他决定在郎卫内部增设一个叫作“期门”的禁卫组织，拉开了军事改革的序幕。“期门”的意思是殿门，也就是随时等候在殿门外，听候皇帝的调遣。期门主官称为“仆射”。汉武帝喜欢微服出访，身着便衣巡视长安郊县。他在微服出访时自称“平阳侯”，只带少数随从，骑马出行。期门的主要任务，就是在汉武帝微服出行时担任他的便衣侍卫—至少在刚刚建立时是如此规定的。
+				[NEWLINE]最早的期门卫士是在郎卫内部选拔的，但汉武帝很快就把期门作为一块特殊的试验田经营起来。他开始在关东、陇西、天水、安定、北地、上郡、两河等六郡良家子中，选拔新的期门卫士。这六个郡都距离长安不远，而且历来以出优秀骑兵著称，即所谓“六郡骑士”。汉武帝希望亲自训练期门，培育出一支精锐骑兵。
+				[NEWLINE]汉武帝如此行事自有其道理。西汉军事制度继承自战国时期的普遍征兵制，每个适龄青年都要在二十三岁开始服役两年，之后转入预备役。在诸侯王国之间以步兵为主的战争中，这样的兵役制度无疑能够提供庞大的补充兵力。但是，这样的军队却不适应与匈奴之间的战争。兵力强大、行动迟缓的步兵集团尽管无坚不摧，但是却无法在北方的广袤原野上抓住行动快捷、来去如风的游牧骑兵。在人口稀少、粮食全靠长途运输的北方草原作战时，庞大兵力所带来的巨大粮食消耗，则成为比敌军更加难以对付的敌人。审视汉王朝前七十年与匈奴交战的历史，汉武帝认为，汉军必须建立一支精锐的骑兵部队。这支骑兵部队不仅能像传统的汉族骑兵那样执锐冲坚，而且能够像匈奴人一样长途奔袭，大漠猎逐。而期门，就将是这支新型骑兵的孵化场与军事学校。
+				[NEWLINE]和只需要学习队列、射弩和刺杀等一般性军事技能的义务兵不同，这种新型骑兵不仅需要精通骑射与格斗，还要学会野外生存、照顾马匹、辨向导航、长途追踪等等高级军事技能和指挥技能。因此，期门没有南、北军中严格限定的服役期限。他们长期服役，反复打磨自己的军事技能，成为远超普通士兵的职业战士。为了训练期门骑兵，武帝经常率领他们在野兽出没的山林里骑马射猎，甚至亲自示范与熊等猛兽搏斗。据说，有一次，武帝率领期门骑兵到长安周边打猎。他们晓伏夜行，在田野之间追逐野猪、狐狸，踩坏了很多庄稼。受害的农民不干了，告到县令那里。县令大怒，说哪儿来的“平阳侯”？八成是哪个京城恶少招摇撞骗来了。于是县令点起手下，把武帝一行人围住不放。骑士们好说歹说，最后不得不拿出皇帝的御物表明身份，县令才把他们放走。从此以后，武帝也觉得老是这样出去打猎实有扰民的问题。于是，他下令修建上林苑，专门作为期门军骑马射猎与军事训练用地。随着上林苑的建立，期门军的训练走上正轨，很快扩充到一千五百人左右。			
+				[NEWLINE]“将军”这种全新的指挥体系也在汉武帝时期得以成型。在武帝之前，汉军的总指挥是太尉（大司马），是代表直接对皇帝负责的最高权力机关的“三公”之一。除了朝廷有自己的太尉之外，各诸侯国也有自己的太尉，作为自身军队的最高指挥官。汉武帝时期，临时任命的杂号将军成为军事体系中新的宠儿。汉武帝常常把“将军”的称号破格授予一些年轻军官，并授予其率领大军的权力。为了指挥作战，将军将会建立起自己的一套指挥、参谋团队，称为“幕府”。“幕府”主要由期门和郎卫中与将军本人交好的年轻人组成。这样，整个“幕府”就成为一个充满朝气的年轻团队，为全军注入了昂扬的活力。
+				[NEWLINE]为了保护卫青，武帝宣布将卫青招入宫中，加入刚刚成立的期门军。由此开始了中国军事史上的一段传奇故事。元光五年（公元前130年），卫青首开记录，长驱直入，攻破匈奴大会诸侯、祭祀先祖的圣地龙城。元光六年，匈奴南下入侵上谷郡，汉武帝起四路大军，各带一万骑兵迎击。由于战场多在汉匈双方互市的关市附近，因此史称关市之战。在这场战争中，已经在期门军中经过十年训练的卫青作为车骑将军率军出征。由于兵力分散，准备不足，四路汉军中两路战败，一路无功而返，只有卫青果敢冷静，长驱直入，突袭河南地区，一举击溃了白羊王与楼烦王的武装力量，歼敌数千，缴获牛羊百余万，收复河南地，兵锋直至匈奴王庭，攻占并摧毁了匈奴圣地龙城，获得汉匈战争中第一场战略性胜利。汉武帝大喜过望，立即封卫青为关内侯。龙城被毁令匈奴军臣单于大为震怒。第二年（公元前128年），军臣单于发兵六万骑，兵分三路攻打辽西、渔阳、雁门，并且一改往日避免与汉军主力作战的传统，主动发起主力会战。汲取了关市之战兵力分散致败的教训，汉武帝令卫青率三万骑兵出雁门，集中力量打击匈奴右路部队。卫青成功击败匈奴军，“斩首虏数千”，挫败了匈奴的攻势。
+				[NEWLINE]元朔三年，军臣单于在愤怒与忧郁中去世，其弟伊稚斜杀太子于丹，自立为单于。伊稚斜登基后，连年发动大军，对汉朝进攻。汉匈战争的高潮来临。元朔六年（公元前123年），汉匈双方决定性的战略会战—漠南之战爆发。卫青率领的十万汉军出定襄，向北长途跋涉数百里，在漠南地区与严阵以待的匈奴主力展开决战。卫青沉着冷静的指挥让汉军在初战失利的情况下反败为胜，最终大败匈奴，斩首近两万。伊稚斜单于从此远遁漠北。
+				[NEWLINE]在这次战役中，卫青的外甥，年仅十七岁，同样出身期门军的霍去病大放异彩。他仅率八百骑兵，长驱直入数百里，不仅歼敌数千，而且俘虏了大量匈奴贵族，甚至还有单于本人爷爷一辈的王，战果勇冠全军。胜利归来，武帝立刻加封霍去病为冠军侯。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER">
+			<Text>期门待诏</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_HELP">
+			<Text>
+				[ICON_BULLET]马踏匈奴：自带+1[ICON_MOVES]移动力，且[ICON_MOVES]移动不受地形影响，每点已使用的[ICON_MOVES]移动力增加10%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]虎贲拥仗：来自维天有汉的额外伤害+50%，3点减伤。
+				[NEWLINE][ICON_BULLET]幕府将军：3格内的重骑兵单位和装甲单位受到的克制减少50%。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT">
+			<Text>幕府将军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_EFFECT_HELP">
+			<Text>重骑兵单位和装甲单位受到的克制减少50%。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER1">
+			<Text>电击雷震（1）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER1_HELP">
+			<Text>对1格内的敌方单位造成20%的AOE伤害。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER2">
+			<Text>电击雷震（2）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER2_HELP">
+			<Text>对2格内的敌方单位造成20%的AOE伤害。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER3">
+			<Text>电击雷震（3）</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER_THUNDER3_HELP">
+			<Text>对3格内的敌方单位造成20%的AOE伤害。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER1">
+			<Text>长平烈烈</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER1_HELP">
+			<Text>攻击额外造成敌军最大血量15%的伤害，每点已使用的移动力+10%[ICON_STRENGTH]攻击力。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER2">
+			<Text>骠骑冠军</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_RIDER2_HELP">
+			<Text>草原及荒漠地形[ICON_STRENGTH]战斗力+30%且移动力翻倍。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_XUANNV">
+			<Text>[COLOR_YIELD_GOLD]“玄女”空天战机[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_XUANNV_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]“玄女”空天战机[ENDCOLOR]是精英的无人空天战机，仅能建造3队。
+				[NEWLINE][ICON_BULLET]进行空中游猎/空中拦截时+200/400%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]可以无视航程进行转场，转场后回复全部移动力。
+				[NEWLINE][ICON_BULLET]拥有50%不被拦截的概率。
+				[NEWLINE][ICON_BULLET]每回合回复100血量（无论是否行动）。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_XUANNV_TEXT">
+			<Text>在“南天门计划”中，“玄女”战机是综合研发中心牵头开发的一款空天战机，装备一套由力场驱动装置与变循环发动机相结合的动力装置，可搭载脉冲粒子加速炮吊舱以及多种制导武器。在“南天门计划”的战术构想中，“玄女”战机将主要依托“鸾鸟”大型战略空天载机平台，承担各类制空、突防、末端打击任务。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_XUANNV">
+			<Text>九天玄女</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_XUANNV_HELP">
+			<Text>
+				[ICON_BULLET]进行空中游猎/空中拦截时+200/400%[ICON_STRENGTH]战斗力。
+				[NEWLINE][ICON_BULLET]可以无视航程进行转场，转场后回复全部移动力。
+				[NEWLINE][ICON_BULLET]拥有50%不被拦截的概率。
+				[NEWLINE][ICON_BULLET]每回合回复100血量（无论是否行动）。
+			</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_MECH">
+			<Text>[COLOR_YIELD_GOLD]“承影”战术机甲[ENDCOLOR]</Text>
+		</Row>
+		<Row Tag="TXT_KEY_UNIT_HAN_ELITE_MECH_HELP">
+			<Text>
+				[COLOR_YIELD_GOLD]“承影”战术机甲[ENDCOLOR]是精英的无人装甲单位，仅能组建3队。
+				[NEWLINE][ICON_BULLET]移动不受地形限制，且以最大移动力在城市中驻扎时可以在40格内进行轨道空降。
+				[NEWLINE][ICON_BULLET]不受单位克制关系影响，每点额外的电力数量提供5%[ICON_STRENGTH]战力加成，最大2000%。
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_CIV5_HAN_ELITE_MECH_TEXT">
+			<Text>在“南天门计划”中，“承影”是基于轨道空降作战开发的一种新型战术机甲，其多项关键技术，如动力、武备、材料借鉴了大量同时期空天武器装备的最新成果，可灵活使用低空飞行或步行两种行进模式。在实际运用中通常以多机群行动为主，可根据不同的任务类型、目标特性灵活地调整战术。</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_MECH">
+			<Text>天子剑</Text>
+		</Row>
+		<Row Tag="TXT_KEY_PROMOTION_HAN_ELITE_MECH_HELP">
+			<Text>
+				[ICON_BULLET]移动不受地形限制，且以最大移动力在城市中驻扎时可以在40格内进行轨道空降。
+				[NEWLINE][ICON_BULLET]不受单位克制关系影响，每点额外的电力提供5%[ICON_STRENGTH]战力加成，最大2000%。
+			</Text>
+		</Row>
+		<Row Tag='TXT_KEY_TITLE_HAN_EMPEROR'>
+			<Text>轨道空投</Text>
+		</Row>
+		<Row Tag='TXT_KEY_COND_HAN_EMPEROR'>
+			<Text>传送到40格内的无城市无单位地块，需要以最大移动力在城市中驻扎。</Text>
+		</Row>
+	</Language_zh_CN>
   
 </GameData>

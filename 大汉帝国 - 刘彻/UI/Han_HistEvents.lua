@@ -140,8 +140,12 @@ function HanEventUnitCreated( iPlayerID, iUnitID )
     and player:GetUnitCountFromHasPromotion(HanEH1ID == 0)
     then
         -- 仕汉羽林郎：建造第一个羽林禁军时触发
-        numEvent = 1
-        showDialog()
+        numEvent = 1 
+        if player:IsHuman() then
+            showDialog()
+        else
+            HanHistoryEvents(player)
+        end
     end
 end
 GameEvents.UnitCreated.Add(HanEventUnitCreated)
@@ -168,7 +172,11 @@ function HanEventCaptureCity(hexPos, iPlayer, cityID, newiPlayer)
     then
         -- 天马极西徕：攻占城邦或希腊文明城市后触发
         numEvent = 2
-        showDialog()
+        if player:IsHuman() then
+            showDialog()
+        else
+            HanHistoryEvents(player)
+        end
     end
 end
 Events.SerialEventCityCaptured.Add(HanEventCaptureCity)
@@ -190,25 +198,29 @@ function OnPlayerDoTurn(playerID)
     and GameInfoTypes["CIVILIZATION_JIHAN"] ~= nil
     then
         -- 历史的天空
-        if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_JIHAN) then
-            local iJiHaPlayer
-            for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
-                local pPlayer = Players[iPlayer]
-                if pPlayer:IsEverAlive() then
-                    if(player:GetCivilizationType() == GameInfoTypes["CIVILIZATION_JIHAN"]) then
-                        iJiHaPlayer = iPlayer
-                    end
+        -- if Game.IsCivEverActive(GameInfoTypes.CIVILIZATION_JIHAN) then
+        local iJiHaPlayer
+        for iPlayer = 0, GameDefines.MAX_CIV_PLAYERS - 1, 1 do
+            local pPlayer = Players[iPlayer]
+            if pPlayer:IsEverAlive() then
+                if (pPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_JIHAN"]) then
+                    iJiHaPlayer = iPlayer
                 end
             end
-            if iJiHaPlayer then
-                if player:IsDoF(iJiHaPlayer) then
-                    -- 友谊声明
-                    numEvent = 3
-                    showDialog()
-                end
-            end
-            
         end
+        if iJiHaPlayer then
+            if player:IsDoF(iJiHaPlayer) then
+                -- 友谊声明
+                numEvent = 3
+                if player:IsHuman() then
+                    showDialog()
+                else
+                    HanHistoryEvents(player)
+                end
+            end
+        end
+            
+        -- end
     end
 
     if player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY4"].ID) < 3
@@ -231,7 +243,11 @@ function OnPlayerDoTurn(playerID)
 
         if bHasMetMed and math.random(1, 4) < 2 then
             numEvent = 4
-            showDialog()
+            if player:IsHuman() then
+                showDialog()
+            else
+                HanHistoryEvents(player)
+            end
         end
     end
 end

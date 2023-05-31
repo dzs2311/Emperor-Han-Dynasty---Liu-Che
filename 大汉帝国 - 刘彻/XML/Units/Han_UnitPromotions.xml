@@ -10,7 +10,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>promoHan_atlas</IconAtlas>
-			<AttackInflictDamageChange>5</AttackInflictDamageChange>
+			<!-- <AttackInflictDamageChange>5</AttackInflictDamageChange> -->
 			<ChangeDamageValue>-5</ChangeDamageValue>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SP_HAN_TRAIT_LAND</PediaEntry>
