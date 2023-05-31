@@ -210,6 +210,24 @@
 			</Text>
 		</Row>
 
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_FIRSTGREETING_1">
+			<Text>欢迎来到汉人的国度，我们是为了更加美好的未来努力拼搏的汉人。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_FIRSTGREETING_2">
+			<Text>你好，旅行者。看我骑兵是否威猛，军势是否雄壮！</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_DECLAREWAR_1">
+			<Text>宜悬汝头槀街蛮夷邸间，以示万里。明犯强汉者，虽远必诛！</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_DECLAREWAR_2">
+			<Text>汝等穷寇可往，吾亦可往！</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_DEFEATED_1">
+			<Text>天意虽负天汉，但这也只是一个考验。迟早一天我们会王者归来。</Text>
+		</Row>
+		<Row Tag="TXT_KEY_LEADER_SP_LIUCHE_DEFEATED_2">
+			<Text>我们被打败了，但是我们不会气馁，迟早一天我们会王者归来。</Text>
+		</Row>
 		<!--*******************************特性*******************************-->
 		<Row Tag="TXT_KEY_TRAIT_SP_HAN_SHORT">
 			<Text>维天有汉/率土之滨</Text>
@@ -217,7 +235,7 @@
 		<Row Tag="TXT_KEY_TRAIT_SP_HAN">
 			<Text>
 				[ICON_BULLET]所有[ICON_PROMOTION_LIGHTNING_WARFARE][COLOR_POSITIVE_TEXT]陆军单位[ENDCOLOR]减少[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点所受伤害，在境外造成[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点额外伤害，所有[ICON_PEACE]信仰/[ICON_CULTURE]文化建筑获得对等基础[ICON_CULTURE]文化/[ICON_PEACE]信仰，拥有独特的历史加成系统；
-				[NEWLINE][ICON_BULLET]成为城邦首个接触的文明时获得200[ICON_INFLUENCE]影响力，位于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+3[ICON_INFLUENCE]影响力，完成城邦任务后获得[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]。
+				[NEWLINE][ICON_BULLET]成为城邦首个接触的文明时获得200[ICON_INFLUENCE]影响力，处于[ICON_GOLDEN_AGE]黄金时代使所有已发现的城邦每回合+3[ICON_INFLUENCE]影响力，完成城邦任务后获得[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]。
 			</Text>
 		</Row>
 		
@@ -431,8 +449,8 @@
 		<Row Tag="TXT_KEY_UNIT_HAN_CROSSBOWMAN_HELP">
 			<Text>
 				[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]是大汉的特有单位，只能通过驿传赠送获得，可以建造[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]。
-				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，每回合获得相当于远程最大[ICON_STRENGTH]攻击力的[ICON_GOLD]金币。	
-				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]时，每回合额外回复5点血量，获得相当于基础远程[ICON_STRENGTH]战斗力的[ICON_CULTURE]文化。		
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，每回合获得相当于远程最大[ICON_STRENGTH]攻击力/4的[ICON_GOLD]金币。	
+				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]汉塞[ENDCOLOR]时，每回合额外回复5点血量，获得相当于基础远程[ICON_STRENGTH]战斗力/10的[ICON_CULTURE]文化。		
 				[NEWLINE][ICON_BULLET]根据驻守回合数可造成额外伤害，最多额外增加[COLOR_POSITIVE_TEXT]5[ENDCOLOR]点。
 				[NEWLINE][ICON_BULLET]所攻击的敌人失去全部[ICON_MOVES]移动力。
 			</Text>

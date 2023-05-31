@@ -1,7 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 2023/5/19 10:43:42 -->
 <GameData>
-  <Projects>
+	<!--外交台词-->
+	<Diplomacy_Responses>
+		<Row LeaderType="LEADER_SP_LIUCHE">
+			<ResponseType>RESPONSE_FIRST_GREETING</ResponseType>
+			<Response>TXT_KEY_LEADER_SP_LIUCHE_FIRSTGREETING_%</Response>
+			<Bias>2</Bias>
+		</Row>
+
+		<Row LeaderType="LEADER_SP_LIUCHE">
+			<ResponseType>RESPONSE_DELCLAREWAR</ResponseType>
+			<Response>TXT_KEY_LEADER_SP_LIUCHE_DECLAREWAR_%</Response>
+			<Bias>2</Bias>
+		</Row>
+
+		<Row LeaderType="LEADER_SP_LIUCHE">
+			<ResponseType>RESPONSE_DEFEATED</ResponseType>
+			<Response>TXT_KEY_LEADER_SP_LIUCHE_DEFEATED_%</Response>
+			<Bias>2</Bias>
+		</Row>
+	</Diplomacy_Responses>
+	<!-- 项目 -->
+  	<Projects>
   		<Row>
 			<Type>PROJECT_HAN_ELITE_RIDER_TRAINING</Type>
 			<Description>TXT_KEY_PROJECT_HAN_ELITE_RIDER_TRAINING</Description>

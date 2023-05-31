@@ -116,7 +116,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
         if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
             -- 驻扎于丝路驿站
             local unitCount = plot:GetNumUnits()
-            local iGold = unit:GetMaxRangedCombatStrength()
+            local iGold = unit:GetMaxRangedCombatStrength() / 400
             player:ChangeGold(iGold)
             if player:IsHuman() then
                 local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()))
@@ -126,7 +126,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
         elseif plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_FORT"].ID then
             -- 驻扎于汉塞
             unit:ChangeDamage(-5)
-            local iCulture = unit:GetBaseRangedCombatStrength()
+            local iCulture = unit:GetBaseRangedCombatStrength() / 10
             player:ChangeJONSCulture(iCulture)
             if player:IsHuman() then
                 local hex = ToHexFromGrid(Vector2(unit:GetX(), unit:GetY()))
@@ -759,7 +759,7 @@ function HanUB(iPlayer, iCity, iBuilding)
 					local csPlot = Map.GetPlot(Players[iCS]:GetCapitalCity():GetX(),Players[iCS]:GetCapitalCity():GetY())
 					local distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), csPlot:GetX(), csPlot:GetY())
 					if distanceToCity <= 10 then
-						-- 城邦首都位于该城市10格内
+						-- 城邦首都处于该城市10格内
 						bNearCityState = true
 						break
 					end
