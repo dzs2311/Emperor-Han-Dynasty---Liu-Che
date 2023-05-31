@@ -3,6 +3,8 @@
 -- DateCreated: 2023/5/20 17:58:37
 --------------------------------------------------------------
 include("FLuaVector.lua")
+-- SP Code
+include("UtilityFunctions")
 --------------------------------------------------------------
 local KnightID              = GameInfo.UnitPromotions["PROMOTION_KNIGHT_COMBAT"].ID
 local TankID                = GameInfo.UnitPromotions["PROMOTION_TANK_COMBAT"].ID
@@ -70,7 +72,7 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
         end
 
         if attUnit:IsHasPromotion(HanTraitLandID)
-        and attUnit:GetDomainType() == DomainTypes.DOMAIN_LAND
+        -- and attUnit:GetDomainType() == DomainTypes.DOMAIN_LAND
         and not attUnit:GetPlot():IsFriendlyTerritory(iAttackPlayerID)
         then
             -- 汉文明特性加成
@@ -83,7 +85,7 @@ function HanBattleCustomDamage(iBattleUnitType, iBattleType,
 			end
         end
 
-        if attUnit:IsHasPromotion(KnightID) then
+        if attUnit:IsHasPromotion(HanNuID) then
             -- 佽飞射士彍强弩
             additionalDamage = additionalDamage + math.min(5, attUnit:GetFortifyTurns())
         end
@@ -541,11 +543,11 @@ function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 
 	-- 解忧：乌孙弓骑兵保额外战斗力
 	local pOldUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
-	local pNewUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
+	local pNewUnit 					= Players[iPlayer]:GetUnitByID(iNewUnit)
 	local dCombatStrenghth 			= pOldUnit:GetBaseCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].Combat
 	local dRangedCombatStrenghth 	= pOldUnit:GetBaseRangedCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].RangedCombat
-	pNewUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + dCombatStrenghth)
-	pNewUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + dRangedCombatStrenghth)
+	pNewUnit:SetBaseCombatStrength(pNewUnit:GetBaseCombatStrength() + dCombatStrenghth)
+	pNewUnit:SetBaseRangedCombatStrength(pNewUnit:GetBaseRangedCombatStrength() + dRangedCombatStrenghth)
 
 end
 GameEvents.UnitUpgraded.Add(HanUnitUpgraded)
@@ -693,13 +695,13 @@ function SetEliteUnitName( iPlayerID, iUnitID )
 	local pUnit = Players[ iPlayerID ]:GetUnitByID( iUnitID );
 
 	-- 期门禁军特殊命名
-	if pUnit:IsHasPromotion(HanEliteRider1ID) and not pUnit:GetUnitType() == GameInfoTypes.UNIT_HAN_ELITE_RIDER
+	if pUnit:IsHasPromotion(HanEliteRider1ID) and pUnit:GetUnitType() ~= GameInfoTypes.UNIT_HAN_ELITE_RIDER
 	then
 		pUnit:SetName("TXT_KEY_UNIT_HAN_ELITE_RIDER1_NAME");
-	elseif pUnit:IsHasPromotion(HanEliteRider2ID) and not pUnit:GetUnitType() == GameInfoTypes.UNIT_HAN_ELITE_RIDER
+	elseif pUnit:IsHasPromotion(HanEliteRider2ID) and pUnit:GetUnitType() ~= GameInfoTypes.UNIT_HAN_ELITE_RIDER
 	then
 		pUnit:SetName("TXT_KEY_UNIT_HAN_ELITE_RIDER2_NAME");
-	elseif pUnit:IsHasPromotion(HanEliteRiderID) and not pUnit:GetUnitType() == GameInfoTypes.UNIT_HAN_ELITE_RIDER
+	elseif pUnit:IsHasPromotion(HanEliteRiderID) and pUnit:GetUnitType() ~= GameInfoTypes.UNIT_HAN_ELITE_RIDER
 	then
 		pUnit:SetName("TXT_KEY_UNIT_HAN_ELITE_RIDER");
 	end

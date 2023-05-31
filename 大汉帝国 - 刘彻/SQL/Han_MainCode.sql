@@ -309,5 +309,28 @@ VALUES		('SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'Han_Peace', 	'DynamicResident'),
 ------------------------------	
 INSERT INTO Audio_2DSounds 
 			(ScriptID, 										SoundID, 								SoundType, 		MinVolume, 	MaxVolume,	IsMusic,	Looping)
-VALUES		('AS2D_LEADER_MUSIC_SP_LIUCHE_PEACE', 			'SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'GAME_MUSIC', 	60, 		85, 		1, 			0),
-			('AS2D_LEADER_MUSIC_SP_LIUCHE_WAR', 			'SND_LEADER_MUSIC_SP_LIUCHE_WAR', 		'GAME_MUSIC',	60, 		85, 		1,			0);
+VALUES		('AS2D_LEADER_MUSIC_SP_LIUCHE_PEACE', 			'SND_LEADER_MUSIC_SP_LIUCHE_PEACE', 	'GAME_MUSIC', 	50, 		65, 		1, 			0),
+			('AS2D_LEADER_MUSIC_SP_LIUCHE_WAR', 			'SND_LEADER_MUSIC_SP_LIUCHE_WAR', 		'GAME_MUSIC',	50, 		65, 		1,			0);
+--==========================================================================================================================
+-- World Power
+--==========================================================================================================================
+CREATE TABLE IF NOT EXISTS ROG_GlobalUserSettings (Type text default null, Value integer default 0);
+--强权初始科技兼容
+DELETE FROM Civilization_FreeTechs WHERE CivilizationType='CIVILIZATION_SP_HAN' AND EXISTS (SELECT * FROM ROG_GlobalUserSettings WHERE Type = 'WORLD_POWER_PATCH' AND Value = 1); 
+INSERT  INTO Civilization_FreeTechs(CivilizationType,TechType )
+SELECT 'CIVILIZATION_SP_HAN',	    'TECH_AGRICULTURE' 
+WHERE EXISTS (SELECT * FROM ROG_GlobalUserSettings WHERE Type = 'WORLD_POWER_PATCH' AND Value = 1);
+INSERT  INTO Civilization_FreeTechs(CivilizationType,TechType )
+SELECT 'CIVILIZATION_SP_HAN',	    'TECH_STONE_TOOLS' 
+WHERE EXISTS (SELECT * FROM ROG_GlobalUserSettings WHERE Type = 'WORLD_POWER_PATCH' AND Value = 1);
+
+CREATE TRIGGER HAN_WP
+AFTER INSERT ON ROG_GlobalUserSettings
+WHEN NEW.Type ='WORLD_POWER_PATCH' AND NEW.Value = 1
+BEGIN
+	DELETE FROM Civilization_FreeTechs WHERE CivilizationType='CIVILIZATION_SP_HAN';
+	INSERT INTO Civilization_FreeTechs
+				(CivilizationType,			TechType )
+	VALUES 		('CIVILIZATION_SP_HAN',	    'TECH_AGRICULTURE'),
+				('CIVILIZATION_SP_HAN',	    'TECH_STONE_TOOLS');
+END;
