@@ -72,8 +72,8 @@
 		<Row>
 			<Type>BUILDING_TAIXUE</Type>
 			<BuildingClass>BUILDINGCLASS_NATIONAL_LIBRARY</BuildingClass>
-			<Cost>15</Cost>
-			<NumCityCostMod>15</NumCityCostMod>
+			<Cost>35</Cost>
+			<NumCityCostMod>20</NumCityCostMod>
 			<Help>TXT_KEY_BUILDING_TAIXUE_HELP</Help>
 			<ThemingBonusHelp>TXT_KEY_NATIONAL_LIBRARY_THEMING_BONUS_HELP</ThemingBonusHelp>
 			<Description>TXT_KEY_BUILDING_TAIXUE_DESC</Description>
