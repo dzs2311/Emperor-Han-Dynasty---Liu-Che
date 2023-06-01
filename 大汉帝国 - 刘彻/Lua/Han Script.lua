@@ -758,8 +758,8 @@ function HanUB(iPlayer, iCity, iBuilding)
 				then
 					local csPlot = Map.GetPlot(Players[iCS]:GetCapitalCity():GetX(),Players[iCS]:GetCapitalCity():GetY())
 					local distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), csPlot:GetX(), csPlot:GetY())
-					if distanceToCity <= 7 then
-						-- 城邦首都处于该城市7格内
+					if distanceToCity <= 8 then
+						-- 城邦首都处于该城市8格内
 						bNearCityState = true
 						break
 					end
