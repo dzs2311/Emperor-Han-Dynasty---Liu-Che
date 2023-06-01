@@ -360,7 +360,7 @@ function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
 					iPrivateerDamage = math.min(pFoundUnit:GetCurrHitPoints() - 1, iPrivateerDamage)
 					pFoundUnit:ChangeDamage(iPrivateerDamage)
 					pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
-					iFaith = iFaith + iPrivateerDamage * (1 + pEraID)
+					iFaith = iFaith + math.ceil(math.log(2*iPrivateerDamage)) * (1 + pEraID)
 				end
 			end
 		end
@@ -496,7 +496,7 @@ function NewAttackEffect()
 		if defUnit then
 			local pEraType = attPlayer:GetCurrentEra()
 			local pEraID = GameInfo.Eras[pEraType].ID
-			HanSakaDamageBonus = defUnitDamage * (1 + pEraID)
+			HanSakaDamageBonus = math.ceil(math.log(2*defUnitDamage)) * (1 + pEraID)
 		end
 		attPlayer:ChangeOverflowResearch(HanSakaDamageBonus)
 		if attPlayer:IsHuman() and HanSakaDamageBonus > 0 then

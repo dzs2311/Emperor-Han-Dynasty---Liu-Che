@@ -547,8 +547,8 @@
 			<Text>
 				[ICON_BULLET]3格内的每个[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力。
 				[NEWLINE][ICON_BULLET]每个新产生的[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]或新发现的城邦增加1点基础[ICON_STRENTH]战斗力，升级后可保留。
-				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位获取相当于造成伤害的[ICON_PEACE]信仰，随时代增加。
-				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位获取相当于造成伤害的[ICON_RESEARCH]科研，随时代增加。
+				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位根据造成的伤害获取[ICON_PEACE]信仰，随时代增加。
+				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位根据造成的伤害获取[ICON_RESEARCH]科研，随时代增加。
 				[NEWLINE][ICON_BULLET]每次近战攻击回复2[ICON_MOVES]移动力，每次远程攻击回复10血量。
 				[NEWLINE][ICON_BULLET]驻扎于[COLOR_POSITIVE_TEXT]丝路驿站[ENDCOLOR]时，回合开始额外+2[ICON_MOVES]移动力。
 			</Text>
