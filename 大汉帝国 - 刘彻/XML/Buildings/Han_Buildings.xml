@@ -348,23 +348,11 @@
 			<BuildingType>BUILDING_HAN_GARDEN</BuildingType>
 			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV1</BuildingClassType>
 			<YieldType>YIELD_FOOD</YieldType>
-			<YieldChange>4</YieldChange>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_HAN_GARDEN</BuildingType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV1</BuildingClassType>
-			<YieldType>YIELD_SCIENCE</YieldType>
-			<YieldChange>4</YieldChange>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_HAN_GARDEN</BuildingType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV2</BuildingClassType>
-			<YieldType>YIELD_FOOD</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_HAN_GARDEN</BuildingType>
-			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV2</BuildingClassType>
+			<BuildingClassType>BUILDINGCLASS_CITY_HALL_LV1</BuildingClassType>
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<YieldChange>2</YieldChange>
 		</Row>

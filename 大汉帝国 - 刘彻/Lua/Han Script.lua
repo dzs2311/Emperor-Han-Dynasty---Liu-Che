@@ -758,7 +758,7 @@ function HanUB(iPlayer, iCity, iBuilding)
 				then
 					local csPlot = Map.GetPlot(Players[iCS]:GetCapitalCity():GetX(),Players[iCS]:GetCapitalCity():GetY())
 					local distanceToCity = Map.PlotDistance(pCity:GetX(), pCity:GetY(), csPlot:GetX(), csPlot:GetY())
-					if distanceToCity <= 10 then
+					if distanceToCity <= 7 then
 						-- 城邦首都处于该城市10格内
 						bNearCityState = true
 						break
@@ -803,9 +803,9 @@ function HanCityDoInstantYieldFromCityState(iPlayer, iCity)
 	local pEraID = GameInfo.Eras[pEraType].ID
 	-- local totalCultureBonus = 0
 
-	local cultureBonus = g_Allies[1] * 5 * (1 + pEraID)
-	local foodBonus = g_Allies[2]
-	local productionBonus = g_Allies[3]
+	local cultureBonus = g_Allies[1] * (1 + pEraID)
+	local foodBonus = math.ceil(math.log(g_Allies[2])) * (1 + pEraID)
+	local productionBonus = math.ceil(math.log(g_Allies[3])) * (1 + pEraID)
 
 	player:ChangeJONSCulture(cultureBonus)
 	city:ChangeFood(foodBonus)
@@ -817,30 +817,6 @@ function HanCityDoInstantYieldFromCityState(iPlayer, iCity)
 				"[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_CITY_BROWN]+{3_Num}[ENDCOLOR][ICON_PRODUCTION]", 
 				cultureBonus, foodBonus, productionBonus))
 	end
-	
-	-- totalCultureBonus = totalCultureBonus + cultureBonus
-
-	-- if player:CountNumBuildings(GameInfoTypes["BUILDING_DUHU"]) > 0 then
-	-- 	for city in player:Cities() do
-	-- 		if city:IsHasBuilding(GameInfoTypes["BUILDING_DUHU"]) then
-	-- 			local cultureBonus = g_Allies[1] * 5 * (1 + pEraID)
-	-- 			local foodBonus = g_Allies[2]
-	-- 			local productionBonus = g_Allies[3]
-
-	-- 			totalCultureBonus = totalCultureBonus + cultureBonus
-	-- 			city:ChangeFood(foodBonus)
-	-- 			city:SetOverflowProduction(city:GetOverflowProduction() + productionBonus)
-	-- 			if player:IsHuman() then
-    --                 local hex = ToHexFromGrid(Vector2(city:GetX(), city:GetY()));
-    --                 Events.AddPopupTextEvent(HexToWorld(hex), 
-    --                     Locale.ConvertTextKey(
-	-- 						"[COLOR_MAGENTA]+{1_Num}[ENDCOLOR][ICON_CULTURE][NEWLINE][COLOR_YIELD_FOOD]+{2_Num}[ENDCOLOR][ICON_FOOD][NEWLINE][COLOR_CITY_BROWN]+{3_Num}[ENDCOLOR][ICON_PRODUCTION]", 
-	-- 						cultureBonus, foodBonus, productionBonus));
-    --             end
-	-- 		end
-	-- 	end
-	-- end
-	-- player:ChangeJONSCulture(totalCultureBonus)
 end
 
 function HanCityProcessCompleted(iPlayer, iCity)
@@ -854,6 +830,6 @@ function HanCityProcessCompleted(iPlayer, iCity)
 		HanCityDoInstantYieldFromCityState(iPlayer, iCity)
 	end
 end
-GameEvents.CityTrained.Add(HanCityProcessCompleted)
+-- GameEvents.CityTrained.Add(HanCityProcessCompleted)
 GameEvents.CityConstructed.Add(HanCityProcessCompleted)
 GameEvents.CityBoughtPlot.Add(HanCityProcessCompleted)

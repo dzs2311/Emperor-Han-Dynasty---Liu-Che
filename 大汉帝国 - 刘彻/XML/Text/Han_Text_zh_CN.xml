@@ -375,9 +375,9 @@
 		</Row>
 		<Row Tag="TXT_KEY_BUILDING_DUHU_HELP">
 			<Text>
-				都护府是大汉的独特建筑，只能建造在10格内有城邦的非首都城市。
-				[NEWLINE][ICON_BULLET]都护府可以提高城市行政等级，降低当地腐败程度。
-				[NEWLINE][ICON_BULLET]本城完成单位建造、完成建筑建造、购买单元格时根据盟友城邦数量/盟友城邦总人口/盟友城邦单位总数获得[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业产出。
+				都护府是大汉的独特建筑，只能建造在7格内有城邦的非首都城市。
+				[NEWLINE][ICON_BULLET]都护府可以提高城市行政等级，降低当地腐败程度（未实装）。
+				[NEWLINE][ICON_BULLET]本城完成建筑建造或购买单元格时根据盟友城邦数量/盟友城邦总人口/盟友城邦单位总数获得[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业产出。
 				[NEWLINE][ICON_BULLET]本城[ICON_RES_SILK][ICON_RES_INCENSE][ICON_RES_TEA][ICON_RES_JADE]特定奢侈品分别提供额外产出加成。
 				[NEWLINE][ICON_BULLET]修建完成后提供1队[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]。
 			</Text>
@@ -438,7 +438,7 @@
 				[NEWLINE][ICON_BULLET]+10[ICON_RES_HORSE]资源，全国所有的牲畜资源全产出+1。
 				[NEWLINE][ICON_BULLET]+1[ICON_HAPPINESS_1]全局快乐。
 				[NEWLINE][ICON_BULLET]每座[ICON_GREAT_PEOPLE]上林苑可以为轻重骑兵和相应的装甲单位提供1点额外伤害，最高叠加10点。
-				[NEWLINE][ICON_BULLET][ICON_GREAT_PEOPLE]上林苑为1/2级城市提供额外4/2点[ICON_FOOD]食物和[ICON_RESEARCH]科研产出。
+				[NEWLINE][ICON_BULLET][ICON_GREAT_PEOPLE]上林苑为1级城市提供额外2点[ICON_FOOD]食物和[ICON_RESEARCH]科研产出。
 			</Text>
 		</Row>
 
