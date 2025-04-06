@@ -54,9 +54,9 @@
 			<Help>TXT_KEY_PROMOTION_HAN_HISTORY4_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<RangedSupportFireMod>100</RangedSupportFireMod>
-			<NearbyUnitClassBonus>5</NearbyUnitClassBonus>
-			<NearbyUnitClassBonusRange>1</NearbyUnitClassBonusRange>
-			<CombatBonusFromNearbyUnitClass>UNITCLASS_HAN_CROSSBOWMAN</CombatBonusFromNearbyUnitClass>
+			<NearbyUnitPromotionBonus>5</NearbyUnitPromotionBonus>
+			<NearbyUnitPromotionBonusRange>1</NearbyUnitPromotionBonusRange>
+			<CombatBonusFromNearbyUnitPromotion>PROMOTION_HAN_CROSSBOWMAN</CombatBonusFromNearbyUnitPromotion>
 			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -120,9 +120,9 @@
 			<Description>TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW</Description>
 			<Help>TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<NearbyUnitClassBonus>15</NearbyUnitClassBonus>
-			<NearbyUnitClassBonusRange>3</NearbyUnitClassBonusRange>
-			<CombatBonusFromNearbyUnitClass>UNITCLASS_HORSEMAN</CombatBonusFromNearbyUnitClass>
+			<NearbyUnitPromotionBonus>15</NearbyUnitPromotionBonus>
+			<NearbyUnitPromotionBonusRange>3</NearbyUnitPromotionBonusRange>
+			<CombatBonusFromNearbyUnitPromotion>PROMOTION_HUOQUBING_RIDER</CombatBonusFromNearbyUnitPromotion>
 			<PortraitIndex>8</PortraitIndex>
 			<IconAtlas>promoHan_atlas</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
