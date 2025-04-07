@@ -119,7 +119,7 @@ then
 		Condition = function(action, unit)
 			local player = Players[unit:GetOwner()]
 			return unit:CanMove() 
-			and player:HasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT3"].ID)
+			and player:HasPolicy(GameInfoTypes.POLICY_SP_HAN_HIST_EVENT3)
 			and (unit:GetUnitType() == GameInfoTypes.UNIT_ARCHER
 			or unit:GetUnitType() == GameInfoTypes.UNIT_COMPOSITE_BOWMAN
 			or unit:GetUnitType() == GameInfoTypes.UNIT_CROSSBOWMAN);

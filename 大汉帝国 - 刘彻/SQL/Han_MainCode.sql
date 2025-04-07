@@ -15,6 +15,7 @@ UPDATE CustomModOptions SET Value = 1 WHERE Name = 'IMPROVEMENT_TRADE_ROUTE_BONU
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'DEFENSE_MOVES_BONUS';				-- 开启移动力防御加成
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTIONS_EXTRARES_BONUS';			-- 开启资源/笑脸加成
 UPDATE CustomModOptions SET Value = 1 WHERE Name = 'EVENTS_REBASE';						-- 开启飞机转场事件
+UPDATE CustomModOptions SET Value = 1 WHERE Name = 'PROMOTION_AURA_PROMOTION';			-- 开启光环
 --==========================================================================================================================
 -- Civilizations
 --==========================================================================================================================

@@ -144,6 +144,9 @@
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_HAN_ELITE_RIDER</PediaEntry>
 			<CannotBeChosen>true</CannotBeChosen>
+			<AuraPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</AuraPromotionType>
+			<AuraPromotionRange>3</AuraPromotionRange>
+			<AuraPromotionNoSelf>true</AuraPromotionNoSelf>
 		</Row>
 		<!--长平烈烈-->
 		<Row>
@@ -338,37 +341,6 @@
 			<OtherPromotionType>PROMOTION_GUNPOWDER_INFANTRY_COMBAT</OtherPromotionType>
 			<Defense>100</Defense>
 		</Row>
-		<!-- 幕府将军-->
-		<Row>
-			<PromotionType>PROMOTION_ANTI_MOUNTED</PromotionType>
-			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
-			<Modifier>-50</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_FORMATION_1</PromotionType>
-			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
-			<Modifier>-25</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_FORMATION_2</PromotionType>
-			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
-			<Modifier>-25</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_ANTI_TANK</PromotionType>
-			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
-			<Modifier>-50</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
-			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
-			<Modifier>-25</Modifier>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_AMBUSH_1</PromotionType>
-			<OtherPromotionType>PROMOTION_HAN_ELITE_RIDER_EFFECT</OtherPromotionType>
-			<Modifier>-25</Modifier>
-		</Row>
   	</UnitPromotions_PromotionModifiers>
 
 	<UnitPromotions_UnitName>
@@ -384,4 +356,32 @@
 			<Name>TXT_KEY_UNIT_HAN_ELITE_RIDER2_NAME</Name>
 		</Row>
 	</UnitPromotions_UnitName>
+	<!--幕府将军-->
+	<Promotion_AuraPromotionDomains>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER</PromotionType>
+			<DomainType>DOMAIN_LAND</DomainType>
+		</Row>
+	</Promotion_AuraPromotionDomains>
+	<Promotion_AuraPromotionPrePromotionOr>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER</PromotionType>
+			<PrePromotionType>PROMOTION_KNIGHT_COMBAT</PrePromotionType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER</PromotionType>
+			<PrePromotionType>PROMOTION_TANK_COMBAT</PrePromotionType>
+		</Row>
+	</Promotion_AuraPromotionPrePromotionOr>
+	<!--期门禁军互斥晋升-->
+	<Promotion_PromotionExclusionAny>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER1</PromotionType>
+			<ExclusionPromotionType>PROMOTION_HAN_ELITE_RIDER2</ExclusionPromotionType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HAN_ELITE_RIDER2</PromotionType>
+			<ExclusionPromotionType>PROMOTION_HAN_ELITE_RIDER1</ExclusionPromotionType>
+		</Row>
+	</Promotion_PromotionExclusionAny>
 </GameData>

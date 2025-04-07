@@ -113,7 +113,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
     if unit:IsHasPromotion(HanNuID) then
         -- 佽飞射士彍强弩
         local plot = unit:GetPlot()
-        if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
+        if plot and plot:GetImprovementType() == GameInfoTypes.IMPROVEMENT_SP_HAN_POST then
             -- 驻扎于丝路驿站
             local unitCount = plot:GetNumUnits()
             local iGold = unit:GetMaxRangedCombatStrength() / 400
@@ -123,7 +123,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
                 Events.AddPopupTextEvent(HexToWorld(hex),
                     Locale.ConvertTextKey("[COLOR_YIELD_GOLD]+{1_Num}[ENDCOLOR][ICON_GOLD]", iGold))
             end
-        elseif plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_FORT"].ID then
+        elseif plot and plot:GetImprovementType() == GameInfoTypes.IMPROVEMENT_SP_HAN_FORT then
             -- 驻扎于汉塞
             unit:ChangeDamage(-5)
             local iCulture = unit:GetBaseRangedCombatStrength() / 10
@@ -139,7 +139,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	if unit:IsHasPromotion(HanSakaID) then
         -- 解忧
 		local plot = unit:GetPlot()
-        if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
+        if plot and plot:GetImprovementType() == GameInfoTypes.IMPROVEMENT_SP_HAN_POST then
 			unit:ChangeMoves(120)
 		end
 	end
@@ -160,13 +160,13 @@ function HanUnitCreated( iPlayerID, iUnitID )
     local player = Players[iPlayerID]
 
 	if unit:IsHasPromotion(HanRiderID) 
-	and player:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 
+	and player:GetUnitClassCount(GameInfoTypes.UNITCLASS_HAN_VASSAL_MOUNTEDXBOW) > 0 
 	then
 		-- 解忧
         for pUnit in player:Units() do
             if pUnit:IsHasPromotion(HanSakaID) then
-                pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
-                pUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + 1)
+                pUnit:ChangeCombatStrengthChangeFromKilledUnits(1)
+				pUnit:ChangeRangedCombatStrengthChangeFromKilledUnits(1)
             end
         end
 	end	
@@ -193,14 +193,14 @@ function HanTeamMeetHook (eTeamMet, eTeamMoving)
 	end
 
     -- 文明被城邦发现
-    if(pPlayerMet ~= nil and (pPlayerMet:GetCivilizationType() == GameInfo.Civilizations["CIVILIZATION_SP_HAN"].ID)) then
+    if(pPlayerMet ~= nil and (pPlayerMet:GetCivilizationType() == GameInfoTypes.CIVILIZATION_SP_HAN)) then
         if (Teams[eTeamMoving] ~= nil and Teams[eTeamMoving]:IsMinorCiv()) then
 			-- 乌孙弓骑兵加战斗力
-			if pPlayerMet:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 then
+			if pPlayerMet:GetUnitClassCount(GameInfoTypes.UNITCLASS_HAN_VASSAL_MOUNTEDXBOW) > 0 then
 				for pUnit in pPlayerMet:Units() do
 					if pUnit:IsHasPromotion(HanSakaID) then
-						pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
-						pUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + 1)
+						pUnit:ChangeCombatStrengthChangeFromKilledUnits(1)
+						pUnit:ChangeRangedCombatStrengthChangeFromKilledUnits(1)
 					end
 				end
 			end
@@ -236,14 +236,14 @@ function HanTeamMeetHook (eTeamMet, eTeamMoving)
     end
 
     -- 文明发现城邦
-    if (pPlayerMoving ~= nil and (pPlayerMoving:GetCivilizationType() == GameInfo.Civilizations["CIVILIZATION_SP_HAN"].ID )) then
+    if (pPlayerMoving ~= nil and (pPlayerMoving:GetCivilizationType() == GameInfoTypes.CIVILIZATION_SP_HAN)) then
 	    if (Teams[eTeamMet] ~= nil and Teams[eTeamMet]:IsMinorCiv()) then
 			-- 乌孙弓骑兵加战斗力
-			if pPlayerMoving:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 then
+			if pPlayerMoving:GetUnitClassCount(GameInfoTypes.UNITCLASS_HAN_VASSAL_MOUNTEDXBOW) > 0 then
 				for pUnit in pPlayerMoving:Units() do
 					if pUnit:IsHasPromotion(HanSakaID) then
-						pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
-						pUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + 1)
+						pUnit:ChangeCombatStrengthChangeFromKilledUnits(1)
+						pUnit:ChangeRangedCombatStrengthChangeFromKilledUnits(1)
 					end
 				end
 			end
@@ -531,8 +531,9 @@ end --function END
 GameEvents.BattleFinished.Add(NewAttackEffect)
 --------------------------------------------------------------
 -- 单位升级
+-- 废弃，使用骑射手属性替代
 --------------------------------------------------------------
-function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
+--[[function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 	if Players[iPlayer] == nil or not Players[iPlayer]:IsAlive()
 		or Players[iPlayer]:GetUnitByID(iOldUnit) == nil
 		or Players[iPlayer]:GetUnitByID(iOldUnit):IsDead()
@@ -556,6 +557,7 @@ end
 GameEvents.UnitUpgraded.Add(HanUnitUpgraded)
 --------------------------------------------------------------
 -- 单位登陆
+-- 废弃，使用骑射手属性替代
 --------------------------------------------------------------
 function HanUnitEmbark(iPlayerID, iUnitID)
 	if Players[iPlayerID] == nil or Players[iPlayerID]:GetUnitByID(iUnitID) == nil
@@ -571,7 +573,7 @@ function HanUnitEmbark(iPlayerID, iUnitID)
 		pUnit:SetBaseCombatStrength(GameInfo.Units[pUnit:GetUnitType()].Combat + dRangedCombatStrenghth)
 	end
 end
-Events.UnitEmbark.Add(HanUnitEmbark);
+Events.UnitEmbark.Add(HanUnitEmbark);]]
 --------------------------------------------------------------
 -- 战机转场
 --------------------------------------------------------------
@@ -620,8 +622,10 @@ function HanRebaseTo( iPlayerID, iUnitID, iPlotX, iPlotY)
 	end
 end
 GameEvents.RebaseTo.Add(HanRebaseTo)
+--[[
 --==========================================================================================================================
 -- CanHavePromotion EVENTS
+-- 废弃，使用DLL接口
 --==========================================================================================================================
 function HanCanHavePromotion(iPlayer, iUnit, iPromotionType)
 	local player = Players[iPlayer]; -----获取player
@@ -650,6 +654,7 @@ end
 GameEvents.CanHavePromotion.Add(HanCanHavePromotion)
 --------------------------------------------------------------
 -- 光环效果
+-- 废弃，使用DLL接口
 --------------------------------------------------------------
 -- 遍历某单位(pUnit)附近单位，判断其是否拥有晋升A，若有则给与当前单位晋升B，没有则去掉当前单位晋升B
 --------------------------------------------------------------
@@ -699,7 +704,7 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 	end
 end
 GameEvents.UnitSetXY.Add(SPUE_Unit_Effect_UnitSetXY)
-GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)
+GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)]]
 --------------------------------------------------------------
 -- 单位命名
 --------------------------------------------------------------
