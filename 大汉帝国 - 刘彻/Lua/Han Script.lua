@@ -299,7 +299,7 @@ function HanPlayerCompletedMinorCivQuest(iMajor, iMinor, iQuestType, iStartTurn,
 			
 			local NewUnit = pPlayer:InitUnit(unitType, plotX, plotY, UNITAI_ATTACK)
 			NewUnit:JumpToNearestValidPlot()
-			local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID
+			local domainLandID = GameInfoTypes["DOMAIN_LAND"]
 			local LANDTotal =  capCity:GetFreeExperience() + capCity:GetDomainFreeExperience(domainLandID)
 			NewUnit:ChangeExperience(LANDTotal)
 		end
@@ -345,8 +345,7 @@ function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
 	local pUnit = Players[iPlayer]:GetUnitByID(iUnit)
 	local pPlot = Map.GetPlot(iX, iY)
 	local pUnitInfo = GameInfo.Units[pUnit:GetUnitType()]
-	local pEraType = pPlayer:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID
+	local iEraID = pPlayer:GetCurrentEra()
 
 	-- 乌孙弓骑兵
 	if pUnit:IsHasPromotion(HanSakaID) then
@@ -360,7 +359,7 @@ function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
 					iPrivateerDamage = math.min(pFoundUnit:GetCurrHitPoints() - 1, iPrivateerDamage)
 					pFoundUnit:ChangeDamage(iPrivateerDamage)
 					pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
-					iFaith = iFaith + math.ceil(math.log(2*iPrivateerDamage+1)) * (1 + pEraID)
+					iFaith = iFaith + math.ceil(math.log(2*iPrivateerDamage+1)) * (1 + iEraID)
 				end
 			end
 		end
@@ -494,9 +493,8 @@ function NewAttackEffect()
 		-- 解忧
 		local HanSakaDamageBonus = 0
 		if defUnit then
-			local pEraType = attPlayer:GetCurrentEra()
-			local pEraID = GameInfo.Eras[pEraType].ID
-			HanSakaDamageBonus = math.ceil(math.log(2*defUnitDamage+1)) * (1 + pEraID)
+			local iEraID = attPlayer:GetCurrentEra()
+			HanSakaDamageBonus = math.ceil(math.log(2*defUnitDamage+1)) * (1 + iEraID)
 		end
 		attPlayer:ChangeOverflowResearch(HanSakaDamageBonus)
 		if attPlayer:IsHuman() and HanSakaDamageBonus > 0 then
@@ -825,13 +823,12 @@ function HanCityDoInstantYieldFromCityState(iPlayer, iCity)
 	local player = Players[iPlayer]
 	local city = player:GetCityByID(iCity)
 	local g_Allies = HanCountCityStatesData(iPlayer)
-	local pEraType = player:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID
+	local iEraID = player:GetCurrentEra()
 	-- local totalCultureBonus = 0
 
-	local cultureBonus = g_Allies[1] * (1 + pEraID)
-	local foodBonus = math.ceil(math.log(g_Allies[2]+1)) * (1 + pEraID)
-	local productionBonus = math.ceil(math.log(g_Allies[3]+1)) * (1 + pEraID)
+	local cultureBonus = g_Allies[1] * (1 + iEraID)
+	local foodBonus = math.ceil(math.log(g_Allies[2]+1)) * (1 + iEraID)
+	local productionBonus = math.ceil(math.log(g_Allies[3]+1)) * (1 + iEraID)
 
 	player:ChangeJONSCulture(cultureBonus)
 	city:ChangeFood(foodBonus)

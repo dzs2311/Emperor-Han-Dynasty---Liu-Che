@@ -82,23 +82,21 @@ end
 -- Core Functions
 --==========================================================================================
 function HanHistoryEvents(player)
-    local pEraType = player:GetCurrentEra()
-    local pEraID = GameInfo.Eras[pEraType].ID
     -- print("numEvent2 = "..numEvent)
     if numEvent == 1 then
         -- 仕汉羽林郎：建造第一个羽林禁军时触发
         if GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"] == nil then return end
         for unit in player:Units() do
-            if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID) then
+            if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"]) then
                 unit:SetHasPromotion(HanEH1ID, true)
             end
         end
     elseif numEvent == 2 then
         -- 天马极西徕：攻占城邦或希腊文明城市后触发
-        player:SetHasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT2"].ID, true, true)
+        player:SetHasPolicy(GameInfoTypes["POLICY_SP_HAN_HIST_EVENT2"], true, true)
     elseif numEvent == 3 then
         -- 历史的天空：与季汉文明第一次宣布友谊后触发
-        player:SetHasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT3"].ID, true, true)
+        player:SetHasPolicy(GameInfoTypes["POLICY_SP_HAN_HIST_EVENT3"], true, true)
     elseif numEvent == 4 then 
         -- 失落的军团：与罗马/希腊文明相遇后随机触发，只能在中古时代之前触发一次
         local capCity = player:GetCapitalCity()
@@ -108,9 +106,9 @@ function HanHistoryEvents(player)
 			local plotY = capCity:GetY()
 			
 			local NewUnit = player:InitUnit(unitType, plotX, plotY)
-            NewUnit:SetHasPromotion(GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY4"].ID, true)
+            NewUnit:SetHasPromotion(GameInfoTypes["PROMOTION_HAN_HISTORY4"], true)
 			NewUnit:JumpToNearestValidPlot()
-			local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID
+			local domainLandID = GameInfoTypes["DOMAIN_LAND"]
 			local LANDTotal =  capCity:GetFreeExperience() + capCity:GetDomainFreeExperience(domainLandID)
 			NewUnit:ChangeExperience(LANDTotal)
 		end
@@ -136,8 +134,8 @@ function HanEventUnitCreated( iPlayerID, iUnitID )
     if player:GetCivilizationType() ~= GameInfoTypes["CIVILIZATION_SP_HAN"] then return end
     if GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"] == nil then return end
 
-    if unit:IsHasPromotion(GameInfo.UnitPromotions["PROMOTION_SPUE_YULIN_CAVALRY"].ID)
-    and player:GetUnitCountFromHasPromotion(HanEH1ID == 0)
+    if unit:IsHasPromotion(GameInfoTypes["PROMOTION_SPUE_YULIN_CAVALRY"])
+    and player:GetUnitCountFromHasPromotion(HanEH1ID) == 0
     then
         -- 仕汉羽林郎：建造第一个羽林禁军时触发
         numEvent = 1 
@@ -168,7 +166,7 @@ function HanEventCaptureCity(hexPos, iPlayer, cityID, newiPlayer)
 	end
 
     if (pOldPlayer:IsMinorCiv() or pOldPlayer:GetCivilizationType() == GameInfoTypes["CIVILIZATION_GREECE"])
-    and not player:HasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT2"].ID)
+    and not player:HasPolicy(GameInfoTypes["POLICY_SP_HAN_HIST_EVENT2"])
     then
         -- 天马极西徕：攻占城邦或希腊文明城市后触发
         numEvent = 2
@@ -191,10 +189,7 @@ function OnPlayerDoTurn(playerID)
     	return
 	end
 
-    local pEraType = player:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID
-
-    if not player:HasPolicy(GameInfo.Policies["POLICY_SP_HAN_HIST_EVENT3"].ID)
+    if not player:HasPolicy(GameInfoTypes["POLICY_SP_HAN_HIST_EVENT3"])
     and GameInfoTypes["CIVILIZATION_JIHAN"] ~= nil
     then
         -- 历史的天空
@@ -223,8 +218,8 @@ function OnPlayerDoTurn(playerID)
         -- end
     end
 
-    if player:GetUnitCountFromHasPromotion(GameInfo.UnitPromotions["PROMOTION_HAN_HISTORY4"].ID) < 3
-    and pEraID <= GameInfo.Eras["ERA_MEDIEVAL"].ID
+    if player:GetCurrentEra() <= GameInfoTypes["ERA_MEDIEVAL"]
+    and player:GetUnitCountFromHasPromotion(GameInfoTypes["PROMOTION_HAN_HISTORY4"]) < 3
     then
         -- 失落的军团
         local bHasMetMed = false

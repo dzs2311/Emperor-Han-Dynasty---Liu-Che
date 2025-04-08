@@ -56,6 +56,7 @@
 			<RangedSupportFireMod>100</RangedSupportFireMod>
 			<NearbyUnitPromotionBonus>5</NearbyUnitPromotionBonus>
 			<NearbyUnitPromotionBonusRange>1</NearbyUnitPromotionBonusRange>
+			<NearbyUnitPromotionBonusMax>50</NearbyUnitPromotionBonusMax>
 			<CombatBonusFromNearbyUnitPromotion>PROMOTION_HAN_CROSSBOWMAN</CombatBonusFromNearbyUnitPromotion>
 			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>promoHan_atlas</IconAtlas>
@@ -122,6 +123,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<NearbyUnitPromotionBonus>15</NearbyUnitPromotionBonus>
 			<NearbyUnitPromotionBonusRange>3</NearbyUnitPromotionBonusRange>
+			<NearbyUnitPromotionBonusMax>100</NearbyUnitPromotionBonusMax>
 			<CombatBonusFromNearbyUnitPromotion>PROMOTION_HUOQUBING_RIDER</CombatBonusFromNearbyUnitPromotion>
 			<PortraitIndex>8</PortraitIndex>
 			<IconAtlas>promoHan_atlas</IconAtlas>
