@@ -351,7 +351,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_HAN_HISTORY4_HELP">
 			<Text>
 				[ICON_BULLET]先手远程打击火力的伤害比例提升。
-				[NEWLINE][ICON_BULLET]1格内的每个[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]为[COLOR_POSITIVE_TEXT]东方军团[ENDCOLOR]增加5%[ICON_STRENTH]战斗力。
+				[NEWLINE][ICON_BULLET]1格内的每个拥有[COLOR_POSITIVE_TEXT]佽飞射士彍强弩[ENDCOLOR]晋升的单位为[COLOR_POSITIVE_TEXT]东方军团[ENDCOLOR]增加5%[ICON_STRENTH]战斗力（上限50%）。
 			</Text>
 		</Row>
 		<!--*******************************历史加成系统2：汉室宝物*******************************-->
@@ -376,7 +376,7 @@
 		<Row Tag="TXT_KEY_BUILDING_DUHU_HELP">
 			<Text>
 				都护府是大汉的独特建筑，只能建造在8格内有城邦的非首都城市。
-				[NEWLINE][ICON_BULLET]都护府可以提高城市行政等级，降低当地腐败程度（未实装）。
+				[NEWLINE][ICON_BULLET]都护府可以提高城市行政等级一级（最大为[ICON_CITYBANNER_CITY_LV1]一级城市）。
 				[NEWLINE][ICON_BULLET]本城完成建筑建造或购买单元格时根据盟友城邦数量/盟友城邦总人口/盟友城邦单位总数获得[ICON_CULTURE]文化/[ICON_FOOD]粮食/[ICON_PRODUCTION]工业产出。
 				[NEWLINE][ICON_BULLET]本城[ICON_RES_SILK][ICON_RES_INCENSE][ICON_RES_TEA][ICON_RES_JADE]特定奢侈品分别提供额外产出加成。
 				[NEWLINE][ICON_BULLET]修建完成后提供1队[COLOR_POSITIVE_TEXT]佽飞射士[ENDCOLOR]。
@@ -545,7 +545,7 @@
 		</Row>
 		<Row Tag="TXT_KEY_PROMOTION_HAN_VASSAL_MOUNTEDXBOW_HELP">
 			<Text>
-				[ICON_BULLET]3格内的每个[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力。
+				[ICON_BULLET]3格内的每个拥有[COLOR_POSITIVE_TEXT]初随骠骑战渔阳[ENDCOLOR]晋升的单位为[COLOR_POSITIVE_TEXT]乌孙弓骑兵[ENDCOLOR]增加15%[ICON_STRENTH]战斗力（上限100%）。
 				[NEWLINE][ICON_BULLET]每个新产生的[COLOR_POSITIVE_TEXT]冠军骠骑[ENDCOLOR]或新发现的城邦增加1点基础[ICON_STRENTH]战斗力，升级后可保留。
 				[NEWLINE][ICON_BULLET]可通过远程攻击中立或友方单位根据造成的伤害获取[ICON_PEACE]信仰，随时代增加。
 				[NEWLINE][ICON_BULLET]可通过远程攻击敌方单位根据造成的伤害获取[ICON_RESEARCH]科研，随时代增加。

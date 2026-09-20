@@ -113,7 +113,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
     if unit:IsHasPromotion(HanNuID) then
         -- 佽飞射士彍强弩
         local plot = unit:GetPlot()
-        if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
+        if plot and plot:GetImprovementType() == GameInfoTypes.IMPROVEMENT_SP_HAN_POST then
             -- 驻扎于丝路驿站
             local unitCount = plot:GetNumUnits()
             local iGold = unit:GetMaxRangedCombatStrength() / 400
@@ -123,7 +123,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
                 Events.AddPopupTextEvent(HexToWorld(hex),
                     Locale.ConvertTextKey("[COLOR_YIELD_GOLD]+{1_Num}[ENDCOLOR][ICON_GOLD]", iGold))
             end
-        elseif plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_FORT"].ID then
+        elseif plot and plot:GetImprovementType() == GameInfoTypes.IMPROVEMENT_SP_HAN_FORT then
             -- 驻扎于汉塞
             unit:ChangeDamage(-5)
             local iCulture = unit:GetBaseRangedCombatStrength() / 10
@@ -139,7 +139,7 @@ function HanOnUnitDoTurn(playerID, unitID, iPlotX, iPlotY)
 	if unit:IsHasPromotion(HanSakaID) then
         -- 解忧
 		local plot = unit:GetPlot()
-        if plot and plot:GetImprovementType() == GameInfo.Improvements["IMPROVEMENT_SP_HAN_POST"].ID then
+        if plot and plot:GetImprovementType() == GameInfoTypes.IMPROVEMENT_SP_HAN_POST then
 			unit:ChangeMoves(120)
 		end
 	end
@@ -160,13 +160,13 @@ function HanUnitCreated( iPlayerID, iUnitID )
     local player = Players[iPlayerID]
 
 	if unit:IsHasPromotion(HanRiderID) 
-	and player:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 
+	and player:GetUnitClassCount(GameInfoTypes.UNITCLASS_HAN_VASSAL_MOUNTEDXBOW) > 0 
 	then
 		-- 解忧
         for pUnit in player:Units() do
             if pUnit:IsHasPromotion(HanSakaID) then
-                pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
-                pUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + 1)
+                pUnit:ChangeCombatStrengthChangeFromKilledUnits(1)
+				pUnit:ChangeRangedCombatStrengthChangeFromKilledUnits(1)
             end
         end
 	end	
@@ -193,14 +193,14 @@ function HanTeamMeetHook (eTeamMet, eTeamMoving)
 	end
 
     -- 文明被城邦发现
-    if(pPlayerMet ~= nil and (pPlayerMet:GetCivilizationType() == GameInfo.Civilizations["CIVILIZATION_SP_HAN"].ID)) then
+    if(pPlayerMet ~= nil and (pPlayerMet:GetCivilizationType() == GameInfoTypes.CIVILIZATION_SP_HAN)) then
         if (Teams[eTeamMoving] ~= nil and Teams[eTeamMoving]:IsMinorCiv()) then
 			-- 乌孙弓骑兵加战斗力
-			if pPlayerMet:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 then
+			if pPlayerMet:GetUnitClassCount(GameInfoTypes.UNITCLASS_HAN_VASSAL_MOUNTEDXBOW) > 0 then
 				for pUnit in pPlayerMet:Units() do
 					if pUnit:IsHasPromotion(HanSakaID) then
-						pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
-						pUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + 1)
+						pUnit:ChangeCombatStrengthChangeFromKilledUnits(1)
+						pUnit:ChangeRangedCombatStrengthChangeFromKilledUnits(1)
 					end
 				end
 			end
@@ -236,14 +236,14 @@ function HanTeamMeetHook (eTeamMet, eTeamMoving)
     end
 
     -- 文明发现城邦
-    if (pPlayerMoving ~= nil and (pPlayerMoving:GetCivilizationType() == GameInfo.Civilizations["CIVILIZATION_SP_HAN"].ID )) then
+    if (pPlayerMoving ~= nil and (pPlayerMoving:GetCivilizationType() == GameInfoTypes.CIVILIZATION_SP_HAN)) then
 	    if (Teams[eTeamMet] ~= nil and Teams[eTeamMet]:IsMinorCiv()) then
 			-- 乌孙弓骑兵加战斗力
-			if pPlayerMoving:GetUnitClassCount(GameInfo.UnitClasses["UNITCLASS_HAN_VASSAL_MOUNTEDXBOW"].ID) > 0 then
+			if pPlayerMoving:GetUnitClassCount(GameInfoTypes.UNITCLASS_HAN_VASSAL_MOUNTEDXBOW) > 0 then
 				for pUnit in pPlayerMoving:Units() do
 					if pUnit:IsHasPromotion(HanSakaID) then
-						pUnit:SetBaseCombatStrength(pUnit:GetBaseCombatStrength() + 1)
-						pUnit:SetBaseRangedCombatStrength(pUnit:GetBaseRangedCombatStrength() + 1)
+						pUnit:ChangeCombatStrengthChangeFromKilledUnits(1)
+						pUnit:ChangeRangedCombatStrengthChangeFromKilledUnits(1)
 					end
 				end
 			end
@@ -299,7 +299,7 @@ function HanPlayerCompletedMinorCivQuest(iMajor, iMinor, iQuestType, iStartTurn,
 			
 			local NewUnit = pPlayer:InitUnit(unitType, plotX, plotY, UNITAI_ATTACK)
 			NewUnit:JumpToNearestValidPlot()
-			local domainLandID = GameInfo.Domains["DOMAIN_LAND"].ID
+			local domainLandID = GameInfoTypes["DOMAIN_LAND"]
 			local LANDTotal =  capCity:GetFreeExperience() + capCity:GetDomainFreeExperience(domainLandID)
 			NewUnit:ChangeExperience(LANDTotal)
 		end
@@ -345,8 +345,7 @@ function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
 	local pUnit = Players[iPlayer]:GetUnitByID(iUnit)
 	local pPlot = Map.GetPlot(iX, iY)
 	local pUnitInfo = GameInfo.Units[pUnit:GetUnitType()]
-	local pEraType = pPlayer:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID
+	local iEraID = pPlayer:GetCurrentEra()
 
 	-- 乌孙弓骑兵
 	if pUnit:IsHasPromotion(HanSakaID) then
@@ -360,7 +359,7 @@ function OnHanSakaRangeAttackAt(iPlayer, iUnit, iX, iY)
 					iPrivateerDamage = math.min(pFoundUnit:GetCurrHitPoints() - 1, iPrivateerDamage)
 					pFoundUnit:ChangeDamage(iPrivateerDamage)
 					pUnit:ChangeExperience(pUnitInfo.XPValueAttack)
-					iFaith = iFaith + math.ceil(math.log(2*iPrivateerDamage)) * (1 + pEraID)
+					iFaith = iFaith + math.ceil(math.log(2*iPrivateerDamage+1)) * (1 + iEraID)
 				end
 			end
 		end
@@ -494,9 +493,8 @@ function NewAttackEffect()
 		-- 解忧
 		local HanSakaDamageBonus = 0
 		if defUnit then
-			local pEraType = attPlayer:GetCurrentEra()
-			local pEraID = GameInfo.Eras[pEraType].ID
-			HanSakaDamageBonus = math.ceil(math.log(2*defUnitDamage)) * (1 + pEraID)
+			local iEraID = attPlayer:GetCurrentEra()
+			HanSakaDamageBonus = math.ceil(math.log(2*defUnitDamage+1)) * (1 + iEraID)
 		end
 		attPlayer:ChangeOverflowResearch(HanSakaDamageBonus)
 		if attPlayer:IsHuman() and HanSakaDamageBonus > 0 then
@@ -531,8 +529,9 @@ end --function END
 GameEvents.BattleFinished.Add(NewAttackEffect)
 --------------------------------------------------------------
 -- 单位升级
+-- 废弃，使用骑射手属性替代
 --------------------------------------------------------------
-function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
+--[[function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 	if Players[iPlayer] == nil or not Players[iPlayer]:IsAlive()
 		or Players[iPlayer]:GetUnitByID(iOldUnit) == nil
 		or Players[iPlayer]:GetUnitByID(iOldUnit):IsDead()
@@ -542,15 +541,37 @@ function HanUnitUpgraded(iPlayer, iOldUnit, iNewUnit)
 	end
 
 	-- 解忧：乌孙弓骑兵保额外战斗力
+	
 	local pOldUnit 					= Players[iPlayer]:GetUnitByID(iOldUnit)
 	local pNewUnit 					= Players[iPlayer]:GetUnitByID(iNewUnit)
-	local dCombatStrenghth 			= pOldUnit:GetBaseCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].Combat
-	local dRangedCombatStrenghth 	= pOldUnit:GetBaseRangedCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].RangedCombat
-	pNewUnit:SetBaseCombatStrength(pNewUnit:GetBaseCombatStrength() + dCombatStrenghth)
-	pNewUnit:SetBaseRangedCombatStrength(pNewUnit:GetBaseRangedCombatStrength() + dRangedCombatStrenghth)
+	if pOldUnit:IsHasPromotion(HanSakaID) then
+		local dCombatStrenghth 			= pOldUnit:GetBaseCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].Combat
+		local dRangedCombatStrenghth 	= pOldUnit:GetBaseRangedCombatStrength() - GameInfo.Units[pOldUnit:GetUnitType()].RangedCombat
+		pNewUnit:SetBaseCombatStrength(pNewUnit:GetBaseCombatStrength() + dCombatStrenghth)
+		pNewUnit:SetBaseRangedCombatStrength(pNewUnit:GetBaseRangedCombatStrength() + dRangedCombatStrenghth)
+	end
 
 end
 GameEvents.UnitUpgraded.Add(HanUnitUpgraded)
+--------------------------------------------------------------
+-- 单位登陆
+-- 废弃，使用骑射手属性替代
+--------------------------------------------------------------
+function HanUnitEmbark(iPlayerID, iUnitID)
+	if Players[iPlayerID] == nil or Players[iPlayerID]:GetUnitByID(iUnitID) == nil
+		or Players[iPlayerID]:GetUnitByID(iUnitID):IsEmbarked()
+		or Players[iPlayerID]:GetUnitByID(iUnitID):IsDead()
+		or Players[iPlayerID]:GetUnitByID(iUnitID):IsDelayedDeath()
+	then
+		return;
+	end
+	local pUnit = Players[iPlayerID]:GetUnitByID(iUnitID);
+	if pUnit:IsHasPromotion(HanSakaID) then
+		local dRangedCombatStrenghth = pUnit:GetBaseRangedCombatStrength() - GameInfo.Units[pUnit:GetUnitType()].RangedCombat
+		pUnit:SetBaseCombatStrength(GameInfo.Units[pUnit:GetUnitType()].Combat + dRangedCombatStrenghth)
+	end
+end
+Events.UnitEmbark.Add(HanUnitEmbark);]]
 --------------------------------------------------------------
 -- 战机转场
 --------------------------------------------------------------
@@ -599,8 +620,10 @@ function HanRebaseTo( iPlayerID, iUnitID, iPlotX, iPlotY)
 	end
 end
 GameEvents.RebaseTo.Add(HanRebaseTo)
+--[[
 --==========================================================================================================================
 -- CanHavePromotion EVENTS
+-- 废弃，使用DLL接口
 --==========================================================================================================================
 function HanCanHavePromotion(iPlayer, iUnit, iPromotionType)
 	local player = Players[iPlayer]; -----获取player
@@ -629,6 +652,7 @@ end
 GameEvents.CanHavePromotion.Add(HanCanHavePromotion)
 --------------------------------------------------------------
 -- 光环效果
+-- 废弃，使用DLL接口
 --------------------------------------------------------------
 -- 遍历某单位(pUnit)附近单位，判断其是否拥有晋升A，若有则给与当前单位晋升B，没有则去掉当前单位晋升B
 --------------------------------------------------------------
@@ -678,7 +702,7 @@ function SPUE_Unit_Effect_UnitSetXY(playerID)
 	end
 end
 GameEvents.UnitSetXY.Add(SPUE_Unit_Effect_UnitSetXY)
-GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)
+GameEvents.UnitCreated.Add(SPUE_Unit_Effect_UnitSetXY)]]
 --------------------------------------------------------------
 -- 单位命名
 --------------------------------------------------------------
@@ -799,13 +823,12 @@ function HanCityDoInstantYieldFromCityState(iPlayer, iCity)
 	local player = Players[iPlayer]
 	local city = player:GetCityByID(iCity)
 	local g_Allies = HanCountCityStatesData(iPlayer)
-	local pEraType = player:GetCurrentEra()
-	local pEraID = GameInfo.Eras[pEraType].ID
+	local iEraID = player:GetCurrentEra()
 	-- local totalCultureBonus = 0
 
-	local cultureBonus = g_Allies[1] * (1 + pEraID)
-	local foodBonus = math.ceil(math.log(g_Allies[2])) * (1 + pEraID)
-	local productionBonus = math.ceil(math.log(g_Allies[3])) * (1 + pEraID)
+	local cultureBonus = g_Allies[1] * (1 + iEraID)
+	local foodBonus = math.ceil(math.log(g_Allies[2]+1)) * (1 + iEraID)
+	local productionBonus = math.ceil(math.log(g_Allies[3]+1)) * (1 + iEraID)
 
 	player:ChangeJONSCulture(cultureBonus)
 	city:ChangeFood(foodBonus)
