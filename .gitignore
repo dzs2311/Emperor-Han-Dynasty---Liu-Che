@@ -1,4 +1,4 @@
-# 备份与临时文件
+﻿# 备份与临时文件
 *.bak
 *.bak-*
 *.bak8-*
@@ -16,4 +16,3 @@ desktop.ini
 Build/
 Packages/
 *.civ5mod
-*.nb2
