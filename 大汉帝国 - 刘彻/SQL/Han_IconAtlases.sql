@@ -1,14 +1,14 @@
---=========================================================================================================================
+﻿--=========================================================================================================================
 -- IconTextureAtlases
 --==========================================================================================================================
 INSERT OR REPLACE INTO IconTextureAtlases 
 			(Atlas, 							IconSize, 	Filename, 							IconsPerRow, 	IconsPerColumn)
-VALUES		('SP_HAN_ATLAS', 					256, 		'Han_IconAtlas256.dds',				4,				4),
-			('SP_HAN_ATLAS', 					128, 		'Han_IconAtlas128.dds',				4, 				4),
-			('SP_HAN_ATLAS', 					80, 		'Han_IconAtlas080.dds',				4, 				4),
-			('SP_HAN_ATLAS', 					64, 		'Han_IconAtlas064.dds',				4, 				4),
-			('SP_HAN_ATLAS', 					45, 		'Han_IconAtlas045.dds',				4, 				4),
-			('SP_HAN_ATLAS', 					32, 		'Han_IconAtlas032.dds',				4, 				4),
+VALUES		('SP_HAN_ATLAS', 					256, 		'Han_IconAtlas256.dds',				8,				4),
+			('SP_HAN_ATLAS', 					128, 		'Han_IconAtlas128.dds',				8,				4),
+			('SP_HAN_ATLAS', 					80, 		'Han_IconAtlas080.dds',				8,				4),
+			('SP_HAN_ATLAS', 					64, 		'Han_IconAtlas064.dds',				8,				4),
+			('SP_HAN_ATLAS', 					45, 		'Han_IconAtlas045.dds',				8,				4),
+			('SP_HAN_ATLAS', 					32, 		'Han_IconAtlas032.dds',				8,				4),
 			('SP_HAN_ALPHA_ATLAS',				128, 		'Han_AlphaAtlas_128.dds',			1,				1),
 			('SP_HAN_ALPHA_ATLAS',				80, 		'Han_AlphaAtlas_080.dds',			1, 				1),
 			('SP_HAN_ALPHA_ATLAS',				64, 		'Han_AlphaAtlas_064.dds',			1, 				1),
