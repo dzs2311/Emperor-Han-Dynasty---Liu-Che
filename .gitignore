@@ -1,0 +1,13 @@
+# 备份与临时文件
+*.bak
+*.bak-*
+*.bak8-*
+*.orig
+*.orig.png
+*.tmp
+*~
+
+# 系统 / 编辑器
+Thumbs.db
+desktop.ini
+.DS_Store
