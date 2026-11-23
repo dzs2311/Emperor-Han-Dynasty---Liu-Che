@@ -11,3 +11,9 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# ModBuddy 构建产物
+Build/
+Packages/
+*.civ5mod
+*.nb2
