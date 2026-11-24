@@ -583,7 +583,7 @@ function HanCanRebaseInCity( iPlayerID, iUnitID, iPlotX, iPlotY)
 	then
 		return
 	end
-	local cityPlot = Map.GetPlot(cityX, cityY)
+	local cityPlot = Map.GetPlot(iPlotX, iPlotY)
 	local pCity = cityPlot:GetPlotCity()
 	if pCity == nil then return end
 

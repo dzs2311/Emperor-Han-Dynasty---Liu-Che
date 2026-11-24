@@ -35,7 +35,7 @@
 		<Row>
 			<Type>PROMOTION_HAN_HISTORY2</Type>
 			<Description>TXT_KEY_PROMOTION_HAN_HISTORY2</Description>
-			<Help>TXT_KEY_PROMOTION_HAN_HISTORY1_HELP</Help>
+			<Help>TXT_KEY_PROMOTION_HAN_HISTORY2_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<MovesChange>1</MovesChange>
 			<ExtraResourceType>RESOURCE_HORSE</ExtraResourceType>
