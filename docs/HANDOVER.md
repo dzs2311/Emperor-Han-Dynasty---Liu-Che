@@ -37,7 +37,7 @@
 |---|---|---|
 | 玄女转场判定 | `Lua/Han Script.lua:586` | `cityX/cityY` → `iPlotX/iPlotY` |
 | 西极天马说明 | `XML/Units/Han_UnitPromotions.xml:38` | Help 指向 `HISTORY2_HELP` |
-| 特性单位类型 | `SQL/Han_MainCode.sql:268-274` | 已 revert 回 V8.3 的 7 类（含 BOMBER，无 GUNPOWDER_INFANTRY），遗留问题见第三节 1 |
+| 特性单位类型 | `SQL/Han_MainCode.sql:268-274` | 已 revert 回 V8.3 的 7 类（含 BOMBER，无 GUNPOWDER_INFANTRY）；经 SP 源码逐个核对，已覆盖全部汉陆军，见第四节 |
 | 承影文本 | `XML/Text/Han_Text_zh_CN.xml:763` | 3 队 → 1 队 |
 | 都护府文本 | 同上 `:379` | 改为“城邦首都 8 格内” |
 | 特性文本 | 同上 `:238` | 补“开局拥有农业与青铜器” |
@@ -46,7 +46,7 @@
 
 ## 三、待修（优先级从高到低）
 
-### 1. 特性单位类型清单缺 ARCHER（已核实，待定方案）
+### 1. 特性单位类型清单——已核对，不需要改
 
 `SQL/Han_MainCode.sql:268-274` 当前为 7 类（与 V8.3 一致）：
 
@@ -56,12 +56,12 @@ MELEE · MOUNTED · ARMOR · HELICOPTER · SIEGE · BOMBER · RECON
 
 - `UNITCOMBAT_BOMBER` 必须保留（SP 里 BOMBER = 地面炮兵/AOE 武器）
 - `UNITCOMBAT_GUNPOWDER_INFANTRY` **不存在**，火器应为 `UNITCOMBAT_GUN`
-- **缺 `UNITCOMBAT_ARCHER`**：佽飞射士继承 `UNIT_COMPOSITE_BOWMAN`，CombatClass = ARCHER，因此始终拿不到「维天有汉」晋升（减伤 + 境外加伤都吃不到）
-- **但不能直接挂 ARCHER**：SP 的攻击机/轰炸机同样使用 ARCHER（见 `SP\SuperPower\...\Gameplay\XML\Units\Units_Air.xml` 顶部注释），直接加会让汉文明拥有的 SP 空军也吃到「陆军」晋升
+- **不要加 `UNITCOMBAT_ARCHER`**：SP 的攻击机/轰炸机占用 ARCHER（`SP\SuperPower\...\Gameplay\XML\Units\Units_Air.xml` 顶部注释），且汉文明本身没有 ARCHER 类单位
 
-两个方案：
-- **A（推荐，影响面最小）**：在 `SQL/Han_Units.sql` 的 `Unit_FreePromotions` 里给 `UNIT_HAN_CROSSBOWMAN` 单独加 `PROMOTION_SP_HAN_TRAIT_LAND`
-- **B**：在 `Lua/Han Script.lua` 的 `HanUnitCreated` 里按 `CombatClass == ARCHER` 且 `Domain == DOMAIN_LAND` 补发，可覆盖缴获/赠予场景
+已按 SP v7 源码逐单位核对继承基类（见第四节）：汉文明全部陆军恰好落在 MELEE / MOUNTED / HELICOPTER / ARMOR / SIEGE 五类，均在清单内。
+
+> **佽飞射士 = `UNITCOMBAT_SIEGE`**（SP 把 `UNIT_COMPOSITE_BOWMAN` 从原版 ARCHER 改成了 SIEGE），**已在清单内，「维天有汉」正常生效**。
+> 此前「缺 ARCHER 导致佽飞射士吃不到特性」的结论是把原版数据当成 SP 数据，已作废。
 
 `UNITCOMBAT_GUN` 目前无对应汉单位，可等加入火器单位时再补（只影响本文明）。
 
@@ -83,27 +83,38 @@ MELEE · MOUNTED · ARMOR · HELICOPTER · SIEGE · BOMBER · RECON
 
 剩余动作：仅需游戏内实测确认数值，不改代码。
 
-### 3. 部署与元数据
+### 3. 佽飞射士没有入手途径（待定方案）
+
+- `SQL/Han_Units.sql:10` 里 `Cost = -1`、`HurryCostModifier = -1` → 不能生产、不能购买
+- `Han_Projects.xml` 只有期门禁军/承影/玄女两个项目，无弩兵项目
+- `Lua/Han Script.lua` 没有任何 `UNIT_HAN_CROSSBOWMAN` 的 `InitUnit`（城邦任务只送乌孙弓骑兵）
+- 说明文本写「只能通过驿传赠送获得」，但「驿传」在现版本已改为**都护府**（`Han_MainCode.sql:31`），而 `Han Script.lua:773` 的 `HanUB` 只做建造位置校验，不赠兵
+
+即：按现有代码，玩家拿不到佽飞射士。可选方案：A. 都护府建成时赠 1 队；B. 恢复正常 `Cost` + 科技前置变为可建造；C. 作为军功爵/首功奖励单位。
+
+### 4. 部署与元数据
 
 - `.civ5proj` 版本号已统一为 `ModVersion=9` / Teaser `(9.0)`，与 `更新记录.txt` 顶部 9.0 条目一致
 - `MODS` 目录下曾同时存在 `大汉帝国 - 刘彻 (v 8)` 与 `(v 9)` 两份，且 v9 为 revert 前的旧代码，**必须删除后重新部署**
 
-### 4. 其它
+### 5. 其它
 
 - 英文文本 `Han_Text_en_US.xml` 是中文逐字复制，未做英化
 - 斥候（图集槽 6）有图无单位定义
 
-## 四、单位战斗类型（已核实）
+## 四、单位战斗类型（已按 SP v7 源码核实）
 
-| 汉单位 | 继承 | CombatClass |
+| 汉单位 | 继承 | SP 中的 CombatClass |
 |---|---|---|
 | 细柳营 | `UNIT_PIKEMAN` | `MELEE` |
 | 冠军骠骑 | `UNIT_HORSEMAN` | `MOUNTED` |
-| 佽飞射士 | `UNIT_COMPOSITE_BOWMAN` | `ARCHER` |
-| 期门禁军 | `UNIT_ELITE_RIDER`（SP） | `MOUNTED` |
-| 乌孙弓骑兵 | `UNIT_MEDIEVAL_CHARIOT` | `MOUNTED` |
+| 佽飞射士 | `UNIT_COMPOSITE_BOWMAN` | **`SIEGE`**（SP 改写，原版是 ARCHER） |
+| 期门禁军 | `UNIT_ELITE_RIDER`（SP 自带） | `MOUNTED` |
+| 乌孙弓骑兵 | `UNIT_MEDIEVAL_CHARIOT` | **`HELICOPTER`**（SP 改写，不是 MOUNTED） |
 | 承影机甲 | `UNIT_MECH` | `ARMOR` |
-| 玄女战机 | `UNIT_INTERCEPTER` | `FIGHTER` |
+| 玄女战机 | `UNIT_INTERCEPTER` | `FIGHTER`（空军，不加特性） |
+
+> 汉模组里没有任何 `UPDATE Units` 语句，单位的 `CombatClass` 全部直接继承自 SP 的基类定义；因此在判断战斗类型时必须查 **SP 源码**，不能按原版数据推断。
 
 ## 五、重大设计决策（已定稿，见素材区文档）
 
@@ -165,7 +176,7 @@ MELEE · MOUNTED · ARMOR · HELICOPTER · SIEGE · BOMBER · RECON
 
 ## 八、接手第一步建议
 
-1. 按第三节 1 的方案 A 补 ARCHER（佽飞射士），打包部署验证「减伤 5 / 境外 +5」数值
+1. 先定佽飞射士的入手途径（第三节 3 的 A/B/C），再打包部署验证「减伤 5 / 境外 +5」数值
 2. 清理 `MODS` 下重复安装的旧版本目录，用第九节部署命令重新部署
 3. 接 SaveUtils + 事件框架（数据表驱动 + 队列 + 双选项），把现有 4 条事件迁入
 4. 按 M → T → D → S → G → K → C → N → L 顺序导入事件
