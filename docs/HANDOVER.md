@@ -125,6 +125,19 @@ MELEE · MOUNTED · ARMOR · HELICOPTER · SIEGE · BOMBER · RECON
 
 > 汉模组里没有任何 `UPDATE Units` 语句，单位的 `CombatClass` 全部直接继承自 SP 的基类定义；因此在判断战斗类型时必须查 **SP 源码**，不能按原版数据推断。
 
+### UB 实现核对（2026-11-24 已逐项验证）
+
+| UB | 关键实现 | 结论 |
+|---|---|---|
+| 太学 | `FreePolicies 1`（建成 one-shot）、`Building_YieldModifiers` 文化 25、Writer×2 + 文学巨作×2、`FreeBuilding BUILDINGCLASS_SIXUE`（玩家级免费建筑 → 私学发到**所有城市**）、`Policy_BuildingClassYieldModifiers`(传统完成, SIXUE) → 全国 +10% | ✅ |
+| 太学前置 | `Building_PrereqBuildingClasses` = `BUILDINGCLASS_ACADEMY`（**学院**，非图书馆；设计表"图书馆"是笔误，游戏文本也写学院） | ✅ |
+| 太学文学家加成 | `Building_SpecialistYieldChanges` 只能作用于**该城**；SP 的"每位文学家 +1 文化"是用 `Trait_SpecialistYieldChanges`（文明级）实现的，MPDLL 没有全局专家平坦产出表 | ℹ️ 城市级为现有能力上限 |
+| 私学 | 1 文学家席位 + `POLICY_TRADITION_FINISHER` 本城 +10% 文化/信仰 | ✅ |
+| 上林苑 | 26 人口门槛、+25% 伟人、+10 马、马/牛/羊/鹿各 +1、+1 全局快乐、每座 +1 伤害（Lua，上限 10）、1 级城市 +1 食物/+1 科研 | ✅ |
+| 上林苑不满 | `<UnhappinessModifier>-3</UnhappinessModifier>` = **全局不满 -3%**（`iUnhappiness *= (100+GetUnhappinessMod())`），已在 9.0 补进 Help 文本 | ✅ |
+| 都护府 | 8 格内非首都（Lua `HanUB`）、`CorruptionLevelChange -1`、盟友数/总人口/总单位给文化/粮食/工业、丝香茶玉产出、`Building_FreeUnits` 赠 1 队佽飞射士 | ✅ |
+| 都护府 `FreeStartEra ERA_INDUSTRIAL` | 仅当**起始时代** ≥ 工业（高级开局）才自动发放，正常远古开局无副作用 | ℹ️ |
+
 ## 五、重大设计决策（已定稿，见素材区文档）
 
 ### 文明定位
