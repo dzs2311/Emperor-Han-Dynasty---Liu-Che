@@ -83,14 +83,23 @@ MELEE · MOUNTED · ARMOR · HELICOPTER · SIEGE · BOMBER · RECON
 
 剩余动作：仅需游戏内实测确认数值，不改代码。
 
-### 3. 佽飞射士没有入手途径（待定方案）
+### 3. 佽飞射士入手途径——已确认存在
 
-- `SQL/Han_Units.sql:10` 里 `Cost = -1`、`HurryCostModifier = -1` → 不能生产、不能购买
-- `Han_Projects.xml` 只有期门禁军/承影/玄女两个项目，无弩兵项目
-- `Lua/Han Script.lua` 没有任何 `UNIT_HAN_CROSSBOWMAN` 的 `InitUnit`（城邦任务只送乌孙弓骑兵）
-- 说明文本写「只能通过驿传赠送获得」，但「驿传」在现版本已改为**都护府**（`Han_MainCode.sql:31`），而 `Han Script.lua:773` 的 `HanUB` 只做建造位置校验，不赠兵
+`XML/Buildings/Han_Buildings.xml:391-397`：
 
-即：按现有代码，玩家拿不到佽飞射士。可选方案：A. 都护府建成时赠 1 队；B. 恢复正常 `Cost` + 科技前置变为可建造；C. 作为军功爵/首功奖励单位。
+```xml
+<Building_FreeUnits>
+    <Row>
+        <BuildingType>BUILDING_DUHU</BuildingType>
+        <UnitType>UNIT_HAN_CROSSBOWMAN</UnitType>
+        <NumUnits>1</NumUnits>
+    </Row>
+</Building_FreeUnits>
+```
+
+即「都护府建成时在每个该城免费送 1 队佽飞射士」（原生 `Building_FreeUnits` 机制）。配合 `Cost = -1`，它就是设计上的「赠兵单位」，与说明文本「只能通过驿传赠送获得」一致（驿传 = 都护府旧名）。
+
+> 排查教训：查单位引用时不能只搜 `Lua/` 与 `SQL/`，**必须一并搜 `XML/Buildings/`**（`Building_FreeUnits` / `Building_UnitCombatFreeExperiences` 等都在这里）。
 
 ### 4. 部署与元数据
 
@@ -176,7 +185,7 @@ MELEE · MOUNTED · ARMOR · HELICOPTER · SIEGE · BOMBER · RECON
 
 ## 八、接手第一步建议
 
-1. 先定佽飞射士的入手途径（第三节 3 的 A/B/C），再打包部署验证「减伤 5 / 境外 +5」数值
+1. 打包部署后游戏内验证三项数值：特性减伤 5、境外 +5、都护府赠兵
 2. 清理 `MODS` 下重复安装的旧版本目录，用第九节部署命令重新部署
 3. 接 SaveUtils + 事件框架（数据表驱动 + 队列 + 双选项），把现有 4 条事件迁入
 4. 按 M → T → D → S → G → K → C → N → L 顺序导入事件
