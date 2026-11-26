@@ -3,7 +3,7 @@
 --==========================================================================================================================	
 INSERT INTO Improvements
 		(Type,							SpecificCivRequired,	CivilizationType,			NoTwoAdjacent,	NearbyFriendHeal,	InAdjacentFriendly,	AdditionalUnits,	NearbyEnemyDamage,	DefenseModifier,	PillageGold,	Description,							Help,										Civilopedia,								ArtDefineTag,						PortraitIndex,	IconAtlas)
-VALUES	('IMPROVEMENT_SP_HAN_POST',	    1,						'CIVILIZATION_SP_HAN',	    1,				1,					0,					0,					0,					25,					200,			'TXT_KEY_IMPROVEMENT_SP_HAN_POST',	    'TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP',	    'TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP',	    'ART_DEF_IMPROVEMENT_SP_HAN_POST', 	11,				'SP_HAN_ATLAS'),
+VALUES	('IMPROVEMENT_SP_HAN_POST',	    1,						'CIVILIZATION_SP_HAN',	    1,				5,					0,					0,					0,					25,					200,			'TXT_KEY_IMPROVEMENT_SP_HAN_POST',	    'TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP',	    'TXT_KEY_IMPROVEMENT_SP_HAN_POST_HELP',	    'ART_DEF_IMPROVEMENT_SP_HAN_POST', 	11,				'SP_HAN_ATLAS'),
 		('IMPROVEMENT_SP_HAN_FORT',	    0,						null,						1,				0,					1,					1,					10,					50,					50,				'TXT_KEY_IMPROVEMENT_SP_HAN_FORT',	    'TXT_KEY_IMPROVEMENT_SP_HAN_FORT_HELP',	    'TXT_KEY_IMPROVEMENT_SP_HAN_FORT_HELP',	    'ART_DEF_IMPROVEMENT_SP_HAN_FORT', 	14,				'SP_HAN_ATLAS');
 --==========================================================================================================================	
 -- Improvement_ValidTerrains
