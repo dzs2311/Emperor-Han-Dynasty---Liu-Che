@@ -16,3 +16,5 @@ desktop.ini
 Build/
 Packages/
 *.civ5mod
+
+build-*.log

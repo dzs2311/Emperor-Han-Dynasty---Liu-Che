@@ -121,6 +121,12 @@
     <ModContent>
       <Content>
         <Type>InGameUIAddin</Type>
+        <Name>HanDuhuPanel</Name>
+        <Description>HanDuhuPanel</Description>
+        <FileName>UI/HanDuhuPanel.xml</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
         <Name>Han Script</Name>
         <Description>Han Script</Description>
         <FileName>Lua/Han Script.lua</FileName>
@@ -178,6 +184,18 @@
     <Folder Include="XML\Text" />
   </ItemGroup>
   <ItemGroup>
+  <Content Include="UI\Han_DuhuMark.dds">
+    <SubType>Lua</SubType>
+    <ImportIntoVFS>True</ImportIntoVFS>
+  </Content>
+  <Content Include="UI\Han_DuhuBand.dds">
+    <SubType>Lua</SubType>
+    <ImportIntoVFS>True</ImportIntoVFS>
+  </Content>
+  <Content Include="UI\Han_DuhuBanner.dds">
+    <SubType>Lua</SubType>
+    <ImportIntoVFS>True</ImportIntoVFS>
+  </Content>
     <Content Include="Art\Flags\HanNuFlag.dds">
       <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -731,6 +749,16 @@
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="更新记录.txt">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UI\HanDuhuPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\HanDuhuPanel.xml">
       <SubType>Lua</SubType>
       <ImportIntoVFS>False</ImportIntoVFS>
     </Content>

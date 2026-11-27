@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 都护府：城旗旁徽记按钮 + 两栏管理面板（720×520）
+     设计约束：
+     1) 标记用 Button + Texture（原版 BuildCityButton 写法），不要 GridButton + 子 Image
+     2) 面板只用一层 Grid9DetailFive140，内容靠绝对偏移摆，不再嵌第二个九宫格（内框会把内容压住）
+-->
+<Context>
+	<Box ID="DuhuMarkers"/>
+
+	<!-- 隐藏测量尺：Stack(可 CalculateSize) + CityName 同字体 Label，摆在屏外 -->
+	<Stack ID="DuhuMeasure" Anchor="L,B" Offset="0,-2000" StackGrowth="Right" Padding="0" Hidden="0">
+		<Label ID="DuhuMeasureText" Font="TwCenMT18" FontStyle="Shadow" String=""/>
+	</Stack>
+
+	<!-- 城邦行模板（InstanceManager 要求 Instance 挂在 Context 顶层，不能塞在 Stack 里） -->
+	<Instance Name="DuhuRow">
+		<Box ID="Anchor" Size="336,54" Color="0,0,0,0">
+			<Box ID="Accent" Anchor="L,C" Size="3,38" Color="120,140,120,255"/>
+			<Image ID="Icon" Anchor="L,C" Offset="10,0" Size="32,32"/>
+			<Label ID="Name" Anchor="L,T" Offset="50,6" Font="TwCenMT18" ColorSet="Beige_Black" FontStyle="Shadow"/>
+			<Label ID="Dist" Anchor="L,T" Offset="50,29" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+			<Label ID="Pop" Anchor="R,T" Offset="12,6" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+			<Label ID="State" Anchor="R,T" Offset="12,29" Font="TwCenMT14" ColorSet="Beige_Black_Alpha" FontStyle="Shadow"/>
+		</Box>
+	</Instance>
+
+	<!-- 城旗旁徽记：Button + Texture（原版 BuildCityButton 写法：只画贴图，不带底板） -->
+	<Instance Name="DuhuMark">
+		<WorldAnchor ID="Anchor">
+			<Button ID="MarkButton" Size="45,45" Anchor="C,C" Offset="0,0"
+			        Texture="Han_DuhuMark.dds" ConsumeMouse="1" ToolTip="TXT_KEY_HAN_DUHU_BUTTON"/>
+		</WorldAnchor>
+	</Instance>
+
+	<!-- 管理面板：DuhuFrame 必须显式透明，Box 默认会铺满一屏白底 -->
+	<Box ID="DuhuFrame" Anchor="C,C" Size="full,full" Hidden="True" Color="0,0,0,0">
+		<!-- 轻微压暗：约 24% 黑，地图仍清晰可见 -->
+		<Box Size="full,full" Color="0,0,0,60"/>
+		<Grid ID="DuhuBody" Size="720,520" Anchor="C,C" Offset="0,0" ConsumeMouse="1" Style="Grid9DetailFive140">
+
+			<!-- 标题在绿条上；头图在绿条下方，收在面板内框里 -->
+			<Label ID="DuhuTitle" Anchor="C,T" Offset="0,15"
+			       String="TXT_KEY_HAN_DUHU_CITY_TITLE" ColorSet="Beige_Black" Font="TwCenMT22" FontStyle="Shadow"/>
+			<Image ID="DuhuBanner" Anchor="C,T" Offset="0,49" Size="616,96" Texture="Han_DuhuBanner.dds"/>
+			<Label ID="DuhuSummary" Anchor="C,T" Offset="0,151"
+			       String="TXT_KEY_HAN_DUHU_CITY_SUMMARY" ColorSet="Beige_Black" Font="TwCenMT16" FontStyle="Shadow"/>
+
+			<!-- 左栏：城邦列表（行模板在 Context 顶层） -->
+			<Box Anchor="L,T" Size="336,1" Offset="30,175" Color="230,206,150,90"/>
+			<Stack ID="DuhuList" Anchor="L,T" Offset="30,181" Size="336,232" StackGrowth="Bottom" Padding="4"/>
+
+			<!-- 右栏：都护收益（单行 = 名称 + 数值 + ICON） -->
+			<Box Anchor="L,T" Size="300,1" Offset="392,175" Color="230,206,150,90"/>
+			<Label ID="RewardTitle" Anchor="L,T" Offset="392,181"
+			       String="TXT_KEY_HAN_DUHU_REWARD_TITLE" Font="TwCenMT18" ColorSet="Beige_Black" FontStyle="Shadow"/>
+
+			<Label ID="CulV" Anchor="L,T" Offset="392,215" Font="TwCenMT16" ColorSet="Beige_Black" FontStyle="Shadow"/>
+			<Label ID="FoodV" Anchor="L,T" Offset="392,245" Font="TwCenMT16" ColorSet="Beige_Black" FontStyle="Shadow"/>
+			<Label ID="ProdV" Anchor="L,T" Offset="392,275" Font="TwCenMT16" ColorSet="Beige_Black" FontStyle="Shadow"/>
+
+			<Box Anchor="L,T" Size="300,1" Offset="392,307" Color="230,206,150,90"/>
+			<Label ID="DuhuHint" Anchor="L,T" Offset="392,317" Font="TwCenMT14" ColorSet="Beige_Black_Alpha"
+			       FontStyle="Shadow" String="TXT_KEY_HAN_DUHU_HINT2" WrapWidth="298"/>
+
+			<GridButton ID="DuhuClose" Size="180,30" Anchor="C,B" Offset="0,-26" Style="BaseButton">
+				<Label Anchor="C,C" Offset="0,-2" String="TXT_KEY_HAN_DUHU_CLOSE"
+				       Font="TwCenMT18" FontStyle="Shadow" ColorSet="Beige_Black_Alpha"/>
+			</GridButton>
+		</Grid>
+	</Box>
+</Context>
